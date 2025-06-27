@@ -1,14 +1,12 @@
 <template>
-    <div
-        class="transiton-opacity flex bg-white/20 text-current text-white backdrop-blur-lg duration-1000 hover:opacity-100"
-    >
+    <div class="flex duration-1000 hover:opacity-100">
         <footer
             role="contentinfo"
             class="relative z-10 w-full transition-transform duration-500"
         >
             <div class="flex flex-col lg:flex-row">
                 <div
-                    class="to-blaze-orange-500 via-pizazz-500 flex w-full shrink-0 flex-col bg-gradient-to-b from-orange-500 p-8 lg:max-w-80"
+                    class="to-blaze-orange-500 via-pizazz-500 flex w-full shrink-0 flex-col bg-gradient-to-b from-orange-500 p-8 text-white lg:max-w-80"
                 >
                     <site-brand />
                     <p class="flex flex-row gap-1">
