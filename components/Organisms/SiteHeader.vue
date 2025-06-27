@@ -2,20 +2,20 @@
     <header
         role="banner"
         :class="headerClasses"
-        class="fixed top-0 right-0 left-0 z-50 w-full bg-orange-500 py-4 transition-transform duration-500 lg:py-6 lg:backdrop-blur-sm"
+        class="fixed top-0 right-0 left-0 z-50 w-full text-white transition-transform duration-500 lg:py-6"
     >
         <div class="grid-layout container-px container">
             <div
                 class="relative col-span-9 col-start-2 row-start-1 flex w-full items-center justify-between lg:col-span-10 lg:col-start-2"
             >
-                <site-brand class="" />
+                <site-brand class="max-w-48" />
                 <div
-                    class="fixed inset-0 z-10 grid h-screen w-full grid-flow-row auto-rows-max grid-cols-12 overflow-y-scroll bg-gray-100 py-4 transition-all duration-300 lg:static lg:inset-auto lg:z-auto lg:flex lg:h-auto lg:overflow-y-visible lg:bg-transparent lg:p-0"
+                    class="fixed inset-0 z-10 grid h-screen w-full grid-flow-row auto-rows-max grid-cols-12 overflow-y-scroll bg-orange-600 py-4 transition-all duration-300 lg:static lg:inset-auto lg:z-auto lg:flex lg:h-auto lg:overflow-y-visible lg:bg-transparent lg:p-0"
                     :class="mobileNavWrapperClasses"
                 >
-                    <site-brand
-                        class="col-span-10 col-start-2 row-start-1 lg:hidden"
-                    />
+                    <div class="col-span-7 col-start-2 row-start-1 lg:hidden">
+                        <site-brand class="w-full max-w-56" />
+                    </div>
                     <button
                         class="relative z-10 col-start-11 row-start-1 lg:hidden"
                         aria-label="Close mobile navigation"

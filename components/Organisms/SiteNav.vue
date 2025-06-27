@@ -1,5 +1,5 @@
 <template>
-    <nav v-if="navigation" class="site-nav">
+    <nav v-if="navigation" class="site-nav font-bold">
         <ul class="my-auto lg:mr-4" :class="ulClasses">
             <li
                 v-for="navItem in navigation"
@@ -12,9 +12,9 @@
                 >
                     {{ navItem.label }}
                 </nuxt-link>
-                <ul
+                <!-- <ul
                     v-if="navItem.subItems && navItem.subItems.length > 0"
-                    class="z-10 flex flex-col bg-gray-100 p-4 lg:absolute lg:top-full lg:right-0 lg:z-20 lg:hidden lg:w-[300px] lg:text-right lg:group-hover:block"
+                    class="z-10 flex flex-col bg-orange-800 p-4 lg:absolute lg:top-full lg:right-0 lg:z-20 lg:hidden lg:w-[300px] lg:text-right lg:group-hover:block"
                 >
                     <li
                         v-for="subItem in navItem.subItems"
@@ -28,7 +28,7 @@
                             {{ subItem.label }}
                         </nuxt-link>
                     </li>
-                </ul>
+                </ul> -->
             </li>
         </ul>
     </nav>

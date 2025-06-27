@@ -18,6 +18,32 @@
     --color-orange-900: oklch(19.498% 0.04078 77.079);
     --color-orange-950: oklch(8.5603% 0.01756 94.54);
 
+    --color-pizazz: oklch(75.376% 0.17816 59.215);
+    --color-pizazz-50: oklch(92.06% 0.06202 72.432);
+    --color-pizazz-100: oklch(89.91% 0.08016 72.602);
+    --color-pizazz-200: oklch(85.809% 0.11366 71.624);
+    --color-pizazz-300: oklch(82% 0.14211 69.292);
+    --color-pizazz-400: oklch(78.507% 0.16418 65.463);
+    --color-pizazz-500: oklch(75.376% 0.17816 59.215);
+    --color-pizazz-600: oklch(62.789% 0.14711 60.097);
+    --color-pizazz-700: oklch(49.535% 0.11438 61.631);
+    --color-pizazz-800: oklch(35.119% 0.07968 63.63);
+    --color-pizazz-900: oklch(19.239% 0.04078 73.97);
+    --color-pizazz-950: oklch(7.5348% 0.01676 66.154);
+
+    --color-blaze-orange: oklch(69.706% 0.20349 43.804);
+    --color-blaze-orange-50: oklch(89.967% 0.06119 54.842);
+    --color-blaze-orange-100: oklch(87.272% 0.07975 55.357);
+    --color-blaze-orange-200: oklch(82.153% 0.11594 54.732);
+    --color-blaze-orange-300: oklch(77.47% 0.14973 52.773);
+    --color-blaze-orange-400: oklch(73.17% 0.18018 49.123);
+    --color-blaze-orange-500: oklch(69.706% 0.20349 43.804);
+    --color-blaze-orange-600: oklch(58.016% 0.16774 44.35);
+    --color-blaze-orange-700: oklch(45.852% 0.12914 45.894);
+    --color-blaze-orange-800: oklch(32.668% 0.08836 48.446);
+    --color-blaze-orange-900: oklch(18.017% 0.04269 58.969);
+    --color-blaze-orange-950: oklch(7.5348% 0.01676 66.154);
+
     --color-blue: oklch(69.137% 0.17407 245.01);
     --color-blue-50: oklch(89.875% 0.05878 233.63);
     --color-blue-100: oklch(87.169% 0.07557 233.26);
