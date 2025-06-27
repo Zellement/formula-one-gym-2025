@@ -23,14 +23,12 @@ export default defineNuxtConfig({
         '@nuxtjs/seo',
         '@nuxt/fonts',
         '@nuxt/icon',
-        '@storyblok/nuxt',
-			{
-				accessToken: import.meta.env.STORYBLOK_DELIVERY_API_TOKEN,
-				apiOptions: {
-					region: 'eu',
-				},
-			},
+        '@storyblok/nuxt'
     ],
+
+    storyblok: {
+        accessToken: import.meta.env.STORYBLOK_DELIVERY_API_TOKEN
+    },
 
     svgSprite: {
         input: '~/assets/icons/svg',
