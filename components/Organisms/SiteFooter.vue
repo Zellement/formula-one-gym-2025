@@ -1,21 +1,30 @@
 <template>
     <div
-        class="transiton-opacity site-footer mt-32 flex bg-white/20 text-current backdrop-blur-lg duration-1000 hover:opacity-100 dark:bg-black/20"
+        class="transiton-opacity flex bg-white/20 text-current text-white backdrop-blur-lg duration-1000 hover:opacity-100"
     >
         <footer
             role="contentinfo"
             class="relative z-10 w-full transition-transform duration-500"
         >
-            <div class="grid-layout container-px container py-8">
+            <div class="flex flex-col lg:flex-row">
                 <div
-                    class="col-span-10 col-start-2 flex flex-col justify-between gap-8 lg:flex-row"
+                    class="to-blaze-orange-500 via-pizazz-500 flex w-full shrink-0 flex-col bg-gradient-to-b from-orange-500 p-8 lg:max-w-80"
                 >
-                    <div class="flex flex-row items-center gap-4">
-                        <site-brand />
-                        <p class="flex flex-row gap-1 text-xs">
-                            <span>&copy;</span> <span>{{ date }}</span>
-                        </p>
-                    </div>
+                    <site-brand />
+                    <p class="flex flex-row gap-1">
+                        <span>&copy;</span> <span>{{ date }}</span>
+                    </p>
+                </div>
+                <div class="flex grow bg-gray-100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.7207820905182!2d-1.1483069223096876!3d52.95344697217786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c3d5996f7b75%3A0x8531186fa3c1bef3!2sFormula%20One%20Gym!5e0!3m2!1sen!2suk!4v1751053648344!5m2!1sen!2suk"
+                        width="100%"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen="false"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
             </div>
         </footer>
