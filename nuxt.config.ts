@@ -18,7 +18,6 @@ export default defineNuxtConfig({
     modules: [
         '@nuxt/image',
         '@pinia/nuxt',
-        '@nuxtjs/svg-sprite',
         'nuxt-viewport',
         '@nuxtjs/seo',
         '@nuxt/fonts',
@@ -30,43 +29,11 @@ export default defineNuxtConfig({
         accessToken: import.meta.env.STORYBLOK_DELIVERY_API_TOKEN
     },
 
-    svgSprite: {
-        input: '~/assets/icons/svg',
-        output: '~/assets/icons/sprites'
-    },
-
-    // Contentful image provider
-    // image: {
-    //     provider: 'contentful',
-    //     contentful: {}
-    // },
-
-    // Storyblok image provider
-    // image: {
-    //     domains: [
-    //         'https://a.storyblok.com',
-    //         'localhost',
-    //     ],
-    //     screens: {
-    //         '3xs': 21 * 16,
-    //         '2xs': 23 * 16,
-    //         xs: 25.625 * 16,
-    //         sm: 30 * 16,
-    //         'sm-md': 35 * 16,
-    //         md: 43.125 * 16,
-    //         lg: 54.875 * 16,
-    //         xl: 79.6875 * 16,
-    //         '2xl': 90 * 16,
-    //         '3xl': 100 * 16,
-    //         max: 1920
-    //     }
-    // },
-
     css: ['@/assets/css/app.css'],
 
     components: [
         {
-            path: '~/components',
+            path: '~/components', // for everything else like Atoms/Molecules
             pathPrefix: false
         }
     ],
@@ -124,22 +91,7 @@ export default defineNuxtConfig({
                     type: 'image/x-icon',
                     href: '/favicon.png'
                 }
-                // {
-                //     rel: 'preconnect',
-                //     href: 'https://www.googletagmanager.com'
-                // },
-                // {
-                //     rel: 'preconnect',
-                //     href: 'https://www.google-analytics.com'
-                // },
-                // {
-                //     rel: 'preconnect',
-                //     href: 'https://googleads.g.doubleclick.net'
-                // },
-                // {
-                //     rel: 'preconnect',
-                //     href: 'https://www.google.com'
-                // },
+
                 // {
                 //     rel: 'preconnect',
                 //     href: 'https://www.google.nl'
@@ -197,11 +149,6 @@ export default defineNuxtConfig({
             ]
         }
     },
-
-    build: {
-        transpile: ['@effect-digital/vue-utils']
-    },
-
     devtools: { enabled: true },
 
     compatibilityDate: '2024-08-08'
