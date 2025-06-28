@@ -3,7 +3,7 @@ defineProps({ blok: Object })
 </script>
 
 <template>
-    <div class="bg-red-500">
+    <div class="grid grid-cols-3 bg-red-500">
         <StoryblokComponent
             v-for="currentBlok in blok.columns"
             :key="currentBlok._uid"

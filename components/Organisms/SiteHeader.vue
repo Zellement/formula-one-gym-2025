@@ -21,7 +21,7 @@
                         aria-label="Close mobile navigation"
                         @click="uiStore.toggleShowMobileNav(false)"
                     >
-                        <svg-icon name="ui/cross" class="ml-auto h-10 w-10" />
+                        <Icon name="charm:cross" class="ml-auto h-10 w-10" />
                     </button>
                     <site-nav
                         class="col-span-10 col-start-2 row-start-2 mt-8 lg:mt-0 lg:w-full"
@@ -34,7 +34,7 @@
                 aria-label="Open mobile navigation"
                 @click="uiStore.toggleShowMobileNav(true)"
             >
-                <svg-icon name="ui/hamburger" class="ml-auto h-10 w-10" />
+                <Icon name="charm:menu-kebab" class="ml-auto h-10 w-10" />
             </button>
         </div>
     </header>
