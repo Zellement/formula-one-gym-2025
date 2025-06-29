@@ -4,6 +4,7 @@ defineProps<{ blok: any }>()
 
 <template>
     <div v-editable="blok">
+        <pre>{{ blok }}</pre>
         <StoryblokComponent
             v-for="nestedBlok in blok.body"
             :key="nestedBlok._uid"

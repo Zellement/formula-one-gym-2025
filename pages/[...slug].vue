@@ -1,6 +1,5 @@
 <template>
     <div>
-        <pre>{{ story.value.content }}</pre>
         <StoryblokComponent
             v-if="story?.value?.content?.component"
             :blok="story.value.content"
