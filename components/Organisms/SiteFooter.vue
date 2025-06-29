@@ -6,11 +6,31 @@
         >
             <div class="flex flex-col lg:flex-row">
                 <div
-                    class="to-blaze-orange-500 via-pizazz-500 flex w-full shrink-0 flex-col bg-gradient-to-b from-orange-500 p-8 text-white lg:max-w-80"
+                    class="to-blaze-orange-500 via-pizazz-500 flex w-full shrink-0 flex-col gap-8 bg-gradient-to-b from-orange-500 p-8 text-white lg:max-w-96"
                 >
-                    <site-brand />
+                    <site-brand class="block max-w-56" />
+
+                    <div class="flex flex-col gap-1 leading-tight">
+                        <site-telephone />
+                        <site-email />
+                    </div>
+
                     <p class="flex flex-row gap-1">
-                        <span>&copy;</span> <span>{{ date }}</span>
+                        <span>&copy;</span> Formula One Gym
+                        <span>{{ date }}</span>
+                    </p>
+
+                    <discounted-parking />
+
+                    <p>
+                        <nuxt-link
+                            to="https://www.zellement.com"
+                            external
+                            class="hover:underline"
+                            target="_blank"
+                        >
+                            Site by Zellement
+                        </nuxt-link>
                     </p>
                 </div>
                 <div class="flex grow bg-gray-100">

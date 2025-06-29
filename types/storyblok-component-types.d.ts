@@ -62,6 +62,14 @@ export interface AtomSingleLinkStoryblok {
   [k: string]: any;
 }
 
+export interface DataDiscountedParkingOptionStoryblok {
+  time?: string;
+  cost?: string;
+  component: "dataDiscountedParkingOption";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   name?: string;
   component: "feature";
@@ -72,6 +80,7 @@ export interface FeatureStoryblok {
 export interface GridStoryblok {
   columns?: (
     | AtomSingleLinkStoryblok
+    | DataDiscountedParkingOptionStoryblok
     | FeatureStoryblok
     | GridStoryblok
     | MetaSiteOptionsStoryblok
@@ -87,6 +96,7 @@ export interface MetaSiteOptionsStoryblok {
   telephone?: string;
   email?: string;
   navigation?: AtomSingleLinkStoryblok[];
+  discountedParking?: DataDiscountedParkingOptionStoryblok[];
   component: "metaSiteOptions";
   _uid: string;
   [k: string]: any;
@@ -102,6 +112,7 @@ export interface TeaserStoryblok {
 export interface TemplatePageStoryblok {
   body?: (
     | AtomSingleLinkStoryblok
+    | DataDiscountedParkingOptionStoryblok
     | FeatureStoryblok
     | GridStoryblok
     | MetaSiteOptionsStoryblok

@@ -41,6 +41,41 @@
       "metadata": {}
     },
     {
+      "name": "dataDiscountedParkingOption",
+      "display_name": "[Data] Discounted Parking Option",
+      "description": "",
+      "created_at": "2025-06-29T11:28:28.293Z",
+      "updated_at": "2025-06-29T11:30:56.437Z",
+      "id": 63516296372531,
+      "schema": {
+        "time": {
+          "type": "text",
+          "pos": 0,
+          "id": "Ejws9Sb3SvaaXhhG0L_c0g"
+        },
+        "cost": {
+          "type": "text",
+          "pos": 1,
+          "id": "PPaBJOGCR2SF8Aln-lNX7g"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "[Data] Discounted Parking Option",
+      "component_group_uuid": null,
+      "color": "#3ea6a6",
+      "icon": "block-sticker",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {}
+    },
+    {
       "name": "feature",
       "display_name": null,
       "description": null,
@@ -103,7 +138,7 @@
       "display_name": "Site Options",
       "description": "Site options.",
       "created_at": "2025-06-29T08:14:18.293Z",
-      "updated_at": "2025-06-29T08:17:41.809Z",
+      "updated_at": "2025-06-29T11:29:48.743Z",
       "id": 63468577972256,
       "schema": {
         "telephone": {
@@ -134,6 +169,16 @@
             "atomSingleLink"
           ],
           "id": "qykkeC9XSk-XR3RtxCgWQg"
+        },
+        "discountedParking": {
+          "type": "bloks",
+          "pos": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "dataDiscountedParkingOption"
+          ],
+          "id": "94IMr2zITS-YYmo3GSwSIg"
         }
       },
       "image": null,
@@ -145,7 +190,7 @@
       "preset_id": null,
       "real_name": "Site Options",
       "component_group_uuid": null,
-      "color": "#3ea6a6",
+      "color": "#374dc3",
       "icon": "block-keyboard",
       "internal_tags_list": [],
       "internal_tag_ids": [],
@@ -186,7 +231,7 @@
       "display_name": "Page",
       "description": "A standard page.",
       "created_at": "2025-06-29T08:11:57.513Z",
-      "updated_at": "2025-06-29T11:01:43.827Z",
+      "updated_at": "2025-06-29T11:29:22.091Z",
       "id": 63468001337375,
       "schema": {
         "meta_tags": {
@@ -221,7 +266,7 @@
       "preset_id": null,
       "real_name": "Page",
       "component_group_uuid": null,
-      "color": "#374dc3",
+      "color": "#1a1f36",
       "icon": "block-1-2block",
       "internal_tags_list": [],
       "internal_tag_ids": [],
