@@ -4,7 +4,6 @@
             v-if="story?.value?.content?.component"
             :blok="story.value.content"
         />
-        <pre>{{ story }}</pre>
     </div>
 </template>
 
