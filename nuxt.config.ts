@@ -80,6 +80,7 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'en'
             },
+            title: 'Formula One Gym | Nottingham',
             meta: [
                 {
                     name: 'viewport',
@@ -88,7 +89,7 @@ export default defineNuxtConfig({
                 {
                     name: 'description',
                     content:
-                        'An Effect Digital creation. Please change this description.'
+                        'No joining fee or contract. Our independent Nottingham gym offers free weights, resistance machines, cardio machines, classes, saunas and sunbeds'
                 },
                 { id: 'og-type', property: 'og:type', content: 'website' }
             ],
@@ -98,7 +99,6 @@ export default defineNuxtConfig({
                     type: 'image/x-icon',
                     href: '/favicon.png'
                 }
-
                 // {
                 //     rel: 'preconnect',
                 //     href: 'https://www.google.nl'
@@ -123,8 +123,6 @@ export default defineNuxtConfig({
     runtimeConfig: {
         public: {
             WEBSITE_URL: import.meta.env.WEBSITE_URL,
-            MARKER_ID: import.meta.env.MARKER_ID,
-            MARKER_ENABLED: import.meta.env.MARKER_ENABLED,
             COOKIE_YES_ID: import.meta.env.COOKIE_YES_ID,
             GTM_ID: import.meta.env.GTM_ID
         }
