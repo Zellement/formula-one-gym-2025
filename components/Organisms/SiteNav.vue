@@ -1,5 +1,5 @@
 <template>
-    <nav v-if="navigation" class="text-sm font-extrabold">
+    <nav v-if="navigation" class="text-sm font-bold">
         <ul class="my-auto lg:mr-4" :class="ulClasses">
             <li
                 v-for="navItem in navigation"
