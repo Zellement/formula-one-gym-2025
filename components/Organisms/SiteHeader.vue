@@ -8,7 +8,7 @@
             <div
                 class="relative col-span-9 col-start-2 row-start-1 flex w-full items-center justify-between lg:col-span-10 lg:col-start-2"
             >
-                <site-brand class="max-w-48" />
+                <site-brand class="max-w-56" />
                 <div
                     class="fixed inset-0 z-10 grid h-screen w-full grid-flow-row auto-rows-max grid-cols-12 overflow-y-scroll bg-orange-600 py-4 transition-all duration-300 lg:static lg:inset-auto lg:z-auto lg:flex lg:h-auto lg:overflow-y-visible lg:bg-transparent lg:p-0"
                     :class="mobileNavWrapperClasses"

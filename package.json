@@ -14,8 +14,8 @@
         "format": "npm-run-all --serial format:check format:write",
         "format:check": "npx prettier --check \"**/(*.vue|*.js|*.ts|*.md|*.scss)\"",
         "format:write": "npx prettier --write \"**/(*.vue|*.js|*.ts|*.md|*.scss)\"",
-        "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths storyblok/components.308756.json --destinationFilePath types/storyblok-component-types.d.ts",
-        "pull-sb-components": "storyblok pull-components --path storyblok/ --space 308756",
+        "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths storyblok/components.285425567212385.json --destinationFilePath types/storyblok-component-types.d.ts",
+        "pull-sb-components": "storyblok pull-components --path storyblok/ --space 285425567212385",
         "update-storyblok": "npm run pull-sb-components && npm run generate-sb-types"
     },
     "devDependencies": {
