@@ -10,10 +10,10 @@ export default defineNuxtPlugin(async (): Promise<void> => {
         '_data/site-options',
         {
             version: 'published',
-            resolve_links: 'story'
+            resolve_links: 'url'
         },
         {
-            resolveLinks: 'story'
+            resolveLinks: 'url'
         }
     )
 

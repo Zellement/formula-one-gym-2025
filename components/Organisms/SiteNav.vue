@@ -1,34 +1,17 @@
 <template>
-    <nav v-if="navigation" class="site-nav font-bold">
+    <nav v-if="navigation" class="text-sm font-extrabold">
         <ul class="my-auto lg:mr-4" :class="ulClasses">
             <li
                 v-for="navItem in navigation"
-                :key="navItem.key"
+                :key="navItem._uid"
                 class="group relative"
             >
                 <nuxt-link
-                    :to="navItem.url"
+                    :to="getLinkUrl(navItem)"
                     @click="uiStore.toggleShowMobileNav(false)"
                 >
-                    {{ navItem.label }}
+                    {{ getLinkName(navItem) }}
                 </nuxt-link>
-                <!-- <ul
-                    v-if="navItem.subItems && navItem.subItems.length > 0"
-                    class="z-10 flex flex-col bg-orange-800 p-4 lg:absolute lg:top-full lg:right-0 lg:z-20 lg:hidden lg:w-[300px] lg:text-right lg:group-hover:block"
-                >
-                    <li
-                        v-for="subItem in navItem.subItems"
-                        :key="subItem.key"
-                        class="ml-4 lg:m-0"
-                    >
-                        <nuxt-link
-                            :to="subItem.url"
-                            @click="uiStore.toggleShowMobileNav(false)"
-                        >
-                            {{ subItem.label }}
-                        </nuxt-link>
-                    </li>
-                </ul> -->
             </li>
         </ul>
     </nav>
@@ -41,43 +24,11 @@ defineProps<{
     ulClasses?: string
 }>()
 
-const navigation: NavItem[] = [
-    {
-        key: 'home',
-        label: 'Home',
-        url: '/'
-    },
-    {
-        key: 'about',
-        label: 'About',
-        url: '/about'
-    },
-    {
-        key: 'services',
-        label: 'Services',
-        url: '/services',
-        subItems: [
-            {
-                key: 'webDevelopment',
-                label: 'Web Development',
-                url: '/services/web-development'
-            },
-            {
-                key: 'graphicDesign',
-                label: 'Graphic Design',
-                url: '/services/graphic-design'
-            }
-        ]
-    },
-    {
-        key: 'blog',
-        label: 'Blog',
-        url: '/blog'
-    },
-    {
-        key: 'contact',
-        label: 'Contact',
-        url: '/contact'
-    }
-]
+const storyblokStore = useStoryblokStore()
+
+const { getLinkUrl, getLinkName } = useStoryblokUtils()
+
+const navigation = computed(() => {
+    return storyblokStore.siteOptions?.navigation || []
+})
 </script>

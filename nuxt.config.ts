@@ -25,6 +25,13 @@ export default defineNuxtConfig({
         '@storyblok/nuxt'
     ],
 
+    fonts: {
+        defaults: {
+            weights: [400, 700],
+            styles: ['normal', 'italic']
+        }
+    },
+
     storyblok: {
         accessToken: import.meta.env.STORYBLOK_DELIVERY_API_TOKEN
     },
