@@ -1,8 +1,10 @@
 <template>
     <div class="text-black">
         <div class="container-px container">
-            <div class="col-span-full">
-                <h2 v-if="blok.title">{{ blok.title }}</h2>
+            <div class="col-span-full flex flex-col gap-8">
+                <h2 v-if="blok.title" class="h2 text-center">
+                    {{ blok.title }}
+                </h2>
                 <ul
                     v-if="blok.icons"
                     class="flex flex-wrap items-start justify-center gap-12 2xl:justify-between"
@@ -17,7 +19,6 @@
                             :size="icon.iconSize || '50'"
                             class="text-pizazz-500"
                         />
-                        {{ icon.iconSize || '50' }}
                         <span class="text-sm font-bold">{{ icon.name }}</span>
                     </li>
                 </ul>

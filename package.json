@@ -53,6 +53,8 @@
         "esbuild": "0.25.5",
         "isomorphic-dompurify": "^2.25.0",
         "pinia": "3.0.3",
+        "serpapi": "^2.1.0",
+        "storyblok-js-client": "^7.0.2",
         "stylelint-config-standard": "^38.0.0",
         "stylelint-prettier": "5.0.3",
         "tailwindcss": "^4.1.11",

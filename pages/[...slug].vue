@@ -15,9 +15,13 @@ const routePath = computed(() => {
     return route.path === '/' ? 'home' : route.path
 })
 
+const { fetchGoogleReviews } = useSerpApiUtils()
+
 const story = await useAsyncStoryblok(routePath.value, {
     version: 'published'
 })
+
+await useAsyncData('reviews', () => fetchGoogleReviews())
 
 useHead({
     title: story.value?.content?.meta_tags?.title || 'Formula One Gym',

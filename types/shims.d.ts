@@ -1,3 +1,5 @@
+import type { MetaSiteOptionsStoryblok } from '@/types/storyblok-component-types'
+
 declare global {
     type ImageTypes = {
         url?: string
@@ -15,6 +17,11 @@ declare global {
 
     interface UtmParameters {
         [key: `utm_${string}`]: string
+    }
+
+    interface ExtendedMetaSiteOptionsStoryblok
+        extends MetaSiteOptionsStoryblok {
+        reviewsGoogle?: any
     }
 }
 
