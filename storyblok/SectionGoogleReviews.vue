@@ -1,8 +1,11 @@
 <template>
-    <div class="container-px py-32">
+    <div
+        v-gsap.whenVisible.from="{ opacity: 0, x: -32 }"
+        class="container-px py-32"
+    >
         <div class="container">
             <div class="mb-16 flex flex-col lg:flex-row lg:justify-between">
-                <h2 class="h2">Google Reviews</h2>
+                <h2 v-gsap.animateText class="h2">Google Reviews</h2>
                 <p class="mb-8">
                     {{ reviewsGoogle.place_info.rating }} stars from
                     {{ reviewsGoogle.place_info.reviews }} reviews

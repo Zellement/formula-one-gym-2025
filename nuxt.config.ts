@@ -15,15 +15,7 @@ export default defineNuxtConfig({
         minify: true
     },
 
-    modules: [
-        '@nuxt/image',
-        '@pinia/nuxt',
-        'nuxt-viewport',
-        '@nuxtjs/seo',
-        '@nuxt/fonts',
-        '@nuxt/icon',
-        '@storyblok/nuxt'
-    ],
+    modules: ['@nuxt/image', '@pinia/nuxt', 'nuxt-viewport', '@nuxtjs/seo', '@nuxt/fonts', '@nuxt/icon', '@storyblok/nuxt', 'v-gsap-nuxt'],
 
     fonts: {
         defaults: {
