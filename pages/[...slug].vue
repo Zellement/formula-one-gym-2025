@@ -1,5 +1,6 @@
 <template>
     <div>
+        <pre>{{ story.value.content }}</pre>
         <StoryblokComponent
             v-if="story?.value?.content?.component"
             :blok="story.value.content"
@@ -16,5 +17,15 @@ const routePath = computed(() => {
 
 const story = await useAsyncStoryblok(routePath.value, {
     version: 'published' // or 'published'
+})
+
+useHead({
+    title: story.value?.content?.meta_tags?.title || 'Formula One Gym',
+    meta: [
+        {
+            name: 'description',
+            content: story.value?.content?.meta_tags?.description ?? ''
+        }
+    ]
 })
 </script>

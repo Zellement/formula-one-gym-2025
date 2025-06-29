@@ -186,14 +186,30 @@
       "display_name": "Page",
       "description": "A standard page.",
       "created_at": "2025-06-29T08:11:57.513Z",
-      "updated_at": "2025-06-29T08:12:29.451Z",
+      "updated_at": "2025-06-29T11:01:43.827Z",
       "id": 63468001337375,
       "schema": {
+        "meta_tags": {
+          "type": "custom",
+          "pos": 0,
+          "field_type": "meta-fields",
+          "options": [],
+          "id": "TYETNLwRQqGLdyTAK1ERRQ"
+        },
         "body": {
           "type": "bloks",
-          "pos": 0,
+          "pos": 1,
           "required": false,
           "id": "NQom_38ER0O2Wa0r5lRhnQ"
+        },
+        "tab-934beaee-cdf8-45b0-91eb-651a990f2214": {
+          "display_name": "SEO",
+          "keys": [
+            "meta_tags"
+          ],
+          "pos": 2,
+          "type": "tab",
+          "id": "k0vq7s34RbCR62UamQ8iFA"
         }
       },
       "image": null,

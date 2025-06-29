@@ -75,6 +75,12 @@ export default defineNuxtConfig({
         )
     },
 
+    site: {
+        url: import.meta.env.WEBSITE_URL,
+        name: 'Formula One Gym',
+        trailingSlash: true
+    },
+
     app: {
         head: {
             htmlAttrs: {
@@ -98,23 +104,19 @@ export default defineNuxtConfig({
                     rel: 'icon',
                     type: 'image/x-icon',
                     href: '/favicon.png'
+                },
+                {
+                    rel: 'preload',
+                    as: 'script',
+                    href: `https://www.googletagmanager.com/gtm.js?id=${import.meta.env.GTM_ID}`
                 }
-                // {
-                //     rel: 'preconnect',
-                //     href: 'https://www.google.nl'
-                // },
-                // {
-                //     rel: 'preload',
-                //     as: 'script',
-                //     href: `https://www.googletagmanager.com/gtm.js?id=${import.meta.env.GTM_ID}`
-                // }
             ],
             script: [
-                // {
-                //     id: 'gtm-script',
-                //     innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${import.meta.env.GTM_ID}');`,
-                //     type: 'text/javascript'
-                // }
+                {
+                    id: 'gtm-script',
+                    innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${import.meta.env.GTM_ID}');`,
+                    type: 'text/javascript'
+                }
             ]
         },
         pageTransition: { name: 'page', mode: 'out-in' }
@@ -122,9 +124,7 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            WEBSITE_URL: import.meta.env.WEBSITE_URL,
-            COOKIE_YES_ID: import.meta.env.COOKIE_YES_ID,
-            GTM_ID: import.meta.env.GTM_ID
+            WEBSITE_URL: import.meta.env.WEBSITE_URL
         }
     },
 
