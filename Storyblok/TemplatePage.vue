@@ -1,10 +1,5 @@
-<script setup lang="ts">
-defineProps<{ blok: any }>()
-</script>
-
 <template>
     <div v-editable="blok">
-        <pre>{{ blok }}</pre>
         <StoryblokComponent
             v-for="nestedBlok in blok.body"
             :key="nestedBlok._uid"
@@ -12,3 +7,9 @@ defineProps<{ blok: any }>()
         />
     </div>
 </template>
+
+<script setup lang="ts">
+import type { TemplatePageStoryblok } from '~/types/storyblok-component-types'
+
+defineProps<{ blok: TemplatePageStoryblok }>()
+</script>

@@ -4,6 +4,7 @@
             v-if="story?.value?.content?.component"
             :blok="story.value.content"
         />
+        <pre>{{ story }}</pre>
     </div>
 </template>
 
@@ -15,7 +16,7 @@ const routePath = computed(() => {
 })
 
 const story = await useAsyncStoryblok(routePath.value, {
-    version: 'published' // or 'published'
+    version: 'published'
 })
 
 useHead({
