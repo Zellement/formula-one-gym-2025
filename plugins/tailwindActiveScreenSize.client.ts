@@ -7,15 +7,15 @@ export default defineNuxtPlugin(() => {
     }
 
     const screenSizes: Screens = {
-        xs: '25rem',
-        sm: '40rem',
-        md: '48rem',
-        'md-lg': '56rem',
-        lg: '64rem',
-        xl: '72rem',
-        '2xl': '80rem',
-        '3xl': '90rem',
-        '4xl': '96rem'
+        '3xs': '21rem' /* 336px */,
+        '2xs': '25.625re' /* 410px */,
+        xs: '30rem' /* 480px */,
+        sm: '35rem' /* 560px */,
+        md: '45.714rem' /* 658px */,
+        lg: '54.875rem' /* 878px */,
+        xl: '67.375rem' /* 1078px */,
+        '2xl': '79.19rem' /* 1280px */,
+        '3xl': '90rem' /* 1400px */
     }
 
     const updateScreenSize = (): void => {

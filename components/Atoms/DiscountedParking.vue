@@ -5,7 +5,7 @@
             <li
                 v-for="item in discountedParking"
                 :key="item.uid"
-                class="grid w-full grid-cols-2"
+                class="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-2"
             >
                 <span> {{ item.time }}</span>
                 <span> {{ item.cost }}</span>

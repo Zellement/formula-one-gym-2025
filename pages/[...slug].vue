@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page">
         <StoryblokComponent
             v-if="story?.value?.content?.component"
             :blok="story.value.content"
