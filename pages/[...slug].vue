@@ -1,6 +1,7 @@
 <template>
-    <div class="page">
-        <StoryblokComponent
+    <div>
+        <site-hero :title="story.value.name" />
+        <storyblok-component
             v-if="story?.value?.content?.component"
             :blok="story.value.content"
         />

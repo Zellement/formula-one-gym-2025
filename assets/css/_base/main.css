@@ -27,7 +27,7 @@ picture img {
 
 .page {
     /* ::before to push content down to overwrite fixed header */
-    &::before {
+    /* &::before {
         content: '';
         display: block;
         height: 72px;
@@ -36,7 +36,7 @@ picture img {
         @media (min-width: 64rem) {
             height: 96px;
         }
-    }
+    } */
 }
 
 @utility container {

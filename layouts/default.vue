@@ -1,7 +1,6 @@
 <template>
     <div class="layout">
         <site-header />
-        <site-hero />
         <main>
             <slot />
         </main>
