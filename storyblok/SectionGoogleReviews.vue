@@ -3,8 +3,7 @@
         v-gsap.whenVisible.from="{ opacity: 0, x: -32 }"
         class="container-px py-32"
     >
-        {{ reviewsGoogle }}
-        <div ref="containerEl" class="container">
+        <div v-if="reviewsGoogle" ref="containerEl" class="container">
             <div class="mb-16 flex flex-col lg:flex-row lg:justify-between">
                 <h2 v-gsap.animateText class="h2">Google Reviews</h2>
                 <p class="mb-8">
@@ -20,22 +19,18 @@
                     class="flex min-w-max gap-8"
                     :style="{ paddingLeft: dynamicPadding + 'px' }"
                 >
-                    <!-- <div
+                    <div
                         v-for="review in reviewsGoogle.reviews"
                         :key="review.review_id"
                         class="review flex w-80 shrink-0 flex-col gap-2"
                     >
                         <div class="mb-4 flex items-center gap-4">
-                            <img
-                                width="30"
-                                height="30"
-                                :src="review.user?.thumbnail"
-                                alt="User Image"
-                                class="self-start"
-                            />
                             <h3 class="font-bold">{{ review.user?.name }}</h3>
                         </div>
-                        <p>Date: {{ review.date }}</p>
+                        <p>
+                            Date:
+                            {{ dayjs(review.iso_date).format('D MMM YYYY') }}
+                        </p>
                         <div class="mb-2 flex items-center">
                             <Icon
                                 v-for="(filled, i) in getStars(review.rating)"
@@ -45,10 +40,10 @@
                             />
                         </div>
                         <p>{{ truncate(review.snippet, 160) }}</p>
-                        <a :href="review.link" target="_blank"
-                            >View on Google</a
-                        >
-                    </div> -->
+                        <a :href="review.link" target="_blank">
+                            View on Google
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -56,15 +51,17 @@
 </template>
 
 <script lang="ts" setup>
+import dayjs from 'dayjs'
+
 const storyblokStore = useStoryblokStore()
 
 const reviewsGoogle: ComputedRef<any> = computed(() => {
     return storyblokStore.siteOptions?.reviewsGoogle
 })
 
-// function getStars(rating: number) {
-//     return Array.from({ length: 5 }, (_, i) => i < Math.round(rating))
-// }
+const getStars = (rating: number) => {
+    return Array.from({ length: 5 }, (_, i) => i < Math.round(rating))
+}
 
 const viewport = useViewport()
 
@@ -72,7 +69,7 @@ const isGreaterThan2xl: ComputedRef<boolean> = computed(() => {
     return viewport.isGreaterOrEquals('2xl')
 })
 
-// const { truncate } = useStringUtils()
+const { truncate } = useStringUtils()
 
 const dynamicPadding = ref(0)
 const containerEl = ref<HTMLElement | null>(null)

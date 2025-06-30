@@ -51,6 +51,7 @@
         "@storyblok/js": "^4.1.1",
         "@storyblok/nuxt": "^7.1.1",
         "@tailwindcss/vite": "^4.1.11",
+        "dayjs": "^1.11.13",
         "esbuild": "0.25.5",
         "isomorphic-dompurify": "^2.25.0",
         "pinia": "3.0.3",
