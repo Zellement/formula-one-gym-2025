@@ -3,7 +3,8 @@
         v-gsap.whenVisible.from="{ opacity: 0, x: -32 }"
         class="container-px py-32"
     >
-        <div class="container">
+        {{ reviewsGoogle }}
+        <div ref="containerEl" class="container">
             <div class="mb-16 flex flex-col lg:flex-row lg:justify-between">
                 <h2 v-gsap.animateText class="h2">Google Reviews</h2>
                 <p class="mb-8">
@@ -15,8 +16,11 @@
             <div
                 class="container-px relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto"
             >
-                <div class="3xl:pl-[500px] flex min-w-max gap-8">
-                    <div
+                <div
+                    class="flex min-w-max gap-8"
+                    :style="{ paddingLeft: dynamicPadding + 'px' }"
+                >
+                    <!-- <div
                         v-for="review in reviewsGoogle.reviews"
                         :key="review.review_id"
                         class="review flex w-80 shrink-0 flex-col gap-2"
@@ -25,11 +29,11 @@
                             <img
                                 width="30"
                                 height="30"
-                                :src="review.user.thumbnail"
+                                :src="review.user?.thumbnail"
                                 alt="User Image"
                                 class="self-start"
                             />
-                            <h3 class="font-bold">{{ review.user.name }}</h3>
+                            <h3 class="font-bold">{{ review.user?.name }}</h3>
                         </div>
                         <p>Date: {{ review.date }}</p>
                         <div class="mb-2 flex items-center">
@@ -44,7 +48,7 @@
                         <a :href="review.link" target="_blank"
                             >View on Google</a
                         >
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -58,9 +62,38 @@ const reviewsGoogle: ComputedRef<any> = computed(() => {
     return storyblokStore.siteOptions?.reviewsGoogle
 })
 
-function getStars(rating: number) {
-    return Array.from({ length: 5 }, (_, i) => i < Math.round(rating))
+// function getStars(rating: number) {
+//     return Array.from({ length: 5 }, (_, i) => i < Math.round(rating))
+// }
+
+const viewport = useViewport()
+
+const isGreaterThan2xl: ComputedRef<boolean> = computed(() => {
+    return viewport.isGreaterOrEquals('2xl')
+})
+
+// const { truncate } = useStringUtils()
+
+const dynamicPadding = ref(0)
+const containerEl = ref<HTMLElement | null>(null)
+
+function updatePadding() {
+    if (!isGreaterThan2xl.value) {
+        dynamicPadding.value = 0
+        return
+    }
+    if (containerEl.value) {
+        const padding = containerEl.value.getBoundingClientRect().left
+        dynamicPadding.value = padding
+    }
 }
 
-const { truncate } = useStringUtils()
+onMounted(() => {
+    updatePadding()
+    window.addEventListener('resize', updatePadding)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', updatePadding)
+})
 </script>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <site-hero :title="story.value.name" />
+        <site-hero :title="story.value?.name" />
         <storyblok-component
             v-if="story?.value?.content?.component"
             :blok="story.value.content"
@@ -23,13 +23,13 @@ const story = await useAsyncStoryblok(routePath.value, {
 
 await useAsyncData('reviews', () => fetchGoogleReviews())
 
-useHead({
-    title: story.value?.content?.meta_tags?.title || 'Formula One Gym',
-    meta: [
-        {
-            name: 'description',
-            content: story.value?.content?.meta_tags?.description ?? ''
-        }
-    ]
-})
+// useHead({
+//     title: story.value?.content?.meta_tags?.title || 'Formula One Gym',
+//     meta: [
+//         {
+//             name: 'description',
+//             content: story.value?.content?.meta_tags?.description ?? ''
+//         }
+//     ]
+// })
 </script>

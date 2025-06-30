@@ -5,24 +5,22 @@ export const useSerpApiUtils = () => {
         const storyblokStore = useStoryblokStore()
 
         const today = new Date()
-        // Normalize 'today' to the beginning of the day for accurate comparison
-        today.setHours(0, 0, 0, 0)
+        today.setHours(0, 0, 0, 0) // Start of today
 
-        // Check if reviewsGoogle exists and if reviewsLastFetched is today or later
+        const lastFetched = new Date(
+            storyblokStore.siteOptions?.reviewsLastFetched
+        )
+        lastFetched.setHours(0, 0, 0, 0) // Start of that day
+
         if (
             storyblokStore.siteOptions?.reviewsGoogle &&
-            storyblokStore.siteOptions.reviewsLastFetched &&
-            new Date(storyblokStore.siteOptions.reviewsLastFetched).setHours(
-                0,
-                0,
-                0,
-                0
-            ) >= today.getTime()
+            storyblokStore.siteOptions?.reviewsLastFetched &&
+            lastFetched >= today
         ) {
             console.log(
                 'Google reviews already fetched today, skipping API call.'
             )
-            return storyblokStore.siteOptions.reviewsGoogle // Return existing data if up-to-date
+            return storyblokStore.siteOptions?.reviewsGoogle
         }
 
         console.log('Fetching Google reviews from SerpAPI...')
@@ -51,32 +49,20 @@ export const useSerpApiUtils = () => {
             'SerpAPI data received, attempting to post to Storyblok MAPI...'
         )
 
-        // 2. Update Storyblok MAPI
-        const { data: postResponse, error: postError } = await useFetch(
-            '/api/storyblok/mapi',
-            {
-                // Fixed typo: /api/
-                method: 'POST',
-                body: {
-                    reviewsGoogle: reviewsToSave, // Ensure this matches your Storyblok content field name
-                    reviewsLastFetched: new Date().toISOString() // Use current time for when it was truly fetched
-                }
-                // Add headers if your /api/storyblok/mapi expects them, though `readBody` won't use them
-            }
-        )
-
-        if (postError.value) {
-            console.error('Error posting to Storyblok MAPI:', postError.value)
-            throw new Error('Failed to update Storyblok with new reviews.')
+        const requestBody = {
+            reviewsGoogle: reviewsToSave,
+            reviewsLastFetched: new Date().toISOString()
         }
 
-        if (postResponse.value) {
-            console.log(
-                'Successfully posted to Storyblok MAPI:',
-                postResponse.value
-            )
-        } else {
-            console.warn('Post to Storyblok MAPI returned no response data.')
+        try {
+            const postResponse = await $fetch('/api/storyblok/mapi', {
+                method: 'POST',
+                body: requestBody
+            })
+
+            console.log('Successfully posted to Storyblok MAPI:', postResponse)
+        } catch (err) {
+            console.error('Error posting to Storyblok MAPI:', err)
         }
 
         return

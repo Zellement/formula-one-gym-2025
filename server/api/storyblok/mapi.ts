@@ -1,81 +1,87 @@
+// api/storyblok/mapi.ts
 import { H3Event, sendError, readBody } from 'h3'
+import StoryblokClient from 'storyblok-js-client' // Import the client
 
 export default defineEventHandler(async (event: H3Event): Promise<any> => {
-    // Ensure you have STORYBLOK_PERSONAL_ACCESS_TOKEN configured in your .env or nuxt.config.ts
-    const token = import.meta.env.STORYBLOK_PERSONAL_ACCESS_TOKEN
+    const oauthToken = import.meta.env.STORYBLOK_PERSONAL_ACCESS_TOKEN
+    if (!oauthToken) {
+        console.error('Storyblok MAPI: oauthToken is missing in runtimeConfig.')
+        return sendError(
+            event,
+            createError({
+                statusCode: 500,
+                statusMessage:
+                    'Storyblok Personal Access Token is not configured on the server.'
+            })
+        )
+    }
 
-    // Make sure these IDs are correct for your Storyblok setup
+    // Initialize the Storyblok Management API client
+    const Storyblok = new StoryblokClient({
+        oauthToken: oauthToken
+    })
+
     const siteOptionsId = '63469607958820' // Story ID
     const spaceId = '285425567212385' // Space ID
 
     try {
-        // 1. Fetch existing story
-        const response = await fetch(
-            `https://mapi.storyblok.com/v1/spaces/${spaceId}/stories/${siteOptionsId}`, // <-- FIXED: Added backticks
-            {
-                method: 'GET',
-                headers: { Authorization: token }
-            }
-        )
-        if (!response.ok) {
-            const errorText = await response.text()
-            throw new Error(
-                `Failed to fetch story: ${response.status} - ${errorText}`
-            )
-        }
-        const existingStory = await response.json()
+        console.log('Storyblok MAPI Handler: Executing')
 
-        // 2. Get new data from request
+        // 1. Fetch existing story using the client's GET method
+        // The client automatically handles URL construction and authorization
+        const existingStoryResponse = await Storyblok.get(
+            `spaces/${spaceId}/stories/${siteOptionsId}`
+        )
+        const existingStory = existingStoryResponse.data // Client returns data directly
+
+        // 2. Get new data from request body
         const newData = await readBody(event)
 
-        // 3. Merge data (customize as needed)
-        // Note: existingStory.story contains the full story object
-        // newData should contain the fields you want to update within existingStory.story.content
-        // If newData is just the 'content' object, you'll want to merge into content:
+        // 3. Merge data
         const mergedStoryContent = {
-            ...existingStory.story.content, // Merge existing content
-            ...newData // with the new data
+            ...existingStory.story.content, // Preserve existing content fields
+            ...newData // Overwrite/add new data (reviewsGoogle, reviewsLastFetched)
         }
 
         const storyToUpdate = {
-            ...existingStory.story, // Keep existing story metadata (name, slug, parent_id etc.)
+            ...existingStory.story, // Preserve story metadata (name, slug, etc.)
             content: mergedStoryContent // Update only the content part
         }
 
-        // 4. Update story in Storyblok
-        const updateResponse = await fetch(
-            `https://mapi.storyblok.com/v1/spaces/${spaceId}/stories/${siteOptionsId}`, // <-- FIXED: Added backticks
+        // 4. Update story in Storyblok using the client's PUT method
+        const updateResult = await Storyblok.put(
+            `spaces/${spaceId}/stories/${siteOptionsId}`,
             {
-                method: 'PUT',
-                headers: {
-                    Authorization: token,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    story: storyToUpdate, // Send the refined story object
-                    force_update: 1, // Ensures update even if not latest version
-                    publish: 1 // Publishes the story immediately
-                })
+                story: storyToUpdate,
+                force_update: 1, // Ensures update even if not latest version
+                publish: 1 // Publishes the story immediately
             }
         )
 
-        if (!updateResponse.ok) {
-            const errorText = await updateResponse.text()
-            throw new Error(
-                `Failed to update story: ${updateResponse.status} - ${errorText}`
-            )
-        }
-        return await updateResponse.json()
+        console.log('Storyblok MAPI PUT Success Result:', updateResult)
+        return updateResult // Client returns data directly
     } catch (error: any) {
-        console.error('Storyblok API route error:', error) // Log the error for debugging
+        console.error('Storyblok API route error (caught):', error) // Log the full error object
+        let statusMessage = 'Sorry, an error occurred while updating the story.'
+        let statusCode = 500
+
+        // Attempt to extract more specific error info from StoryblokClient's error structure
+        if (error.response && error.response.status) {
+            statusCode = error.response.status
+            if (error.response.data && error.response.data.error) {
+                statusMessage = `Storyblok API Error: ${error.response.data.error}`
+            } else if (error.response.statusText) {
+                statusMessage = `Storyblok API Error: ${error.response.statusText}`
+            }
+        } else if (error.message) {
+            statusMessage = error.message
+        }
+
         return sendError(
             event,
             createError({
-                statusCode: error.status ?? 500,
-                statusMessage:
-                    error.response?.statusText || // Access response.statusText if available
-                    error.message || // Use the message from your thrown errors
-                    'Sorry, an error occurred while updating the story.'
+                statusCode: statusCode,
+                statusMessage: statusMessage
             })
         )
     }
