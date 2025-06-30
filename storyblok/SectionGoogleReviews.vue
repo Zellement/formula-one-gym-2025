@@ -13,7 +13,7 @@
             </div>
 
             <div
-                class="container-px relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto"
+                class="3xl:px-0 relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto"
             >
                 <div
                     class="flex min-w-max gap-8"
@@ -63,25 +63,16 @@ const getStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => i < Math.round(rating))
 }
 
-const viewport = useViewport()
-
-const isGreaterThan2xl: ComputedRef<boolean> = computed(() => {
-    return viewport.isGreaterOrEquals('2xl')
-})
-
 const { truncate } = useStringUtils()
 
 const dynamicPadding = ref(0)
 const containerEl = ref<HTMLElement | null>(null)
 
-function updatePadding() {
-    if (!isGreaterThan2xl.value) {
-        dynamicPadding.value = 0
-        return
-    }
+const updatePadding = (): void => {
     if (containerEl.value) {
-        const padding = containerEl.value.getBoundingClientRect().left
-        dynamicPadding.value = padding
+        const windowWidth = window.innerWidth
+        const padding = containerEl.value.clientWidth
+        dynamicPadding.value = (windowWidth - padding) / 2
     }
 }
 
