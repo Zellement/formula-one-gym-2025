@@ -17,13 +17,13 @@ export const useSerpApiUtils = () => {
             storyblokStore.siteOptions?.reviewsLastFetched &&
             lastFetched >= today
         ) {
-            console.log(
-                'Google reviews already fetched today, skipping API call.'
-            )
+            // console.log(
+            //     'Google reviews already fetched today, skipping API call.'
+            // )
             return storyblokStore.siteOptions?.reviewsGoogle
         }
 
-        console.log('Fetching Google reviews from SerpAPI...')
+        // console.log('Fetching Google reviews from SerpAPI...')
 
         // 1. Fetch reviews from SerpAPI
         const { data: serpApiData, error: serpApiError } = await useFetch(
@@ -41,13 +41,11 @@ export const useSerpApiUtils = () => {
             return null // No data to process
         }
 
-        // IMPORTANT: Adjust `serpApiData.value` based on your actual SerpAPI response structure
-        // If it's `data.value.reviews`, use that. If it's just `data.value`, use it.
-        const reviewsToSave = serpApiData.value // Assuming serpApiData.value is the array of reviews or object containing them
+        const reviewsToSave = serpApiData.value
 
-        console.log(
-            'SerpAPI data received, attempting to post to Storyblok MAPI...'
-        )
+        // console.log(
+        //     'SerpAPI data received, attempting to post to Storyblok MAPI...'
+        // )
 
         const requestBody = {
             reviewsGoogle: reviewsToSave,
@@ -55,12 +53,12 @@ export const useSerpApiUtils = () => {
         }
 
         try {
-            const postResponse = await $fetch('/api/storyblok/mapi', {
+            await $fetch('/api/storyblok/mapi', {
                 method: 'POST',
                 body: requestBody
             })
 
-            console.log('Successfully posted to Storyblok MAPI:', postResponse)
+            // console.log('Successfully posted to Storyblok MAPI:', postResponse)
         } catch (err) {
             console.error('Error posting to Storyblok MAPI:', err)
         }

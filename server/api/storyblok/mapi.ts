@@ -4,6 +4,7 @@ import StoryblokClient from 'storyblok-js-client' // Import the client
 
 export default defineEventHandler(async (event: H3Event): Promise<any> => {
     const oauthToken = import.meta.env.STORYBLOK_PERSONAL_ACCESS_TOKEN
+
     if (!oauthToken) {
         console.error('Storyblok MAPI: oauthToken is missing in runtimeConfig.')
         return sendError(
@@ -25,10 +26,7 @@ export default defineEventHandler(async (event: H3Event): Promise<any> => {
     const spaceId = '285425567212385' // Space ID
 
     try {
-        console.log('Storyblok MAPI Handler: Executing')
-
         // 1. Fetch existing story using the client's GET method
-        // The client automatically handles URL construction and authorization
         const existingStoryResponse = await Storyblok.get(
             `spaces/${spaceId}/stories/${siteOptionsId}`
         )
