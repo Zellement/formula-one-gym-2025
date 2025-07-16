@@ -1,5 +1,5 @@
 <template>
-    <rich-text :content="blok.richText" class="content large-first" />
+    <rich-text :content="blok.richText" />
 </template>
 
 <script lang="ts" setup>
