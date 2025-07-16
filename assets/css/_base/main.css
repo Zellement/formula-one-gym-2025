@@ -12,6 +12,7 @@ body {
     font-family: var(--font-sans);
     font-size: var(--text-base);
     overscroll-behavior-y: none;
+    font-weight: 600;
 
     @media (resolution >= 2dppx) {
         -webkit-font-smoothing: antialiased;
@@ -40,7 +41,7 @@ picture img {
 }
 
 @utility container {
-    max-width: var(--container-3xl);
+    max-width: var(--container-4xl);
     margin-inline: auto;
 }
 

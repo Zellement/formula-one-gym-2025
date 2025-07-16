@@ -4,6 +4,11 @@
  * ----------------------
  */
 
+.uc-text {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 .h1 {
     font-size: var(--text-3xl);
 }

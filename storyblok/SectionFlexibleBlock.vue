@@ -2,7 +2,7 @@
     <div class="container-px container">
         <div class="grid-layout">
             <div class="col-span-full lg:col-span-2">
-                <component :is="blok.browHeadingLevel">
+                <component :is="blok.browHeadingLevel" class="uc-text">
                     {{ blok.browHeading }}
                 </component>
             </div>
@@ -27,7 +27,7 @@
                 {{ blok.tertiaryBlock }}
             </div>
 
-            <!-- Quartenary block -->
+            <!-- Quarternary block -->
             <div
                 class="col-span-full lg:col-span-5 lg:col-start-8 lg:row-start-2"
             >
