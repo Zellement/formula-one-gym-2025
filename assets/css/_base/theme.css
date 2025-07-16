@@ -83,6 +83,19 @@
     --color-pink-900: oklch(8.8392% 0.03672 351.24);
     --color-pink-950: oklch(0% 0 none);
 
+    --color-ecru: oklch(96.504% 0.01145 84.578);
+    --color-ecru-50: oklch(100% 0 none);
+    --color-ecru-100: oklch(100% 0 none);
+    --color-ecru-200: oklch(100% 0 none);
+    --color-ecru-300: oklch(100% 0 none);
+    --color-ecru-400: oklch(100% 0 none);
+    --color-ecru-500: oklch(96.504% 0.01145 84.578);
+    --color-ecru-600: oklch(89.471% 0.03462 84.586);
+    --color-ecru-700: oklch(82.392% 0.05787 84.466);
+    --color-ecru-800: oklch(75.287% 0.0804 84.054);
+    --color-ecru-900: oklch(68.19% 0.10037 82.956);
+    --color-ecru-950: oklch(62.773% 0.09271 82.581);
+
     /* -------------------------
   Fonts
   ------------------------- */
@@ -95,6 +108,10 @@
 
     /* Reset sizes */
     --text-*: initial;
+
+    /* Step -2: 12px */
+    --text-xs: clamp(0.75rem, 0.75rem + 0vw, 0.75rem);
+    --text-xs--line-height: calc(100% + 10px);
 
     /* Step -1: 14px */
     --text-sm: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);

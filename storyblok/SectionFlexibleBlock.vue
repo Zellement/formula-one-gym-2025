@@ -1,41 +1,55 @@
 <template>
-    <div class="container-px container">
-        <div class="grid-layout">
-            <div class="col-span-full lg:col-span-2">
-                <component :is="blok.browHeadingLevel" class="uc-text">
-                    {{ blok.browHeading }}
-                </component>
-            </div>
-            <!-- Primary block -->
-            <div class="col-span-full lg:col-span-5">
-                <component :is="blok.mainHeadingLevel">
-                    {{ blok.mainHeading }}
-                </component>
-            </div>
-            <!-- Secondary block -->
-            <div class="col-span-full lg:col-span-5">
-                <StoryblokComponent
-                    v-for="nestedBlok in blok.secondaryBlock"
-                    :key="nestedBlok._uid"
-                    :blok="nestedBlok"
-                />
-            </div>
-            <!-- Tertiary block -->
-            <div
-                class="col-span-full lg:col-span-5 lg:col-start-3 lg:row-start-2"
-            >
-                {{ blok.tertiaryBlock }}
-            </div>
+    <div
+        :class="getBgStyle(blok.backgroundStyle.toString())"
+        class="py-16 lg:py-24"
+    >
+        <div class="container-px container">
+            <div class="grid-layout">
+                <div class="col-span-full lg:col-span-2">
+                    <component :is="blok.browHeadingLevel" class="uc-text">
+                        {{ blok.browHeading }}
+                    </component>
+                </div>
+                <!-- Primary block -->
+                <div class="col-span-full lg:col-span-5">
+                    <component
+                        :is="blok.mainHeadingLevel"
+                        class="text-2xl font-bold"
+                    >
+                        {{ blok.mainHeading }}
+                    </component>
+                </div>
+                <!-- Secondary block -->
+                <div class="content col-span-full lg:col-span-5">
+                    <StoryblokComponent
+                        v-for="nestedBlok in blok.secondaryBlock"
+                        :key="nestedBlok._uid"
+                        :blok="nestedBlok"
+                    />
+                </div>
+                <!-- Tertiary block -->
+                <div
+                    class="col-span-full lg:col-span-5 lg:col-start-3 lg:row-start-2"
+                >
+                    <single-storyblok-picture
+                        :url="blok.tertiaryBlock.filename"
+                        :alt="blok.tertiaryBlock.alt ?? ''"
+                        :focus="blok.tertiaryBlock.focus"
+                        :dimensions="['700x550', '600x450', '400x300']"
+                        class="overflow-clip rounded-lg"
+                    />
+                </div>
 
-            <!-- Quarternary block -->
-            <div
-                class="col-span-full lg:col-span-5 lg:col-start-8 lg:row-start-2"
-            >
-                <StoryblokComponent
-                    v-for="nestedBlok in blok.quarternaryBlock"
-                    :key="nestedBlok._uid"
-                    :blok="nestedBlok"
-                />
+                <!-- Quarternary block -->
+                <div
+                    class="col-span-full lg:col-span-5 lg:col-start-8 lg:row-start-2"
+                >
+                    <StoryblokComponent
+                        v-for="nestedBlok in blok.quarternaryBlock"
+                        :key="nestedBlok._uid"
+                        :blok="nestedBlok"
+                    />
+                </div>
             </div>
         </div>
     </div>
@@ -46,4 +60,6 @@
 import type { SectionFlexibleBlockStoryblok } from '~/types/storyblok-component-types'
 
 defineProps<{ blok: SectionFlexibleBlockStoryblok }>()
+
+const { getBgStyle } = useStoryblokUtils()
 </script>

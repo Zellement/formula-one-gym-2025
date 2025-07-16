@@ -12,17 +12,32 @@ export const useStoryblokUtils = () => {
         return singleLink.link.url || singleLink.link.cached_url
     }
     const getLinkName = (singleLink: AtomSingleLinkStoryblok): string => {
+        console.log(singleLink.link)
         if (singleLink.displayText) {
             return singleLink.displayText
         }
-        if (singleLink.linktype === 'story') {
-            return `/${singleLink.link.story?.name}`
+        if (singleLink.link.linktype === 'story') {
+            return (
+                singleLink.link?.story?.name ||
+                singleLink.link.url ||
+                singleLink.link.cached_url
+            )
         }
 
         return singleLink.link.url || singleLink.link.cached_url
     }
+
+    const getBgStyle = (style: string) => {
+        switch (style) {
+            case 'off-white':
+                return 'bg-ecru-500'
+            default:
+                return 'bg-white'
+        }
+    }
     return {
         getLinkUrl,
-        getLinkName
+        getLinkName,
+        getBgStyle
     }
 }
