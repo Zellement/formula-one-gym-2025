@@ -12,7 +12,6 @@ export const useStoryblokUtils = () => {
         return singleLink.link.url || singleLink.link.cached_url
     }
     const getLinkName = (singleLink: AtomSingleLinkStoryblok): string => {
-        console.log(singleLink.link)
         if (singleLink.displayText) {
             return singleLink.displayText
         }

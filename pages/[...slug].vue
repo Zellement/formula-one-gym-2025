@@ -18,7 +18,8 @@ const routePath = computed(() => {
 const { fetchGoogleReviews } = useSerpApiUtils()
 
 const story = await useAsyncStoryblok(routePath.value, {
-    version: 'published'
+    version: 'published',
+    resolve_links: 'url'
 })
 
 await useAsyncData('reviews', () => fetchGoogleReviews())
