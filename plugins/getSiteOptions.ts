@@ -37,6 +37,7 @@ export default defineNuxtPlugin(async (): Promise<void> => {
             component: 'metaSiteOptions',
             email: '',
             telephone: '',
+            defaultWhy: [],
             navigation: []
         }
         console.warn('Site options could not be loaded, using fallback.')

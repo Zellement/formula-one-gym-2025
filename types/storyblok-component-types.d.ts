@@ -63,10 +63,67 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
+export interface AtomSingleButtonLinkStoryblok {
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  displayText?: string;
+  buttonStyle?: number | string;
+  launchInductionModal?: boolean;
+  component: "atomSingleButtonLink";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface AtomSingleLinkStoryblok {
   link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   displayText?: string;
   component: "atomSingleLink";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface ContentRichTextStoryblok {
+  richText: RichtextStoryblok;
+  component: "contentRichText";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface ContentSingleButtonsStoryblok {
+  links?: AtomSingleButtonLinkStoryblok[];
+  component: "contentSingleButtons";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface ContentSingleMediaStoryblok {
+  media: AssetStoryblok;
+  component: "contentSingleMedia";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface ContentWhyChooseUsStoryblok {
+  component: "contentWhyChooseUs";
   _uid: string;
   [k: string]: any;
 }
@@ -79,36 +136,43 @@ export interface DataDiscountedParkingOptionStoryblok {
   [k: string]: any;
 }
 
-export interface FeatureStoryblok {
-  name?: string;
-  component: "feature";
-  _uid: string;
-  [k: string]: any;
-}
-
-export interface GridStoryblok {
-  columns?: (
-    | AtomIconTitlePairStoryblok
-    | AtomSingleLinkStoryblok
-    | DataDiscountedParkingOptionStoryblok
-    | FeatureStoryblok
-    | GridStoryblok
-    | MetaSiteOptionsStoryblok
-    | SectionIconListStoryblok
-    | TeaserStoryblok
-    | TemplatePageStoryblok
-  )[];
-  component: "grid";
-  _uid: string;
-  [k: string]: any;
-}
-
 export interface MetaSiteOptionsStoryblok {
   telephone?: string;
   email?: string;
   navigation?: AtomSingleLinkStoryblok[];
   discountedParking?: DataDiscountedParkingOptionStoryblok[];
+  defaultWhy: AtomIconTitlePairStoryblok[];
   component: "metaSiteOptions";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface SectionFlexibleBlockStoryblok {
+  backgroundStyle: number | string;
+  browHeading?: string;
+  browHeadingLevel: number | string;
+  mainHeading?: string;
+  mainHeadingLevel?: number | string;
+  secondaryBlock?: (
+    | ContentRichTextStoryblok
+    | ContentSingleButtonsStoryblok
+    | ContentSingleMediaStoryblok
+    | ContentWhyChooseUsStoryblok
+  )[];
+  tertiaryBlock: AssetStoryblok;
+  quarternaryBlock?: (
+    | ContentRichTextStoryblok
+    | ContentSingleButtonsStoryblok
+    | ContentSingleMediaStoryblok
+    | ContentWhyChooseUsStoryblok
+  )[];
+  component: "sectionFlexibleBlock";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface SectionGoogleReviewsStoryblok {
+  component: "sectionGoogleReviews";
   _uid: string;
   [k: string]: any;
 }
@@ -121,15 +185,8 @@ export interface SectionIconListStoryblok {
   [k: string]: any;
 }
 
-export interface TeaserStoryblok {
-  headline?: string;
-  component: "teaser";
-  _uid: string;
-  [k: string]: any;
-}
-
 export interface TemplatePageStoryblok {
-  body?: SectionIconListStoryblok[];
+  body?: (SectionFlexibleBlockStoryblok | SectionGoogleReviewsStoryblok | SectionIconListStoryblok)[];
   component: "templatePage";
   _uid: string;
   [k: string]: any;
