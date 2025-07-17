@@ -23,10 +23,19 @@
             </embla-carousel>
         </div>
         <div
-            class="container-px relative col-span-full col-start-1 row-start-1 container flex h-full flex-col justify-end bg-gradient-to-t from-black/40 via-black/20 pb-8 text-white"
+            class="container-px relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end bg-gradient-to-t from-black/40 via-black/20 pb-8 text-white xl:pb-12"
         >
+            <p
+                v-if="brow"
+                class="uc-text rounded-full bg-black/60 px-3 py-2 tracking-wider"
+            >
+                {{ brow }}
+            </p>
             <p v-if="title" class="text-3xl font-bold">
                 {{ title }}
+            </p>
+            <p v-if="subtitle" class="max-w-screen-lg">
+                {{ subtitle }}
             </p>
 
             <embla-carousel-external-controls
@@ -45,7 +54,8 @@ import type { MultiassetStoryblok } from '~/types/storyblok-component-types'
 
 interface Props {
     title?: string
-    subTitle?: string
+    subtitle?: string
+    brow: string
     media: MultiassetStoryblok
 }
 
