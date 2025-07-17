@@ -1,6 +1,9 @@
 <template>
-    <nav v-if="navigation" class="font-bold">
-        <ul class="my-auto lg:mr-4" :class="ulClasses">
+    <nav v-if="navigation" class="flex">
+        <ul
+            class="my-auto rounded-lg lg:ml-auto lg:bg-white lg:p-4 lg:text-black"
+            :class="ulClasses"
+        >
             <li
                 v-for="navItem in navigation"
                 :key="navItem._uid"
@@ -11,11 +14,6 @@
                     @click="uiStore.toggleShowMobileNav(false)"
                 >
                     {{ getLinkName(navItem) }}
-                </nuxt-link>
-            </li>
-            <li>
-                <nuxt-link to="http://www.zellement.com" external>
-                    Join us
                 </nuxt-link>
             </li>
         </ul>

@@ -8,11 +8,19 @@ export const useStoryblokUtils = () => {
             if (singleLink.link?.story?.full_slug === 'home') {
                 return '/'
             }
-            return `/${singleLink.link.story?.full_slug}/`
+            // Make sure the link is suffixed with a slash
+            if (singleLink.link?.story?.full_slug.endsWith('/')) {
+                return `/${singleLink.link.story?.full_slug}`
+            }
+            // If the slug does not end with a slash, add it
+            if (!singleLink.link?.story?.full_slug.endsWith('/')) {
+                return `/${singleLink.link.story?.full_slug}/`
+            }
         }
 
         return singleLink.link.url || singleLink.link.cached_url || undefined
     }
+
     const getLinkName = (singleLink: AtomSingleLinkStoryblok): string => {
         if (singleLink.displayText) {
             return singleLink.displayText

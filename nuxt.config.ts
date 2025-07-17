@@ -49,17 +49,16 @@ export default defineNuxtConfig({
     viewport: {
         breakpoints: {
             initial: 0,
-            '3xs': 21 * 16, // 336px
-            '2xs': 23 * 16, // 368px
-            xs: 25.625 * 16, // 410px
-            sm: 30 * 16, // 480px
-            'sm-md': 35 * 16, // 560px
-            md: 43.125 * 16, // 690px
-            lg: 54.875 * 16, // 878px
-            xl: 79.6875 * 16, // 1275px
-            '2xl': 90 * 16, // 1440px
-            '3xl': 100 * 16, // 1600px
-            max: 1848 // 1848px
+            '3xs': 21 * 16,
+            '2xs': 25.625 * 16,
+            xs: 30 * 16,
+            sm: 35 * 16,
+            md: 45.714 * 16,
+            lg: 54.875 * 16,
+            xl: 67.375 * 16,
+            '2xl': 79.19 * 16,
+            '3xl': 90 * 16,
+            '4xl': 111.25 * 16
         },
         fallbackBreakpoint: 'initial'
     },

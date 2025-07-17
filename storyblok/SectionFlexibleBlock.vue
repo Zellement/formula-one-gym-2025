@@ -62,7 +62,6 @@
             </div>
         </div>
     </div>
-    {{ blok }}
 </template>
 
 <script setup lang="ts">
