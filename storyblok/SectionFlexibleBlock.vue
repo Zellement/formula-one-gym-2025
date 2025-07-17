@@ -16,11 +16,16 @@
                         :is="blok.mainHeadingLevel"
                         class="text-2xl font-bold"
                     >
-                        {{ blok.mainHeading }}
+                        <span v-gsap.entrance.slide-left>
+                            {{ blok.mainHeading }}
+                        </span>
                     </component>
                 </div>
                 <!-- Secondary block -->
-                <div class="content col-span-full lg:col-span-5">
+                <div
+                    v-gsap.entrance.slide-left.stagger
+                    class="small-content col-span-full lg:col-span-5"
+                >
                     <StoryblokComponent
                         v-for="nestedBlok in blok.secondaryBlock"
                         :key="nestedBlok._uid"
@@ -32,6 +37,10 @@
                     class="col-span-full lg:col-span-5 lg:col-start-3 lg:row-start-2"
                 >
                     <single-storyblok-picture
+                        v-gsap.whenVisible.once.from="{
+                            opacity: 0,
+                            transform: 'translateY(50px)'
+                        }"
                         :url="blok.tertiaryBlock.filename"
                         :alt="blok.tertiaryBlock.alt ?? ''"
                         :focus="blok.tertiaryBlock.focus"

@@ -65,7 +65,16 @@ button,
 /**
  * Rich Text / Body Copy
  */
-.content {
+
+.small-content {
+    p {
+        &:first-of-type {
+            font-size: var(--text-lg);
+        }
+    }
+}
+.content,
+.small-content {
     display: flex;
     flex-direction: column;
 
@@ -74,13 +83,6 @@ button,
 
         margin-block: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse))
             calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
-    }
-
-    &.large-first > :first-child {
-        font-size: var(--text-lg);
-        line-height: var(--text-lg--line-height);
-        font-weight: 500;
-        letter-spacing: -3%;
     }
 
     h1,

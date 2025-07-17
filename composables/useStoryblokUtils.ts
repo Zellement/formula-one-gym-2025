@@ -1,7 +1,9 @@
 import type { AtomSingleLinkStoryblok } from '~/types/storyblok-component-types'
 
 export const useStoryblokUtils = () => {
-    const getLinkUrl = (singleLink: AtomSingleLinkStoryblok): string => {
+    const getLinkUrl = (
+        singleLink: AtomSingleLinkStoryblok
+    ): string | undefined => {
         if (singleLink.link.linktype === 'story') {
             if (singleLink.link?.story?.full_slug === 'home') {
                 return '/'
@@ -9,7 +11,7 @@ export const useStoryblokUtils = () => {
             return `/${singleLink.link.story?.full_slug}/`
         }
 
-        return singleLink.link.url || singleLink.link.cached_url
+        return singleLink.link.url || singleLink.link.cached_url || undefined
     }
     const getLinkName = (singleLink: AtomSingleLinkStoryblok): string => {
         if (singleLink.displayText) {
@@ -34,6 +36,7 @@ export const useStoryblokUtils = () => {
                 return 'bg-white'
         }
     }
+
     return {
         getLinkUrl,
         getLinkName,
