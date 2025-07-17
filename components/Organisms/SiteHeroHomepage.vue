@@ -23,7 +23,7 @@
             </embla-carousel>
         </div>
         <div
-            class="container-px relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end bg-gradient-to-t from-black/40 via-black/20 pb-8 text-white xl:pb-12"
+            class="container-px ga-8 relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end bg-gradient-to-t from-black/40 via-black/20 pb-8 text-white xl:pb-12"
         >
             <p
                 v-if="brow"
@@ -37,6 +37,11 @@
             <p v-if="subtitle" class="max-w-screen-lg">
                 {{ subtitle }}
             </p>
+            <div class="mt-8 flex gap-2 rounded-lg bg-black p-2">
+                <launch-induction-modal-button class="btn">
+                    Book your free induction
+                </launch-induction-modal-button>
+            </div>
 
             <embla-carousel-external-controls
                 class="absolute right-4 bottom-8 flex w-20"
