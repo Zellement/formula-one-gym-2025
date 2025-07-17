@@ -156,5 +156,11 @@ button,
 
     a {
         text-decoration-line: underline;
+        color: var(--color-orange-500) !important;
+        transition: color 0.3s;
+
+        &:hover {
+            color: var(--color-orange-600) !important;
+        }
     }
 }

@@ -4,7 +4,7 @@
         class="py-16 lg:py-24"
     >
         <div class="container-px container">
-            <div class="grid-layout">
+            <div class="grid-layout @container">
                 <div class="col-span-full lg:col-span-2">
                     <component :is="blok.browHeadingLevel" class="uc-text">
                         {{ blok.browHeading }}
@@ -24,7 +24,7 @@
                 <!-- Secondary block -->
                 <div
                     v-gsap.entrance.slide-left.stagger
-                    class="small-content col-span-full lg:col-span-5"
+                    class="small-content col-span-full my-auto flex flex-col gap-4 lg:col-span-5"
                 >
                     <StoryblokComponent
                         v-for="nestedBlok in blok.secondaryBlock"
@@ -51,7 +51,7 @@
 
                 <!-- Quarternary block -->
                 <div
-                    class="col-span-full lg:col-span-5 lg:col-start-8 lg:row-start-2"
+                    class="col-span-full my-auto flex flex-col gap-4 lg:col-span-5 lg:col-start-8 lg:row-start-2"
                 >
                     <StoryblokComponent
                         v-for="nestedBlok in blok.quarternaryBlock"

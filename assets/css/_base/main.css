@@ -48,11 +48,11 @@ picture img {
 @utility container-px {
     padding-inline: calc(var(--spacing) * 3);
 
-    @media (width >= 48rem) {
+    @media (width >= 45.714rem) {
         padding-inline: calc(var(--spacing) * 8);
     }
 
-    @media (width >= 80rem) {
+    @media (width >= 79.19rem) {
         padding-inline: calc(var(--spacing) * 10);
     }
 
@@ -67,11 +67,11 @@ picture img {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: calc(var(--spacing) * 3);
 
-    @media (width >= 48rem) {
+    @media (width >= 45.714rem) {
         gap: calc(var(--spacing) * 8);
     }
 
-    @media (width >= 80rem) {
+    @media (width >= 79.19rem) {
         gap: calc(var(--spacing) * 10);
     }
 
