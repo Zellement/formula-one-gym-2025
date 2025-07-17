@@ -549,6 +549,78 @@
       "component_group_name": "Sections"
     },
     {
+      "name": "templateHomepage",
+      "display_name": "Homepage",
+      "description": "",
+      "created_at": "2025-07-17T19:18:02.834Z",
+      "updated_at": "2025-07-17T19:24:14.546Z",
+      "id": 70001798494270,
+      "schema": {
+        "brow": {
+          "type": "text",
+          "pos": 0,
+          "id": "lSF2m-hJSYyEuZndBHlnYg"
+        },
+        "primary": {
+          "type": "text",
+          "pos": 1,
+          "id": "I9Xnf6u-RpWM3Y3hXg_XYg"
+        },
+        "secondary": {
+          "type": "textarea",
+          "pos": 2,
+          "id": "djm40uShTq2zLKuZw_fm9w"
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "bc66f707-351d-44e4-81a7-4b428aab4c57"
+          ],
+          "id": "UIeE78ljRECYvMIJr2znjw"
+        },
+        "tab-48d3eb9e-02f8-4b9e-a65b-d30957d7e233": {
+          "display_name": "Hero",
+          "keys": [
+            "primary",
+            "secondary",
+            "brow",
+            "media"
+          ],
+          "pos": 4,
+          "type": "tab",
+          "id": "SNPrngL4S56mW9MJV9fiMw"
+        },
+        "media": {
+          "type": "multiasset",
+          "pos": 5,
+          "filetypes": [
+            "images"
+          ],
+          "required": true,
+          "id": "8ytmEQvzSZONHfpuK6DVcA"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Homepage",
+      "component_group_uuid": null,
+      "color": "#1a1f36",
+      "icon": "block-@",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {}
+    },
+    {
       "name": "templatePage",
       "display_name": "Page",
       "description": "A standard page.",

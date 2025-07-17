@@ -1,9 +1,9 @@
 <template>
     <div>
-        <site-hero :title="story?.name" />
         <storyblok-component
             v-if="story?.content?.component"
             :blok="story.content"
+            :story-name="story.name"
         />
     </div>
 </template>

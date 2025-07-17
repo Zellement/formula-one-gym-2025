@@ -23,6 +23,17 @@ declare global {
         extends MetaSiteOptionsStoryblok {
         reviewsGoogle?: any
     }
+
+    /**
+     * Embla Carousel
+     */
+    type EmblaButtons = {
+        icon: EmblaButtonIcon
+        layout: EmblaButtonLayout
+    } | null
+    type EmblaButtonIcon = '' | 'bx:arrow' | 'bx:chevron' | null | undefined
+    type EmblaButtonLayout = '' | 'flex-row' | 'flex-col' | undefined
+    type EmblaScrollEvents = 'next' | 'prev' | 'to'
 }
 
 export {}

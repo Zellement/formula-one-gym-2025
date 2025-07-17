@@ -185,6 +185,27 @@ export interface SectionIconListStoryblok {
   [k: string]: any;
 }
 
+export type MultiassetStoryblok = {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  [k: string]: any;
+}[];
+
+export interface TemplateHomepageStoryblok {
+  brow?: string;
+  primary?: string;
+  secondary?: string;
+  body?: (SectionFlexibleBlockStoryblok | SectionGoogleReviewsStoryblok | SectionIconListStoryblok)[];
+  media: MultiassetStoryblok;
+  component: "templateHomepage";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface TemplatePageStoryblok {
   body?: (SectionFlexibleBlockStoryblok | SectionGoogleReviewsStoryblok | SectionIconListStoryblok)[];
   component: "templatePage";

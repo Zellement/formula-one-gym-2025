@@ -1,6 +1,6 @@
 <template>
     <div v-editable="blok">
-        <site-hero :title="storyName" />
+        <site-hero-homepage :title="storyName" :media="blok.media" />
         <storyblok-component
             v-for="nestedBlok in blok.body"
             :key="nestedBlok._uid"
