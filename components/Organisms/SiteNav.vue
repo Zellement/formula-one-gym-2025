@@ -1,9 +1,14 @@
 <template>
     <nav v-if="navigation" class="flex">
-        <ul
-            class="my-auto rounded-lg lg:ml-auto lg:bg-white lg:p-4 lg:text-black"
-            :class="ulClasses"
-        >
+        <ul :class="ulClasses">
+            <li class="xl:hidden">
+                <nuxt-link
+                    to="/"
+                    class="transition-colors hover:text-orange-600"
+                >
+                    Home
+                </nuxt-link>
+            </li>
             <li
                 v-for="navItem in navigation"
                 :key="navItem._uid"
@@ -11,6 +16,7 @@
             >
                 <nuxt-link
                     :to="getLinkUrl(navItem)"
+                    class="transition-colors hover:text-orange-600"
                     @click="uiStore.toggleShowMobileNav(false)"
                 >
                     {{ getLinkName(navItem) }}

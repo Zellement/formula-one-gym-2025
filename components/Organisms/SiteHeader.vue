@@ -11,14 +11,13 @@
                 />
                 <site-nav
                     v-if="isDesktop"
-                    class="col-span-full row-start-2 mt-8 lg:col-span-10 lg:col-start-2 lg:mt-0 lg:w-full"
-                    ul-classes="flex gap-2 flex-col lg:flex-row 2xl:gap-4 lg:justify-end"
+                    ul-classes="bg-white flex items-center 2xl:text-base 2xl:gap-5 xl:text-sm gap-3 text-black rounded-lg px-4"
                 />
                 <div
                     class="col-span-4 col-start-9 row-start-1 flex justify-end gap-2"
                 >
                     <button
-                        class="flex items-center justify-center rounded-lg bg-white px-4 text-black xl:hidden"
+                        class="flex items-center justify-center gap-1 rounded-lg bg-white px-4 text-black xl:hidden"
                         aria-label="Open mobile navigation"
                         @click="uiStore.toggleShowMobileNav(true)"
                     >
@@ -29,14 +28,10 @@
                             size="24"
                         />
                     </button>
-                    <div class="xs:flex hidden rounded-lg bg-white p-2">
-                        <button
+                    <div class="xs:flex hidden rounded-lg bg-white p-3">
+                        <btn-join-today
                             class="flex items-center justify-center rounded-lg bg-orange-500 px-4 py-2 whitespace-nowrap text-white"
-                            aria-label="Open mobile navigation"
-                            @click="uiStore.toggleShowMobileNav(true)"
-                        >
-                            Join today
-                        </button>
+                        />
                     </div>
                 </div>
             </div>
