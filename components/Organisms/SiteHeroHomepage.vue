@@ -37,10 +37,16 @@
             <p v-if="subtitle" class="max-w-screen-lg">
                 {{ subtitle }}
             </p>
-            <div class="mt-8 flex gap-2 rounded-lg bg-black p-2">
-                <launch-induction-modal-button class="btn">
-                    Book your free induction
-                </launch-induction-modal-button>
+            <div
+                class="mt-8 flex flex-col items-center gap-4 self-start rounded-lg bg-black p-2 sm:flex-row"
+            >
+                <btn-launch-induction-modal class="btn" />
+                <span v-if="membershipsFrom">
+                    Memberships from just
+                    <span class="text-orange-500">
+                        {{ membershipsFrom }}
+                    </span>
+                </span>
             </div>
 
             <embla-carousel-external-controls
@@ -63,6 +69,12 @@ interface Props {
     brow: string
     media: MultiassetStoryblok
 }
+
+const storyblokStore = useStoryblokStore()
+
+const membershipsFrom: ComputedRef<string | null> = computed(() => {
+    return storyblokStore.siteOptions?.membershipsFrom || null
+})
 
 const emblaRef: Ref<InstanceType<typeof EmblaCarousel> | null> = ref(null)
 const { canScrollNext, canScrollPrev, handleScrollClick } =

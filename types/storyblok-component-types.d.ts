@@ -142,6 +142,7 @@ export interface MetaSiteOptionsStoryblok {
   navigation?: AtomSingleLinkStoryblok[];
   discountedParking?: DataDiscountedParkingOptionStoryblok[];
   defaultWhy: AtomIconTitlePairStoryblok[];
+  membershipsFrom?: string;
   component: "metaSiteOptions";
   _uid: string;
   [k: string]: any;
