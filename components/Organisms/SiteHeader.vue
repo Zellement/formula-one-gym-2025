@@ -8,6 +8,7 @@
             <div class="relative col-span-full flex w-full gap-2">
                 <site-brand
                     class="mr-auto max-w-40 shrink-0 py-2 xl:max-w-48"
+                    :class="siteBrandColour"
                 />
                 <site-nav
                     v-if="isDesktop"
@@ -45,6 +46,7 @@
 -------------------------- */
 interface State {
     showHeader: boolean
+    darkenLogo: boolean
     lastScrollPosition: number
     scrollOffset: number
 }
@@ -56,6 +58,7 @@ const uiStore = useUiStore()
 
 const state: State = reactive({
     showHeader: true,
+    darkenLogo: false,
     lastScrollPosition: 0,
     scrollOffset: 40
 })
@@ -74,6 +77,10 @@ const headerClasses: ComputedRef<string> = computed(() => {
     return state.showHeader ? 'translate-y-0' : '-translate-y-full'
 })
 
+const siteBrandColour: ComputedRef<string> = computed(() => {
+    return state.darkenLogo ? 'text-black' : 'text-white'
+})
+
 /* --------------------------
 // Methods
 -------------------------- */
@@ -85,6 +92,11 @@ const onScroll = (): void => {
         Math.abs(window.scrollY - state.lastScrollPosition) < state.scrollOffset
     ) {
         return
+    }
+    if (window.scrollY > uiStore.heroHeight) {
+        state.darkenLogo = true
+    } else {
+        state.darkenLogo = false
     }
     state.showHeader = window.scrollY < state.lastScrollPosition
     state.lastScrollPosition = window.scrollY

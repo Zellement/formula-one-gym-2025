@@ -1,6 +1,11 @@
 <template>
     <div v-editable="blok">
-        <site-hero :title="storyName" />
+        <site-hero
+            :title="blok.primary || storyName"
+            :subtitle="blok.secondary"
+            :brow="blok.brow"
+            :media="blok.media || []"
+        />
         <storyblok-component
             v-for="nestedBlok in blok.body"
             :key="nestedBlok._uid"

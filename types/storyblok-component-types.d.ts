@@ -209,6 +209,10 @@ export interface TemplateHomepageStoryblok {
 
 export interface TemplatePageStoryblok {
   body?: (SectionFlexibleBlockStoryblok | SectionGoogleReviewsStoryblok | SectionIconListStoryblok)[];
+  brow?: string;
+  primary?: string;
+  secondary?: string;
+  media: MultiassetStoryblok;
   component: "templatePage";
   _uid: string;
   [k: string]: any;

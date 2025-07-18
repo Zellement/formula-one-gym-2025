@@ -44,8 +44,12 @@
                         :url="blok.tertiaryBlock.filename"
                         :alt="blok.tertiaryBlock.alt ?? ''"
                         :focus="blok.tertiaryBlock.focus"
-                        :dimensions="['700x550', '600x450', '400x300']"
                         class="overflow-clip rounded-lg"
+                        :sizes="[
+                            { dimensions: '700x550', from: '700px' },
+                            { dimensions: '600x450', from: '400px' },
+                            { dimensions: '400x1000', from: '1px' }
+                        ]"
                     />
                 </div>
 

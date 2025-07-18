@@ -558,13 +558,36 @@
       "display_name": "Homepage",
       "description": "",
       "created_at": "2025-07-17T19:18:02.834Z",
-      "updated_at": "2025-07-17T21:55:23.933Z",
+      "updated_at": "2025-07-18T08:51:27.018Z",
       "id": 70001798494270,
       "schema": {
+        "tab-48d3eb9e-02f8-4b9e-a65b-d30957d7e233": {
+          "display_name": "Hero",
+          "keys": [
+            "primary",
+            "secondary",
+            "brow",
+            "media"
+          ],
+          "pos": 0,
+          "type": "tab",
+          "id": "SNPrngL4S56mW9MJV9fiMw",
+          "name": "tab-48d3eb9e-02f8-4b9e-a65b-d30957d7e233"
+        },
         "brow": {
           "type": "text",
           "pos": 0,
           "id": "lSF2m-hJSYyEuZndBHlnYg"
+        },
+        "tab-32292f41-fea7-4b2e-91ed-a97801f65f81": {
+          "display_name": "SEO",
+          "keys": [
+            "meta_tags"
+          ],
+          "pos": 1,
+          "type": "tab",
+          "id": "MikvQf6nSy6R7al4AfZfgQ",
+          "name": "tab-32292f41-fea7-4b2e-91ed-a97801f65f81"
         },
         "primary": {
           "type": "text",
@@ -587,18 +610,6 @@
           ],
           "id": "UIeE78ljRECYvMIJr2znjw"
         },
-        "tab-48d3eb9e-02f8-4b9e-a65b-d30957d7e233": {
-          "display_name": "Hero",
-          "keys": [
-            "primary",
-            "secondary",
-            "brow",
-            "media"
-          ],
-          "pos": 4,
-          "type": "tab",
-          "id": "SNPrngL4S56mW9MJV9fiMw"
-        },
         "media": {
           "type": "multiasset",
           "pos": 5,
@@ -607,6 +618,13 @@
           ],
           "required": true,
           "id": "8ytmEQvzSZONHfpuK6DVcA"
+        },
+        "meta_tags": {
+          "type": "custom",
+          "pos": 7,
+          "field_type": "meta-fields",
+          "options": [],
+          "id": "R7AuIyncS92dcORSfyHAQA"
         }
       },
       "image": null,
@@ -630,7 +648,7 @@
       "display_name": "Page",
       "description": "A standard page.",
       "created_at": "2025-06-29T08:11:57.513Z",
-      "updated_at": "2025-06-29T15:55:08.257Z",
+      "updated_at": "2025-07-18T08:58:15.296Z",
       "id": 63468001337375,
       "schema": {
         "meta_tags": {
@@ -639,6 +657,18 @@
           "field_type": "meta-fields",
           "options": [],
           "id": "TYETNLwRQqGLdyTAK1ERRQ"
+        },
+        "tab-40dd7e6e-3aad-4b3a-8dc2-9df9b0d35b85": {
+          "display_name": "Hero",
+          "keys": [
+            "brow",
+            "primary",
+            "secondary",
+            "media"
+          ],
+          "pos": 0,
+          "type": "tab",
+          "id": "QN1-bjqtSzqNwp35sNNbhQ"
         },
         "body": {
           "type": "bloks",
@@ -660,6 +690,28 @@
           "pos": 2,
           "type": "tab",
           "id": "k0vq7s34RbCR62UamQ8iFA"
+        },
+        "brow": {
+          "type": "text",
+          "pos": 4,
+          "id": "exunUQYSR5iCqbEPIxwsGA"
+        },
+        "primary": {
+          "type": "text",
+          "pos": 5,
+          "id": "5XyB8YMBTpS3dOMHneD_WQ",
+          "description": "If this is not set, the page name will be used instead."
+        },
+        "secondary": {
+          "type": "textarea",
+          "pos": 6,
+          "id": "l0ZcfxfnRIKXi7bhtRI4LA"
+        },
+        "media": {
+          "type": "multiasset",
+          "pos": 7,
+          "id": "XEc4xTSnTMSixfyEtD9IAw",
+          "required": true
         }
       },
       "image": null,
