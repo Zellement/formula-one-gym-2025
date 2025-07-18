@@ -1,8 +1,5 @@
 <template>
-    <div
-        v-gsap.whenVisible.from="{ opacity: 0, x: -32 }"
-        class="py-16 xl:py-24"
-    >
+    <div class="py-16 xl:py-24">
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
                 <div
@@ -10,7 +7,10 @@
                     :key="review.review_id"
                     class="border-ecru-500 flex shrink-0 basis-full flex-col gap-2 rounded-xl border p-4 md:mx-4 md:basis-[320px] xl:mx-8"
                 >
-                    <div class="mb-2 flex items-center gap-0">
+                    <div
+                        v-gsap.stagger.from="{ opacity: 0, x: -40 }"
+                        class="mb-2 flex items-center gap-0"
+                    >
                         <Icon
                             v-for="(filled, i) in getStars(review.rating)"
                             :key="i"
@@ -19,8 +19,19 @@
                             class="text-orange-500"
                         />
                     </div>
-                    <p class="mb-4">{{ truncate(review.snippet, 300) }}</p>
-                    <div class="mt-auto flex flex-col gap-1">
+                    <p
+                        v-gsap.whenVisible.once.from="{ opacity: 0, x: -20 }"
+                        class="mb-4"
+                    >
+                        {{ truncate(review.snippet, 300) }}
+                    </p>
+                    <div
+                        v-gsap.whenVisible.stagger.once.delay-200.from="{
+                            opacity: 0,
+                            x: -20
+                        }"
+                        class="mt-auto flex flex-col gap-1"
+                    >
                         <h3 class="font-bold">{{ review.user?.name }}</h3>
                         <p>
                             Date:
