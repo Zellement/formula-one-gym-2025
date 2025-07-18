@@ -20,8 +20,8 @@
                                 :alt="item.alt ?? ''"
                                 :sizes="[
                                     { dimensions: '1000x600', from: '700px' },
-                                    { dimensions: '700x700', from: '400px' },
-                                    { dimensions: '400x1000', from: '1px' }
+                                    { dimensions: '700x700', from: '500px' },
+                                    { dimensions: '500x500', from: '1px' }
                                 ]"
                             >
                                 {{ item }}

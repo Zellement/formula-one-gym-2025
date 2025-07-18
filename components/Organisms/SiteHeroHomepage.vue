@@ -26,7 +26,7 @@
         </div>
         <div
             v-gsap.stagger.from="{ opacity: 0, x: -40 }"
-            class="container-px ga-8 relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end bg-gradient-to-t from-black/40 via-black/20 pb-8 text-white xl:pb-12"
+            class="container-px relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end gap-3 bg-gradient-to-t from-black/40 via-black/20 pb-8 text-white lg:gap-1 xl:pb-12"
         >
             <p v-if="brow" class="pill border-white/40 bg-black/60">
                 {{ brow }}
@@ -38,7 +38,7 @@
                 {{ subtitle }}
             </p>
             <div
-                class="mt-8 flex flex-col items-center gap-4 self-start rounded-lg bg-black p-2 sm:flex-row"
+                class="mt-4 flex flex-col items-center gap-4 self-start rounded-lg bg-black p-2 sm:flex-row"
             >
                 <btn-launch-induction-modal class="btn" />
                 <span v-if="membershipsFrom">
