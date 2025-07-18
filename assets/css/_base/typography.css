@@ -66,15 +66,7 @@ button,
  * Rich Text / Body Copy
  */
 
-.small-content {
-    p {
-        &:first-of-type {
-            font-size: var(--text-lg);
-        }
-    }
-}
-.content,
-.small-content {
+.content {
     display: flex;
     flex-direction: column;
 
@@ -97,28 +89,21 @@ button,
     }
 
     h1 {
-        font-size: var(--text-3xl);
-        line-height: var(--text-3xl--line-height);
+        font-size: var(--text-2xl);
+        line-height: var(--text-2xl--line-height);
+        font-weight: 700;
     }
 
     h2 {
-        font-size: var(--text-2xl);
-        line-height: var(--text-2xl--line-height);
+        font-size: var(--text-lg);
+        line-height: var(--text-lg--line-height);
+        font-weight: 500;
     }
 
     h3 {
-        font-size: var(--text-xl);
-        line-height: var(--text-xl--line-height);
-    }
-
-    h4 {
         font-size: var(--text-lg);
         line-height: var(--text-lg--line-height);
-    }
-
-    h5 {
-        font-size: var(--text-base);
-        line-height: var(--text-base--line-height);
+        font-weight: 500;
     }
 
     p strong {

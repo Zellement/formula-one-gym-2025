@@ -196,11 +196,29 @@ export type MultiassetStoryblok = {
   [k: string]: any;
 }[];
 
+export interface SectionTextWithImageStoryblok {
+  block: (
+    | ContentRichTextStoryblok
+    | ContentSingleButtonsStoryblok
+    | ContentSingleMediaStoryblok
+    | ContentWhyChooseUsStoryblok
+  )[];
+  media: MultiassetStoryblok;
+  component: "sectionTextWithImage";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface TemplateHomepageStoryblok {
   brow?: string;
   primary?: string;
   secondary?: string;
-  body?: (SectionFlexibleBlockStoryblok | SectionGoogleReviewsStoryblok | SectionIconListStoryblok)[];
+  body?: (
+    | SectionFlexibleBlockStoryblok
+    | SectionGoogleReviewsStoryblok
+    | SectionIconListStoryblok
+    | SectionTextWithImageStoryblok
+  )[];
   media: MultiassetStoryblok;
   component: "templateHomepage";
   _uid: string;
@@ -208,7 +226,12 @@ export interface TemplateHomepageStoryblok {
 }
 
 export interface TemplatePageStoryblok {
-  body?: (SectionFlexibleBlockStoryblok | SectionGoogleReviewsStoryblok | SectionIconListStoryblok)[];
+  body?: (
+    | SectionFlexibleBlockStoryblok
+    | SectionGoogleReviewsStoryblok
+    | SectionIconListStoryblok
+    | SectionTextWithImageStoryblok
+  )[];
   brow?: string;
   primary?: string;
   secondary?: string;

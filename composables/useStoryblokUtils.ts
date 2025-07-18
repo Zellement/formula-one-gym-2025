@@ -45,9 +45,19 @@ export const useStoryblokUtils = () => {
         }
     }
 
+    const getPaddingFromStyle = (style: string) => {
+        switch (style) {
+            case 'off-white':
+                return 'py-8'
+            default:
+                return 'py-16 lg:py-24'
+        }
+    }
+
     return {
         getLinkUrl,
         getLinkName,
-        getBgStyle
+        getBgStyle,
+        getPaddingFromStyle
     }
 }

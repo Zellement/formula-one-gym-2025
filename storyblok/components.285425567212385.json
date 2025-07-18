@@ -138,7 +138,7 @@
       "display_name": "[Content] Rich Text",
       "description": "Just rich text.",
       "created_at": "2025-07-16T19:58:10.355Z",
-      "updated_at": "2025-07-16T20:23:04.439Z",
+      "updated_at": "2025-07-18T18:28:07.944Z",
       "id": 69657765297993,
       "schema": {
         "richText": {
@@ -149,7 +149,8 @@
           "toolbar": [
             "h2",
             "h3",
-            "link"
+            "link",
+            "h1"
           ],
           "id": "ToAI_wyCQNKeFhbFc6PPNw"
         }
@@ -547,6 +548,50 @@
       "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
       "color": "#374dc3",
       "icon": "block-shield-2",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Sections"
+    },
+    {
+      "name": "sectionTextWithImage",
+      "display_name": "Text with Image",
+      "description": "A single block with an image and text.",
+      "created_at": "2025-07-18T18:24:51.595Z",
+      "updated_at": "2025-07-18T18:26:17.554Z",
+      "id": 70342621579438,
+      "schema": {
+        "block": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "c0671c1e-d800-4a74-a816-4425a1690df6"
+          ],
+          "id": "Lq4iUzc-T_yTDlEYqVDspQ",
+          "required": true
+        },
+        "media": {
+          "type": "multiasset",
+          "pos": 1,
+          "required": true,
+          "id": "ZfDGM6oZQXqwHt2qNP46Cw"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Text with Image",
+      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
+      "color": "#374dc3",
+      "icon": "block-text-img-l",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
