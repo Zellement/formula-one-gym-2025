@@ -38,7 +38,7 @@
                 {{ subtitle }}
             </p>
             <div
-                class="mt-8 flex flex-col items-center gap-4 self-start rounded-xl bg-black p-2 sm:flex-row"
+                class="mt-8 flex flex-col items-center gap-4 self-start rounded-lg bg-black p-2 sm:flex-row"
             >
                 <btn-launch-induction-modal class="btn" />
                 <span v-if="membershipsFrom">

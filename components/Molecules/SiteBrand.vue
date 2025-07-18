@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link to="/" class="flex">
+    <nuxt-link to="/" class="flex transition-colors duration-500">
         <span class="sr-only">Go to the homepage</span>
         <brand-logo />
     </nuxt-link>

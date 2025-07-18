@@ -29,9 +29,9 @@
                             size="24"
                         />
                     </button>
-                    <div class="xs:flex hidden rounded-lg bg-white p-3">
+                    <div class="xs:flex hidden rounded-lg bg-white p-2">
                         <btn-join-today
-                            class="flex items-center justify-center rounded-lg bg-orange-500 px-4 py-2 whitespace-nowrap text-white"
+                            class="flex items-center justify-center rounded bg-orange-500 px-4 py-2 whitespace-nowrap text-white"
                         />
                     </div>
                 </div>

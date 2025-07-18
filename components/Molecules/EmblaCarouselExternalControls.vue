@@ -6,7 +6,8 @@
         <button
             aria-label="Previous Slide"
             :disabled="prevDisabled"
-            class="cursor-pointer transition-[scale] hover:scale-110 disabled:cursor-default disabled:opacity-40"
+            :class="btnClasses"
+            class="cursor-pointer rounded-tr-lg rounded-br-lg transition-[scale] hover:scale-110 disabled:cursor-default disabled:opacity-40"
             @click.prevent="handleClick('Prev')"
         >
             <Icon
@@ -18,7 +19,8 @@
         <button
             aria-label="Next Slide"
             :disabled="nextDisabled"
-            class="cursor-pointer transition-[scale] hover:scale-110 disabled:cursor-default disabled:opacity-40"
+            :class="btnClasses"
+            class=":not:disabled:hover:scale-110 cursor-pointer rounded-tl-lg rounded-bl-lg transition-[scale] disabled:cursor-default disabled:opacity-40"
             @click.prevent="handleClick('Next')"
         >
             <Icon

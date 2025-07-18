@@ -48,7 +48,7 @@
                         :sizes="[
                             { dimensions: '700x550', from: '700px' },
                             { dimensions: '600x450', from: '400px' },
-                            { dimensions: '400x1000', from: '1px' }
+                            { dimensions: '400x400', from: '1px' }
                         ]"
                     />
                 </div>
