@@ -8,7 +8,7 @@
         <div class="container-px container">
             <div class="grid-layout">
                 <div
-                    class="relative col-span-full lg:col-span-7 lg:col-start-1"
+                    class="relative col-span-full overflow-clip rounded-lg lg:col-span-7 lg:col-start-1"
                 >
                     <embla-carousel ref="emblaRef">
                         <template #carousel-items>
@@ -28,6 +28,12 @@
                             </single-storyblok-picture>
                         </template>
                     </embla-carousel>
+                    <embla-carousel-external-controls
+                        class="absolute right-4 bottom-4 flex w-20"
+                        :next-disabled="!canScrollNext"
+                        :prev-disabled="!canScrollPrev"
+                        @scroll="handleScrollClick"
+                    />
                 </div>
                 <div
                     v-gsap.entrance.slide-left.stagger
@@ -45,8 +51,12 @@
 </template>
 
 <script setup lang="ts">
+import EmblaCarousel from '@/components/Molecules/EmblaCarousel.vue'
 import type { SectionTextWithImageStoryblok } from '~/types/storyblok-component-types'
 
 defineProps<{ blok: SectionTextWithImageStoryblok }>()
 const { getBgStyle, getPaddingFromStyle } = useStoryblokUtils()
+const emblaRef: Ref<InstanceType<typeof EmblaCarousel> | null> = ref(null)
+const { canScrollNext, canScrollPrev, handleScrollClick } =
+    useEternalEmblaCarouselControls(emblaRef)
 </script>

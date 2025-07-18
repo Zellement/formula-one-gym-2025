@@ -34,7 +34,7 @@
                 </div>
                 <!-- Tertiary block -->
                 <div
-                    class="relative col-span-full text-white lg:col-span-5 lg:col-start-3 lg:row-start-2"
+                    class="relative col-span-full overflow-clip rounded-lg text-white lg:col-span-5 lg:col-start-3 lg:row-start-2"
                 >
                     <embla-carousel ref="emblaRef">
                         <template #carousel-items>
@@ -53,9 +53,10 @@
                             >
                                 {{ item }}
                             </single-storyblok-picture>
-                        </template> </embla-carousel
-                    ><embla-carousel-external-controls
-                        class="absolute right-4 bottom-8 flex w-20"
+                        </template>
+                    </embla-carousel>
+                    <embla-carousel-external-controls
+                        class="absolute right-4 bottom-4 flex w-20"
                         :next-disabled="!canScrollNext"
                         :prev-disabled="!canScrollPrev"
                         @scroll="handleScrollClick"

@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="!(nextDisabled && prevDisabled)"
-        class="flex items-center justify-between gap-1.5"
+        class="flex items-center justify-between gap-1.5 text-white"
     >
         <button
             aria-label="Previous Slide"
