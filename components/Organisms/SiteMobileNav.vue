@@ -14,7 +14,11 @@
                         size="24"
                     />
                 </button>
-                <site-nav class="text-lg" ul-classes="gap-3 flex flex-col" />
+                <site-nav
+                    v-gsap.from="{ opacity: 0, x: 40 }"
+                    class="text-lg"
+                    ul-classes="gap-3 flex flex-col"
+                />
                 <btn-join-today
                     class="mt-8 flex items-center justify-center self-start rounded-lg bg-orange-500 px-4 py-2 text-lg whitespace-nowrap text-white"
                 />
