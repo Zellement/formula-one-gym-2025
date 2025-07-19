@@ -1,6 +1,6 @@
 <template>
     <div
-        class="site-hero grid h-screen grid-cols-1 grid-rows-1 overflow-clip text-white"
+        class="site-hero grid h-svh grid-cols-1 grid-rows-1 overflow-clip text-white"
     >
         <div class="col-span-full col-start-1 row-start-1">
             <embla-carousel ref="emblaRef">
