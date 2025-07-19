@@ -2,7 +2,7 @@
     <div
         :class="[
             getBgStyle(blok.backgroundStyle?.toString()),
-            getPaddingFromStyle(blok.paddingStyle?.toString())
+            getPaddingFromStyle(blok.backgroundStyle?.toString())
         ]"
     >
         <div class="container-px container">

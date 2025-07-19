@@ -1,7 +1,10 @@
 <template>
     <div
-        :class="getBgStyle(blok.backgroundStyle?.toString())"
-        class="py-16 lg:py-24"
+        :class="[
+            getBgStyle(blok.backgroundStyle?.toString()),
+            getPaddingFromStyle(blok.backgroundStyle?.toString())
+        ]"
+        class=""
     >
         <div class="container-px container">
             <div class="grid-layout @container">
@@ -84,7 +87,7 @@ import type { SectionFlexibleBlockStoryblok } from '~/types/storyblok-component-
 
 defineProps<{ blok: SectionFlexibleBlockStoryblok }>()
 
-const { getBgStyle } = useStoryblokUtils()
+const { getBgStyle, getPaddingFromStyle } = useStoryblokUtils()
 
 const emblaRef: Ref<InstanceType<typeof EmblaCarousel> | null> = ref(null)
 const { canScrollNext, canScrollPrev, handleScrollClick } =

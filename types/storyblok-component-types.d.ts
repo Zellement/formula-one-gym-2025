@@ -187,8 +187,15 @@ export interface SectionIconListStoryblok {
 
 export interface SectionSingleNoticeStoryblok {
   notice?: string;
-  buttons?: AtomSingleButtonLinkStoryblok[];
+  buttons?: ContentSingleButtonsStoryblok[];
   component: "sectionSingleNotice";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface SectionSpacingBlockStoryblok {
+  spacing?: "" | "my-16 lg:my-24" | "my-8 lg:my-12" | "my-24 lg:my-32";
+  component: "sectionSpacingBlock";
   _uid: string;
   [k: string]: any;
 }
@@ -216,6 +223,7 @@ export interface TemplateHomepageStoryblok {
     | SectionGoogleReviewsStoryblok
     | SectionIconListStoryblok
     | SectionSingleNoticeStoryblok
+    | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok
   )[];
   media: MultiassetStoryblok;
@@ -230,6 +238,7 @@ export interface TemplatePageStoryblok {
     | SectionGoogleReviewsStoryblok
     | SectionIconListStoryblok
     | SectionSingleNoticeStoryblok
+    | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok
   )[];
   brow?: string;

@@ -1,5 +1,5 @@
 <template>
-    <div class="relative py-16 xl:py-24">
+    <div class="relative">
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
                 <div
