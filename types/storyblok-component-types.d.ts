@@ -121,6 +121,8 @@ export interface CardContentTextAreaStoryblok {
 }
 
 export interface CardContentTextPairStoryblok {
+  bold?: string;
+  standard?: string;
   component: "cardContentTextPair";
   _uid: string;
   [k: string]: any;

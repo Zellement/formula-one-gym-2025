@@ -44,6 +44,7 @@
                             v-for="nestedBlok in card.content"
                             :key="nestedBlok._uid"
                             :blok="nestedBlok"
+                            :has-image="!!card.media?.filename"
                         />
                     </div>
                 </div>
