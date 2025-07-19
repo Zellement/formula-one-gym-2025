@@ -48,7 +48,7 @@ export const useStoryblokUtils = () => {
     const getPaddingFromStyle = (style: string) => {
         switch (style) {
             case 'off-white':
-                return 'py-12 lg:py-16'
+                return 'py-10 lg:py-20'
             default:
                 return ''
         }
