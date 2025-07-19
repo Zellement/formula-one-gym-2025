@@ -22,15 +22,17 @@ const story = await useAsyncStoryblok(routePath.value, {
     resolve_links: 'url'
 })
 
-await useAsyncData('reviews', () => fetchGoogleReviews())
+onMounted(async () => {
+    await useAsyncData('reviews', () => fetchGoogleReviews())
+})
 
-// useHead({
-//     title: story.value?.content?.meta_tags?.title || 'Formula One Gym',
-//     meta: [
-//         {
-//             name: 'description',
-//             content: story.value?.content?.meta_tags?.description ?? ''
-//         }
-//     ]
-// })
+useHead({
+    title: story.value?.content?.meta_tags?.title || 'Formula One Gym',
+    meta: [
+        {
+            name: 'description',
+            content: story.value?.content?.meta_tags?.description || ''
+        }
+    ]
+})
 </script>

@@ -104,19 +104,18 @@ export interface ContentSingleButtonsStoryblok {
   [k: string]: any;
 }
 
-export interface AssetStoryblok {
+export type MultiassetStoryblok = {
   alt?: string;
   copyright?: string;
   id: number;
   filename: string;
   name: string;
   title?: string;
-  focus?: string;
   [k: string]: any;
-}
+}[];
 
 export interface ContentSingleMediaStoryblok {
-  media: AssetStoryblok;
+  media: MultiassetStoryblok;
   component: "contentSingleMedia";
   _uid: string;
   [k: string]: any;
@@ -160,7 +159,7 @@ export interface SectionFlexibleBlockStoryblok {
     | ContentSingleMediaStoryblok
     | ContentWhyChooseUsStoryblok
   )[];
-  tertiaryBlock: AssetStoryblok;
+  tertiaryBlock: MultiassetStoryblok;
   quarternaryBlock?: (
     | ContentRichTextStoryblok
     | ContentSingleButtonsStoryblok
@@ -186,17 +185,16 @@ export interface SectionIconListStoryblok {
   [k: string]: any;
 }
 
-export type MultiassetStoryblok = {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
+export interface SectionSingleNoticeStoryblok {
+  notice?: string;
+  buttons?: AtomSingleButtonLinkStoryblok[];
+  component: "sectionSingleNotice";
+  _uid: string;
   [k: string]: any;
-}[];
+}
 
 export interface SectionTextWithImageStoryblok {
+  backgroundStyle: number | string;
   block: (
     | ContentRichTextStoryblok
     | ContentSingleButtonsStoryblok
@@ -217,6 +215,7 @@ export interface TemplateHomepageStoryblok {
     | SectionFlexibleBlockStoryblok
     | SectionGoogleReviewsStoryblok
     | SectionIconListStoryblok
+    | SectionSingleNoticeStoryblok
     | SectionTextWithImageStoryblok
   )[];
   media: MultiassetStoryblok;
@@ -230,6 +229,7 @@ export interface TemplatePageStoryblok {
     | SectionFlexibleBlockStoryblok
     | SectionGoogleReviewsStoryblok
     | SectionIconListStoryblok
+    | SectionSingleNoticeStoryblok
     | SectionTextWithImageStoryblok
   )[];
   brow?: string;

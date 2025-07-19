@@ -138,7 +138,7 @@
       "display_name": "[Content] Rich Text",
       "description": "Just rich text.",
       "created_at": "2025-07-16T19:58:10.355Z",
-      "updated_at": "2025-07-18T18:28:07.944Z",
+      "updated_at": "2025-07-18T18:56:58.469Z",
       "id": 69657765297993,
       "schema": {
         "richText": {
@@ -150,7 +150,8 @@
             "h2",
             "h3",
             "link",
-            "h1"
+            "h1",
+            "paragraph"
           ],
           "id": "ToAI_wyCQNKeFhbFc6PPNw"
         }
@@ -210,14 +211,14 @@
     },
     {
       "name": "contentSingleMedia",
-      "display_name": null,
+      "display_name": "[Content] Single Media",
       "description": "A single media item.",
       "created_at": "2025-07-16T20:16:48.536Z",
-      "updated_at": "2025-07-16T20:17:34.833Z",
+      "updated_at": "2025-07-19T09:02:09.471Z",
       "id": 69662345371477,
       "schema": {
         "media": {
-          "type": "asset",
+          "type": "multiasset",
           "pos": 0,
           "filetypes": [
             "images"
@@ -233,7 +234,7 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "contentSingleMedia",
+      "real_name": "[Content] Single Media",
       "component_group_uuid": "c0671c1e-d800-4a74-a816-4425a1690df6",
       "color": "#f5a928",
       "icon": "block-image",
@@ -397,7 +398,7 @@
       "display_name": "Flexible Block",
       "description": "A single flexible block with media, text, lists & buttons",
       "created_at": "2025-07-16T19:48:43.149Z",
-      "updated_at": "2025-07-16T20:41:39.740Z",
+      "updated_at": "2025-07-18T19:06:10.284Z",
       "id": 69655442026310,
       "schema": {
         "backgroundStyle": {
@@ -451,7 +452,7 @@
           ]
         },
         "tertiaryBlock": {
-          "type": "asset",
+          "type": "multiasset",
           "pos": 6,
           "filetypes": [
             "images"
@@ -555,16 +556,66 @@
       "component_group_name": "Sections"
     },
     {
+      "name": "sectionSingleNotice",
+      "display_name": "Single Notice",
+      "description": "A single notice, with buttons if needed.",
+      "created_at": "2025-07-19T09:01:01.989Z",
+      "updated_at": "2025-07-19T09:01:53.109Z",
+      "id": 70557949914333,
+      "schema": {
+        "notice": {
+          "type": "textarea",
+          "pos": 0,
+          "id": "DZI6S68eSYqCG0F1MegS1g"
+        },
+        "buttons": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomSingleButtonLink"
+          ],
+          "id": "IjwRA4S-R-KR0DrxFiz4og"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Single Notice",
+      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
+      "color": "#374dc3",
+      "icon": "block-tag",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Sections"
+    },
+    {
       "name": "sectionTextWithImage",
       "display_name": "Text with Image",
       "description": "A single block with an image and text.",
       "created_at": "2025-07-18T18:24:51.595Z",
-      "updated_at": "2025-07-18T18:26:17.554Z",
+      "updated_at": "2025-07-18T18:39:52.836Z",
       "id": 70342621579438,
       "schema": {
+        "backgroundStyle": {
+          "type": "option",
+          "pos": 0,
+          "use_uuid": true,
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "background-style",
+          "id": "yNS5lpTzTSm1mG-drPwWgw"
+        },
         "block": {
           "type": "bloks",
-          "pos": 0,
+          "pos": 1,
           "restrict_type": "groups",
           "restrict_components": true,
           "component_whitelist": [],
@@ -576,7 +627,7 @@
         },
         "media": {
           "type": "multiasset",
-          "pos": 1,
+          "pos": 2,
           "required": true,
           "id": "ZfDGM6oZQXqwHt2qNP46Cw"
         }

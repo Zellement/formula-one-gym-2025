@@ -52,7 +52,7 @@
             class="absolute bottom-0 left-0 flex w-full -translate-y-4 xl:top-1/2 xl:-translate-y-1/2"
             :next-disabled="!canScrollNext"
             :prev-disabled="!canScrollPrev"
-            btn-classes="bg-white p-2 border border-ecru-500 "
+            btn-classes="bg-white p-2 border leading-none border-ecru-500 text-black"
             @scroll="handleScrollClick"
         />
     </div>

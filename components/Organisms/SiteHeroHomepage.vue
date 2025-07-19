@@ -26,7 +26,7 @@
         </div>
         <div
             v-gsap.stagger.from="{ opacity: 0, x: -40 }"
-            class="container-px relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end gap-3 bg-gradient-to-t from-black/40 via-black/20 pb-8 text-white lg:gap-1 xl:pb-12"
+            class="container-px relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end gap-3 bg-gradient-to-t from-black/40 via-black/20 pb-12 text-white lg:gap-1 xl:pb-8 xl:pb-12"
         >
             <p v-if="brow" class="pill border-white/40 bg-black/60">
                 {{ brow }}
@@ -38,9 +38,9 @@
                 {{ subtitle }}
             </p>
             <div
-                class="mt-4 flex flex-col items-center gap-4 self-start rounded-lg bg-black p-2 sm:flex-row"
+                class="xs:self-start mt-4 flex flex-col items-center gap-4 self-stretch rounded-lg bg-black p-2 sm:flex-row"
             >
-                <btn-launch-induction-modal class="btn" />
+                <btn-launch-induction-modal class="btn xs:w-auto w-full" />
                 <span v-if="membershipsFrom">
                     Memberships from just
                     <span class="text-orange-500">
@@ -50,7 +50,7 @@
             </div>
 
             <embla-carousel-external-controls
-                class="absolute right-4 bottom-8 flex w-20"
+                class="xs:bottom-4 absolute right-4 bottom-1 flex w-20"
                 :next-disabled="!canScrollNext"
                 :prev-disabled="!canScrollPrev"
                 @scroll="handleScrollClick"
