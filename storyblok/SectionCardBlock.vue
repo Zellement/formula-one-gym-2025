@@ -18,11 +18,11 @@
             <div
                 v-for="(card, index) in blok.cards"
                 :key="index"
-                class="2xs:col-span-6 relative col-span-full grid aspect-[3/4] grid-cols-1 grid-rows-1 overflow-clip rounded-lg xl:col-span-3"
+                class="xs:col-span-6 relative col-span-full grid grid-cols-1 grid-rows-1 overflow-clip rounded-lg xl:col-span-3 xl:aspect-[3/4]"
                 :class="
-                    blok.backgroundStyle === 'section-bg-white'
-                        ? 'bg-ecru-500'
-                        : 'bg-white'
+                    blok.backgroundStyle === 'section-bg-ecru-500'
+                        ? 'bg-white'
+                        : 'bg-ecru-500'
                 "
             >
                 <span
@@ -49,7 +49,7 @@
                     />
                 </div>
                 <div
-                    class="relative col-span-full col-start-1 row-start-1 flex flex-col justify-end"
+                    class="relative col-span-full col-start-1 row-start-1 flex flex-col justify-end pt-8"
                 >
                     <div
                         class="mt-auto flex flex-col gap-2 p-6"
