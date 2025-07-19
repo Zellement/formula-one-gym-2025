@@ -1,5 +1,5 @@
 <template>
-    <div class="site-hero bg-orange-500 pt-32 pb-8 text-white">
+    <div class="site-hero bg-orange-500 pt-32 pb-12 text-white">
         <div class="container-px grid-layout container">
             <div
                 v-gsap.stagger.from="{ opacity: 0, x: -40 }"

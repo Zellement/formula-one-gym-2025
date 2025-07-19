@@ -73,10 +73,62 @@ export interface AtomSingleButtonLinkStoryblok {
   [k: string]: any;
 }
 
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface AtomSingleCardStoryblok {
+  media?: AssetStoryblok;
+  pill: string;
+  content?: (
+    | CardContentListItemsStoryblok
+    | CardContentTextAreaStoryblok
+    | CardContentTextPairStoryblok
+    | CardContentTextTitleStoryblok
+  )[];
+  component: "atomSingleCard";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface AtomSingleLinkStoryblok {
   link: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   displayText?: string;
   component: "atomSingleLink";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface CardContentListItemsStoryblok {
+  items: AtomIconTitlePairStoryblok[];
+  component: "cardContentListItems";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface CardContentTextAreaStoryblok {
+  textarea?: string;
+  component: "cardContentTextArea";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface CardContentTextPairStoryblok {
+  component: "cardContentTextPair";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface CardContentTextTitleStoryblok {
+  title?: string;
+  component: "cardContentTextTitle";
   _uid: string;
   [k: string]: any;
 }
@@ -147,16 +199,15 @@ export interface MetaSiteOptionsStoryblok {
   [k: string]: any;
 }
 
-export interface SectionGoogleReviewsStoryblok {
-  component: "sectionGoogleReviews";
+export interface SectionCardBlockStoryblok {
+  cards?: AtomSingleCardStoryblok[];
+  component: "sectionCardBlock";
   _uid: string;
   [k: string]: any;
 }
 
-export interface SectionIconListStoryblok {
-  title?: string;
-  icons?: AtomIconTitlePairStoryblok[];
-  component: "sectionIconList";
+export interface SectionGoogleReviewsStoryblok {
+  component: "sectionGoogleReviews";
   _uid: string;
   [k: string]: any;
 }
@@ -175,7 +226,6 @@ export interface SectionInsetColumnMixedContentStoryblok {
     | ContentWhyChooseUsStoryblok
   )[];
   backgroundStyle: number | string;
-  padding: number | string;
   component: "sectionInsetColumnMixedContent";
   _uid: string;
   [k: string]: any;
@@ -191,7 +241,7 @@ export interface SectionSingleNoticeStoryblok {
 
 export interface SectionSpacingBlockStoryblok {
   backgroundStyle: number | string;
-  height: "" | "deaut";
+  height: "" | "height-4" | "height-8" | "height-12" | "height-16" | "height-20";
   component: "sectionSpacingBlock";
   _uid: string;
   [k: string]: any;
@@ -223,7 +273,6 @@ export interface SectionTitleRowStoryblok {
     | ContentWhyChooseUsStoryblok
   )[];
   backgroundStyle: number | string;
-  padding: number | string;
   component: "sectionTitleRow";
   _uid: string;
   [k: string]: any;
@@ -234,8 +283,8 @@ export interface TemplateHomepageStoryblok {
   primary?: string;
   secondary?: string;
   body?: (
+    | SectionCardBlockStoryblok
     | SectionGoogleReviewsStoryblok
-    | SectionIconListStoryblok
     | SectionInsetColumnMixedContentStoryblok
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok
@@ -250,8 +299,8 @@ export interface TemplateHomepageStoryblok {
 
 export interface TemplatePageStoryblok {
   body?: (
+    | SectionCardBlockStoryblok
     | SectionGoogleReviewsStoryblok
-    | SectionIconListStoryblok
     | SectionInsetColumnMixedContentStoryblok
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok

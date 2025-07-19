@@ -94,6 +94,53 @@
       "metadata": {}
     },
     {
+      "name": "atomSingleCard",
+      "display_name": "Single Card",
+      "description": "",
+      "created_at": "2025-07-19T20:04:21.109Z",
+      "updated_at": "2025-07-19T20:23:38.413Z",
+      "id": 70720967110369,
+      "schema": {
+        "media": {
+          "type": "asset",
+          "pos": 0,
+          "id": "7gN7N2NiQdSAWRlIqvrmvw"
+        },
+        "pill": {
+          "type": "text",
+          "pos": 1,
+          "id": "OftnS_3QQO2r3VDi96djZw",
+          "required": true
+        },
+        "content": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "52d6955a-2299-450d-bb10-92acae63a2ab"
+          ],
+          "id": "oqp8qTPoRE-MBM0QWIGY9Q"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Single Card",
+      "component_group_uuid": null,
+      "color": "#f4cc48",
+      "icon": "block-mobile",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {}
+    },
+    {
       "name": "atomSingleLink",
       "display_name": "Single Link",
       "description": "A single link with optional display text.",
@@ -132,6 +179,130 @@
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
       "metadata": {}
+    },
+    {
+      "name": "cardContentListItems",
+      "display_name": "[Card Content] List Items",
+      "description": "",
+      "created_at": "2025-07-19T20:00:00.940Z",
+      "updated_at": "2025-07-19T20:03:08.547Z",
+      "id": 70719901458139,
+      "schema": {
+        "items": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomIconTitlePair"
+          ],
+          "id": "j6OVUwNnQCO3HvhJGtfTTQ",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "[Card Content] List Items",
+      "component_group_uuid": "52d6955a-2299-450d-bb10-92acae63a2ab",
+      "color": null,
+      "icon": "block-suitcase",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Card Content"
+    },
+    {
+      "name": "cardContentTextArea",
+      "display_name": "[Card Content] Textarea",
+      "description": "",
+      "created_at": "2025-07-19T20:02:58.355Z",
+      "updated_at": "2025-07-19T20:03:31.869Z",
+      "id": 70720628149984,
+      "schema": {
+        "textarea": {
+          "type": "textarea",
+          "pos": 0,
+          "id": "F-OTUqzaSeeicI4eDqeo7Q"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "[Card Content] Textarea",
+      "component_group_uuid": "52d6955a-2299-450d-bb10-92acae63a2ab",
+      "color": null,
+      "icon": "block-text-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Card Content"
+    },
+    {
+      "name": "cardContentTextPair",
+      "display_name": "[Card Content] Text Pair",
+      "description": "A pair of text.",
+      "created_at": "2025-07-19T20:01:34.680Z",
+      "updated_at": "2025-07-19T20:03:42.224Z",
+      "id": 70720285421278,
+      "schema": {},
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "[Card Content] Text Pair",
+      "component_group_uuid": "52d6955a-2299-450d-bb10-92acae63a2ab",
+      "color": null,
+      "icon": "block-text-img-t-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Card Content"
+    },
+    {
+      "name": "cardContentTextTitle",
+      "display_name": "[Card Content] Text Title",
+      "description": "",
+      "created_at": "2025-07-19T20:02:32.140Z",
+      "updated_at": "2025-07-19T20:05:54.714Z",
+      "id": 70720520773343,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "id": "fnUK4VDfRWmTVyfGka3_Hg"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "[Card Content] Text Title",
+      "component_group_uuid": "52d6955a-2299-450d-bb10-92acae63a2ab",
+      "color": null,
+      "icon": "block-block",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Card Content"
     },
     {
       "name": "contentMultiMedia",
@@ -396,6 +567,42 @@
       "metadata": {}
     },
     {
+      "name": "sectionCardBlock",
+      "display_name": null,
+      "description": "A block for cards.",
+      "created_at": "2025-07-19T20:05:17.364Z",
+      "updated_at": "2025-07-19T20:06:07.340Z",
+      "id": 70721197530850,
+      "schema": {
+        "cards": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomSingleCard"
+          ],
+          "id": "tBIDhjkSQg-lojqoNP2wcA"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "sectionCardBlock",
+      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
+      "color": "#374dc3",
+      "icon": "block-table-2",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Sections"
+    },
+    {
       "name": "sectionGoogleReviews",
       "display_name": "Google Reviews",
       "description": "Automatically pulled in - this section has no options.",
@@ -421,52 +628,11 @@
       "component_group_name": "Sections"
     },
     {
-      "name": "sectionIconList",
-      "display_name": "Icon List",
-      "description": "Listing of icons.",
-      "created_at": "2025-06-29T15:40:10.547Z",
-      "updated_at": "2025-07-16T20:00:00.653Z",
-      "id": 63578155201054,
-      "schema": {
-        "title": {
-          "type": "text",
-          "pos": 0,
-          "id": "VmfGwDK3SPOyNM8f8RWqLA"
-        },
-        "icons": {
-          "type": "bloks",
-          "pos": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": [
-            "atomIconTitlePair"
-          ],
-          "id": "kOVnBSyRTJqQvlhegkFyvw"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "Icon List",
-      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
-      "color": "#374dc3",
-      "icon": "block-shield-2",
-      "internal_tags_list": [],
-      "internal_tag_ids": [],
-      "content_type_asset_preview": null,
-      "metadata": {},
-      "component_group_name": "Sections"
-    },
-    {
       "name": "sectionInsetColumnMixedContent",
       "display_name": "Inset Column Mixed Content",
       "description": "A single block that is offset with two mixed content fields.",
       "created_at": "2025-07-16T19:48:43.149Z",
-      "updated_at": "2025-07-19T18:42:27.230Z",
+      "updated_at": "2025-07-19T19:18:16.735Z",
       "id": 69655442026310,
       "schema": {
         "mixedBlockPrimary": {
@@ -502,16 +668,6 @@
           "id": "cYKmbCDKQeGSB-J2YDZc9g",
           "source": "internal",
           "datasource_slug": "background-style"
-        },
-        "padding": {
-          "type": "option",
-          "pos": 4,
-          "use_uuid": true,
-          "required": true,
-          "default_value": "no-padding",
-          "source": "internal",
-          "datasource_slug": "padding",
-          "id": "lzQ_ovZFSWOItGOHOmefFg"
         }
       },
       "image": null,
@@ -577,7 +733,7 @@
       "display_name": "Spacing Block",
       "description": "A block to space out other components.",
       "created_at": "2025-07-19T14:20:01.097Z",
-      "updated_at": "2025-07-19T19:16:45.040Z",
+      "updated_at": "2025-07-19T19:27:06.671Z",
       "id": 70636343696945,
       "schema": {
         "backgroundStyle": {
@@ -587,7 +743,7 @@
           "source": "internal",
           "datasource_slug": "background-style",
           "required": true,
-          "default_value": "default",
+          "default_value": "section-bg-white",
           "id": "0pgbqtKSQTeDi3FFTk9ryQ"
         },
         "height": {
@@ -596,13 +752,34 @@
           "use_uuid": true,
           "options": [
             {
+              "_uid": "28c5a77a-02fd-49cb-85e5-81522101abb0",
+              "value": "height-4",
+              "name": "X-Small (4)"
+            },
+            {
+              "_uid": "3cb69e1a-d250-4d7b-a205-b2e5d0012282",
+              "value": "height-8",
+              "name": "Small (8)"
+            },
+            {
               "_uid": "8187bb70-418f-4720-99dd-586fead94768",
-              "name": "ddefault",
-              "value": "deaut"
+              "name": "Default (12)",
+              "value": "height-12"
+            },
+            {
+              "_uid": "1400ee32-c286-4e91-a580-530b46f72fda",
+              "value": "height-16",
+              "name": "Large (16)"
+            },
+            {
+              "_uid": "23e8eb2d-facd-499f-8b61-32c0d580bd77",
+              "value": "height-20",
+              "name": "X-Large (20)"
             }
           ],
           "id": "UpsaQqj7QLuTdqREsWlcHg",
-          "required": true
+          "required": true,
+          "default_value": "height-12"
         }
       },
       "image": null,
@@ -680,7 +857,7 @@
       "display_name": "Title Row",
       "description": "A row for titles.",
       "created_at": "2025-07-19T18:07:17.064Z",
-      "updated_at": "2025-07-19T18:17:32.152Z",
+      "updated_at": "2025-07-19T20:06:28.607Z",
       "id": 70692196622025,
       "schema": {
         "brow": {
@@ -736,16 +913,6 @@
           "datasource_slug": "background-style",
           "default_value": "default",
           "id": "DrMieByVRo6cSS3o37cRLA"
-        },
-        "padding": {
-          "type": "option",
-          "pos": 6,
-          "id": "MmcjjHm9RAOvJjzRAF9rIQ",
-          "default_value": "no-padding",
-          "required": true,
-          "use_uuid": true,
-          "source": "internal",
-          "datasource_slug": "padding"
         }
       },
       "image": null,
@@ -758,7 +925,7 @@
       "real_name": "Title Row",
       "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
       "color": "#374dc3",
-      "icon": null,
+      "icon": "block-tag",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
@@ -944,6 +1111,13 @@
     }
   ],
   "component_groups": [
+    {
+      "name": "Card Content",
+      "id": 70719935011868,
+      "uuid": "52d6955a-2299-450d-bb10-92acae63a2ab",
+      "parent_id": null,
+      "parent_uuid": null
+    },
     {
       "name": "Content",
       "id": 69659056752716,
