@@ -32,11 +32,20 @@
                 <div
                     class="relative col-span-full col-start-1 row-start-1 flex flex-col justify-end"
                 >
-                    <storyblok-component
-                        v-for="nestedBlok in card.content"
-                        :key="nestedBlok._uid"
-                        :blok="nestedBlok"
-                    />
+                    <div
+                        class="mt-auto flex flex-col gap-2 p-6"
+                        :class="
+                            card.media?.filename
+                                ? 'bg-gradient-to-t from-black/70 via-black/50 text-white'
+                                : 'text-black'
+                        "
+                    >
+                        <storyblok-component
+                            v-for="nestedBlok in card.content"
+                            :key="nestedBlok._uid"
+                            :blok="nestedBlok"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
