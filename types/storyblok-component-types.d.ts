@@ -194,7 +194,7 @@ export interface SectionSingleNoticeStoryblok {
 }
 
 export interface SectionSpacingBlockStoryblok {
-  spacing?: "" | "my-16 lg:my-24" | "my-8 lg:my-12" | "my-24 lg:my-32";
+  spacing?: "" | "margin-default" | "margin-condensed" | "margin-expanded";
   component: "sectionSpacingBlock";
   _uid: string;
   [k: string]: any;

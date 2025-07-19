@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex flex-col">
         <storyblok-component
             v-if="story?.content?.component"
             :blok="story.content"
@@ -17,10 +17,20 @@ const routePath = computed(() => {
 
 const { fetchGoogleReviews } = useSerpApiUtils()
 
-const story = await useAsyncStoryblok(routePath.value, {
-    version: 'published',
+const isDev = import.meta.dev
+const isPreview = route.query._storyblok !== undefined
+
+interface StoryblokOptions {
+    version: 'draft' | 'published'
     resolve_links: 'url'
-})
+}
+
+const storyblokOptions: StoryblokOptions = {
+    version: isDev || isPreview ? 'draft' : 'published',
+    resolve_links: 'url' as const
+}
+
+const story = await useAsyncStoryblok(routePath.value, storyblokOptions)
 
 onMounted(async () => {
     await useAsyncData('reviews', () => fetchGoogleReviews())

@@ -1,5 +1,5 @@
 <template>
-    <div v-editable="blok">
+    <div v-editable="blok" class="flex flex-col">
         <site-hero
             :title="blok.primary || storyName"
             :subtitle="blok.secondary"

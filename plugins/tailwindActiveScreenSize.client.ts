@@ -47,7 +47,6 @@ export default defineNuxtPlugin(() => {
         'fixed bottom-0 left-0 bg-black text-white  text-[12px] p-0.5 leading-none'
     screenSizeContainer.style.zIndex = '9999'
     screenSizeContainer.id = 'tw-screen-size-container'
-    console.log('hllo   ')
     document.body.appendChild(screenSizeContainer)
 
     updateScreenSize()
