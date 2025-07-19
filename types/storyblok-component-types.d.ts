@@ -81,6 +81,23 @@ export interface AtomSingleLinkStoryblok {
   [k: string]: any;
 }
 
+export type MultiassetStoryblok = {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  [k: string]: any;
+}[];
+
+export interface ContentMultiMediaStoryblok {
+  media: MultiassetStoryblok;
+  component: "contentMultiMedia";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -100,23 +117,6 @@ export interface ContentRichTextStoryblok {
 export interface ContentSingleButtonsStoryblok {
   links?: AtomSingleButtonLinkStoryblok[];
   component: "contentSingleButtons";
-  _uid: string;
-  [k: string]: any;
-}
-
-export type MultiassetStoryblok = {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  [k: string]: any;
-}[];
-
-export interface ContentSingleMediaStoryblok {
-  media: MultiassetStoryblok;
-  component: "contentSingleMedia";
   _uid: string;
   [k: string]: any;
 }
@@ -148,24 +148,15 @@ export interface MetaSiteOptionsStoryblok {
 }
 
 export interface SectionFlexibleBlockStoryblok {
-  backgroundStyle: number | string;
-  browHeading: string;
-  browHeadingLevel: number | string;
-  mainHeading: string;
-  mainHeadingLevel?: number | string;
-  secondaryBlock?: (
-    | ContentRichTextStoryblok
-    | ContentSingleButtonsStoryblok
-    | ContentSingleMediaStoryblok
-    | ContentWhyChooseUsStoryblok
-  )[];
   tertiaryBlock: MultiassetStoryblok;
   quarternaryBlock?: (
+    | ContentMultiMediaStoryblok
     | ContentRichTextStoryblok
     | ContentSingleButtonsStoryblok
-    | ContentSingleMediaStoryblok
     | ContentWhyChooseUsStoryblok
   )[];
+  backgroundStyle: number | string;
+  padding: number | string;
   component: "sectionFlexibleBlock";
   _uid: string;
   [k: string]: any;
@@ -203,9 +194,9 @@ export interface SectionSpacingBlockStoryblok {
 export interface SectionTextWithImageStoryblok {
   backgroundStyle: number | string;
   block: (
+    | ContentMultiMediaStoryblok
     | ContentRichTextStoryblok
     | ContentSingleButtonsStoryblok
-    | ContentSingleMediaStoryblok
     | ContentWhyChooseUsStoryblok
   )[];
   media: MultiassetStoryblok;
@@ -220,11 +211,13 @@ export interface SectionTitleRowStoryblok {
   title: string;
   titleLevel: number | string;
   mixedContent: (
+    | ContentMultiMediaStoryblok
     | ContentRichTextStoryblok
     | ContentSingleButtonsStoryblok
-    | ContentSingleMediaStoryblok
     | ContentWhyChooseUsStoryblok
   )[];
+  backgroundStyle: number | string;
+  padding: number | string;
   component: "sectionTitleRow";
   _uid: string;
   [k: string]: any;

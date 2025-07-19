@@ -29,9 +29,9 @@
 
 <script lang="ts" setup>
 import EmblaCarousel from '@/components/Molecules/EmblaCarousel.vue'
-import type { ContentSingleMediaStoryblok } from '~/types/storyblok-component-types'
+import type { ContentMultiMediaStoryblok } from '~/types/storyblok-component-types'
 
-defineProps<{ blok: ContentSingleMediaStoryblok }>()
+defineProps<{ blok: ContentMultiMediaStoryblok }>()
 const emblaRef: Ref<InstanceType<typeof EmblaCarousel> | null> = ref(null)
 const { canScrollNext, canScrollPrev, handleScrollClick } =
     useEternalEmblaCarouselControls(emblaRef)
