@@ -7,7 +7,7 @@
             aria-label="Previous Slide"
             :disabled="prevDisabled"
             :class="btnClasses"
-            class="cursor-pointer rounded-tr-lg rounded-br-lg transition-[scale] hover:scale-110 disabled:cursor-default disabled:opacity-40"
+            class="cursor-pointer bg-black/40 p-1 leading-none transition-colors hover:scale-110 hover:bg-black/70 hover:text-white disabled:pointer-events-none disabled:opacity-40 disabled:hover:bg-black/40"
             @click.prevent="handleClick('Prev')"
         >
             <Icon
@@ -20,7 +20,7 @@
             aria-label="Next Slide"
             :disabled="nextDisabled"
             :class="btnClasses"
-            class=":not:disabled:hover:scale-110 cursor-pointer rounded-tl-lg rounded-bl-lg transition-[scale] disabled:cursor-default disabled:opacity-40"
+            class=":not:disabled:hover:scale-110 cursor-pointer bg-black/40 p-1 leading-none transition-colors hover:bg-black/70 hover:text-white disabled:pointer-events-none disabled:opacity-40 disabled:hover:bg-black/40"
             @click.prevent="handleClick('Next')"
         >
             <Icon

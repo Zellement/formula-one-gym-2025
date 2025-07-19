@@ -37,7 +37,7 @@
                         </single-storyblok-picture>
                     </template> </embla-carousel
                 ><embla-carousel-external-controls
-                    class="absolute right-4 bottom-8 flex w-20"
+                    class="absolute right-4 bottom-4 flex w-20"
                     :next-disabled="!canScrollNext"
                     :prev-disabled="!canScrollPrev"
                     @scroll="handleScrollClick"
