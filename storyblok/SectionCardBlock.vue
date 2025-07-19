@@ -26,7 +26,7 @@
                 "
             >
                 <span
-                    class="pill absolute top-2 left-2 z-10 lg:top-4 lg:left-4"
+                    class="pill absolute top-2 left-2 z-10 mr-2 lg:top-4 lg:left-4 lg:mr-4"
                     :class="
                         card.media?.filename
                             ? 'border-black bg-black text-white'
