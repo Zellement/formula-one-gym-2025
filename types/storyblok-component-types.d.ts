@@ -147,21 +147,6 @@ export interface MetaSiteOptionsStoryblok {
   [k: string]: any;
 }
 
-export interface SectionFlexibleBlockStoryblok {
-  tertiaryBlock: MultiassetStoryblok;
-  quarternaryBlock?: (
-    | ContentMultiMediaStoryblok
-    | ContentRichTextStoryblok
-    | ContentSingleButtonsStoryblok
-    | ContentWhyChooseUsStoryblok
-  )[];
-  backgroundStyle: number | string;
-  padding: number | string;
-  component: "sectionFlexibleBlock";
-  _uid: string;
-  [k: string]: any;
-}
-
 export interface SectionGoogleReviewsStoryblok {
   component: "sectionGoogleReviews";
   _uid: string;
@@ -176,6 +161,26 @@ export interface SectionIconListStoryblok {
   [k: string]: any;
 }
 
+export interface SectionInsetColumnMixedContentStoryblok {
+  mixedBlockPrimary: (
+    | ContentMultiMediaStoryblok
+    | ContentRichTextStoryblok
+    | ContentSingleButtonsStoryblok
+    | ContentWhyChooseUsStoryblok
+  )[];
+  mixedBlockSecondary: (
+    | ContentMultiMediaStoryblok
+    | ContentRichTextStoryblok
+    | ContentSingleButtonsStoryblok
+    | ContentWhyChooseUsStoryblok
+  )[];
+  backgroundStyle: number | string;
+  padding: number | string;
+  component: "sectionInsetColumnMixedContent";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface SectionSingleNoticeStoryblok {
   notice?: string;
   buttons?: ContentSingleButtonsStoryblok[];
@@ -185,7 +190,8 @@ export interface SectionSingleNoticeStoryblok {
 }
 
 export interface SectionSpacingBlockStoryblok {
-  spacing?: "" | "margin-default" | "margin-condensed" | "margin-expanded";
+  backgroundStyle: number | string;
+  height: "" | "deaut";
   component: "sectionSpacingBlock";
   _uid: string;
   [k: string]: any;
@@ -228,9 +234,9 @@ export interface TemplateHomepageStoryblok {
   primary?: string;
   secondary?: string;
   body?: (
-    | SectionFlexibleBlockStoryblok
     | SectionGoogleReviewsStoryblok
     | SectionIconListStoryblok
+    | SectionInsetColumnMixedContentStoryblok
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok
@@ -244,9 +250,9 @@ export interface TemplateHomepageStoryblok {
 
 export interface TemplatePageStoryblok {
   body?: (
-    | SectionFlexibleBlockStoryblok
     | SectionGoogleReviewsStoryblok
     | SectionIconListStoryblok
+    | SectionInsetColumnMixedContentStoryblok
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok

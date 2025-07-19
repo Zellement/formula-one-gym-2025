@@ -148,4 +148,26 @@ button,
             color: var(--color-orange-600) !important;
         }
     }
+
+    blockquote {
+        padding-left: calc(var(--spacing) * 10);
+        margin-block: calc(var(--spacing) * 4);
+        color: var(--color-gray-700);
+        font-style: italic;
+        font-size: 1.2em;
+        position: relative;
+
+        &:before {
+            content: open-quote;
+            font-size: 4em;
+            color: var(--color-gray-500);
+            position: absolute;
+            left: calc(var(--spacing) * -2);
+            bottom: calc(var(--spacing) * -2);
+            font-weight: 700;
+            opacity: 0.1;
+            transform: translateY(-10px);
+            font-family: 'Georgia', serif;
+        }
+    }
 }

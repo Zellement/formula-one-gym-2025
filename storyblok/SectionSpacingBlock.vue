@@ -1,5 +1,5 @@
 <template>
-    <div aria-hidden="true" :class="blok.spacing"></div>
+    <div aria-hidden="true" :class="[blok.backgroundStyle, blok.height]"></div>
 </template>
 
 <script lang="ts" setup>

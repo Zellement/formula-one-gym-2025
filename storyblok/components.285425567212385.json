@@ -173,7 +173,7 @@
       "display_name": "[Content] Rich Text",
       "description": "Just rich text.",
       "created_at": "2025-07-16T19:58:10.355Z",
-      "updated_at": "2025-07-18T18:56:58.469Z",
+      "updated_at": "2025-07-19T19:04:16.058Z",
       "id": 69657765297993,
       "schema": {
         "richText": {
@@ -186,7 +186,9 @@
             "h3",
             "link",
             "h1",
-            "paragraph"
+            "paragraph",
+            "paste-action",
+            "quote"
           ],
           "id": "ToAI_wyCQNKeFhbFc6PPNw"
         }
@@ -394,72 +396,6 @@
       "metadata": {}
     },
     {
-      "name": "sectionFlexibleBlock",
-      "display_name": "Flexible Block",
-      "description": "A single flexible block with media, text, lists & buttons",
-      "created_at": "2025-07-16T19:48:43.149Z",
-      "updated_at": "2025-07-19T18:29:06.234Z",
-      "id": 69655442026310,
-      "schema": {
-        "tertiaryBlock": {
-          "type": "multiasset",
-          "pos": 5,
-          "filetypes": [
-            "images"
-          ],
-          "required": true,
-          "id": "X_h-L5mqSzC3ub4mbzwt2Q"
-        },
-        "quarternaryBlock": {
-          "type": "bloks",
-          "pos": 6,
-          "restrict_type": "groups",
-          "restrict_components": true,
-          "component_whitelist": [],
-          "component_group_whitelist": [
-            "c0671c1e-d800-4a74-a816-4425a1690df6"
-          ],
-          "id": "vWR9bQFJSiKhcT5wF_VWHg"
-        },
-        "backgroundStyle": {
-          "type": "option",
-          "pos": 7,
-          "use_uuid": true,
-          "required": true,
-          "default_value": "default",
-          "id": "cYKmbCDKQeGSB-J2YDZc9g",
-          "source": "internal",
-          "datasource_slug": "background-style"
-        },
-        "padding": {
-          "type": "option",
-          "pos": 8,
-          "use_uuid": true,
-          "required": true,
-          "default_value": "no-padding",
-          "source": "internal",
-          "datasource_slug": "padding",
-          "id": "lzQ_ovZFSWOItGOHOmefFg"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "Flexible Block",
-      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
-      "color": "#374dc3",
-      "icon": "block-center-m",
-      "internal_tags_list": [],
-      "internal_tag_ids": [],
-      "content_type_asset_preview": null,
-      "metadata": {},
-      "component_group_name": "Sections"
-    },
-    {
       "name": "sectionGoogleReviews",
       "display_name": "Google Reviews",
       "description": "Automatically pulled in - this section has no options.",
@@ -526,6 +462,76 @@
       "component_group_name": "Sections"
     },
     {
+      "name": "sectionInsetColumnMixedContent",
+      "display_name": "Inset Column Mixed Content",
+      "description": "A single block that is offset with two mixed content fields.",
+      "created_at": "2025-07-16T19:48:43.149Z",
+      "updated_at": "2025-07-19T18:42:27.230Z",
+      "id": 69655442026310,
+      "schema": {
+        "mixedBlockPrimary": {
+          "type": "bloks",
+          "pos": 1,
+          "id": "yFgsDrMISrOgm_shAVdRsw",
+          "required": true,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "c0671c1e-d800-4a74-a816-4425a1690df6"
+          ]
+        },
+        "mixedBlockSecondary": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "c0671c1e-d800-4a74-a816-4425a1690df6"
+          ],
+          "id": "vWR9bQFJSiKhcT5wF_VWHg",
+          "required": true
+        },
+        "backgroundStyle": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "required": true,
+          "default_value": "default",
+          "id": "cYKmbCDKQeGSB-J2YDZc9g",
+          "source": "internal",
+          "datasource_slug": "background-style"
+        },
+        "padding": {
+          "type": "option",
+          "pos": 4,
+          "use_uuid": true,
+          "required": true,
+          "default_value": "no-padding",
+          "source": "internal",
+          "datasource_slug": "padding",
+          "id": "lzQ_ovZFSWOItGOHOmefFg"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Inset Column Mixed Content",
+      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
+      "color": "#374dc3",
+      "icon": "block-center-m",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Sections"
+    },
+    {
       "name": "sectionSingleNotice",
       "display_name": "Single Notice",
       "description": "A single notice, with buttons if needed.",
@@ -571,32 +577,32 @@
       "display_name": "Spacing Block",
       "description": "A block to space out other components.",
       "created_at": "2025-07-19T14:20:01.097Z",
-      "updated_at": "2025-07-19T14:57:32.785Z",
+      "updated_at": "2025-07-19T19:16:45.040Z",
       "id": 70636343696945,
       "schema": {
-        "spacing": {
+        "backgroundStyle": {
           "type": "option",
-          "pos": 0,
+          "pos": 1,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "background-style",
+          "required": true,
+          "default_value": "default",
+          "id": "0pgbqtKSQTeDi3FFTk9ryQ"
+        },
+        "height": {
+          "type": "option",
+          "pos": 2,
           "use_uuid": true,
           "options": [
             {
-              "_uid": "f14ac4f2-f40b-4749-a1dc-8794b790223f",
-              "name": "Default",
-              "value": "margin-default"
-            },
-            {
-              "_uid": "e5374046-2128-470f-b3c1-6edee0667a5e",
-              "value": "margin-condensed",
-              "name": "Condensed"
-            },
-            {
-              "_uid": "c93397f2-3fed-4e0c-b14c-c9e75cb03b1c",
-              "value": "margin-expanded",
-              "name": "Expanded"
+              "_uid": "8187bb70-418f-4720-99dd-586fead94768",
+              "name": "ddefault",
+              "value": "deaut"
             }
           ],
-          "id": "5c7WHg7QQ86ljLSNznYX-w",
-          "default_value": "margin-default"
+          "id": "UpsaQqj7QLuTdqREsWlcHg",
+          "required": true
         }
       },
       "image": null,

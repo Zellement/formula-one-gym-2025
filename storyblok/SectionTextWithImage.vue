@@ -1,10 +1,5 @@
 <template>
-    <div
-        :class="[
-            getBgStyle(blok.backgroundStyle?.toString()),
-            getPaddingFromStyle(blok.backgroundStyle?.toString())
-        ]"
-    >
+    <div :class="blok.backgroundStyle">
         <div class="container-px container">
             <div class="grid-layout">
                 <div
@@ -55,7 +50,7 @@ import EmblaCarousel from '@/components/Molecules/EmblaCarousel.vue'
 import type { SectionTextWithImageStoryblok } from '~/types/storyblok-component-types'
 
 defineProps<{ blok: SectionTextWithImageStoryblok }>()
-const { getBgStyle, getPaddingFromStyle } = useStoryblokUtils()
+
 const emblaRef: Ref<InstanceType<typeof EmblaCarousel> | null> = ref(null)
 const { canScrollNext, canScrollPrev, handleScrollClick } =
     useEternalEmblaCarouselControls(emblaRef)

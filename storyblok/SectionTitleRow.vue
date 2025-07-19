@@ -1,5 +1,5 @@
 <template>
-    <div :class="[getBgStyle(blok.backgroundStyle?.toString()), blok.padding]">
+    <div :class="blok.backgroundStyle">
         <div class="container-px container">
             <div class="grid-layout @container pb-4">
                 <div
@@ -42,6 +42,4 @@
 import type { SectionTitleRowStoryblok } from '~/types/storyblok-component-types'
 
 defineProps<{ blok: SectionTitleRowStoryblok }>()
-
-const { getBgStyle } = useStoryblokUtils()
 </script>
