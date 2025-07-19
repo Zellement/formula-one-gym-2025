@@ -1,5 +1,5 @@
 <template>
-    <div class="relative">
+    <section class="relative">
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
                 <div
@@ -55,7 +55,7 @@
             btn-classes="bg-white p-2 border leading-none border-ecru-500 text-black"
             @scroll="handleScrollClick"
         />
-    </div>
+    </section>
 </template>
 
 <script lang="ts" setup>

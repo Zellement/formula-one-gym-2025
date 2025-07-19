@@ -1,5 +1,5 @@
 <template>
-    <div :class="blok.backgroundStyle">
+    <section :class="blok.backgroundStyle">
         <div class="container-px container">
             <div class="grid-layout @container">
                 <!-- Primary block -->
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">

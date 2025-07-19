@@ -1,5 +1,5 @@
 <template>
-    <div class="container-px container">
+    <section class="container-px container">
         <div
             class="flex flex-col gap-4 rounded-xl bg-black p-4 text-white lg:flex-row"
         >
@@ -12,7 +12,7 @@
                 />
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script setup lang="ts">
