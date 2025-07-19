@@ -2,6 +2,7 @@
     <div v-editable="blok" class="flex flex-col">
         <site-hero
             :title="blok.primary || storyName"
+            :title-level="blok.title_level || 'p'"
             :subtitle="blok.secondary"
             :brow="blok.brow"
             :media="blok.media || []"

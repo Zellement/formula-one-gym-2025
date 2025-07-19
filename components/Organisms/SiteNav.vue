@@ -1,5 +1,5 @@
 <template>
-    <nav v-if="navigation" class="flex">
+    <nav v-if="navigation" class="site-nav flex">
         <ul :class="ulClasses">
             <li class="xl:hidden">
                 <nuxt-link

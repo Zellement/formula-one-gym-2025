@@ -202,7 +202,9 @@ export interface MetaSiteOptionsStoryblok {
 }
 
 export interface SectionCardBlockStoryblok {
+  title?: string;
   cards?: AtomSingleCardStoryblok[];
+  backgroundStyle: number | string;
   component: "sectionCardBlock";
   _uid: string;
   [k: string]: any;
@@ -250,7 +252,6 @@ export interface SectionSpacingBlockStoryblok {
 }
 
 export interface SectionTextWithImageStoryblok {
-  backgroundStyle: number | string;
   block: (
     | ContentMultiMediaStoryblok
     | ContentRichTextStoryblok
@@ -258,6 +259,7 @@ export interface SectionTextWithImageStoryblok {
     | ContentWhyChooseUsStoryblok
   )[];
   media: MultiassetStoryblok;
+  backgroundStyle: number | string;
   component: "sectionTextWithImage";
   _uid: string;
   [k: string]: any;
@@ -300,6 +302,11 @@ export interface TemplateHomepageStoryblok {
 }
 
 export interface TemplatePageStoryblok {
+  brow?: string;
+  primary?: string;
+  primaryLevel: number | string;
+  secondary?: string;
+  media: MultiassetStoryblok;
   body?: (
     | SectionCardBlockStoryblok
     | SectionGoogleReviewsStoryblok
@@ -309,10 +316,6 @@ export interface TemplatePageStoryblok {
     | SectionTextWithImageStoryblok
     | SectionTitleRowStoryblok
   )[];
-  brow?: string;
-  primary?: string;
-  secondary?: string;
-  media: MultiassetStoryblok;
   component: "templatePage";
   _uid: string;
   [k: string]: any;

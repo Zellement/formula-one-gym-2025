@@ -1,6 +1,7 @@
 <template>
     <section class="container-px container">
         <div
+            v-gsap.whenVisible.delay-200.once.from="{ opacity: 0, x: -40 }"
             class="flex flex-col gap-4 rounded-xl bg-black p-6 text-white lg:flex-row"
         >
             <div class="text-base">{{ blok.notice }}</div>

@@ -582,18 +582,33 @@
       "display_name": "Card Block",
       "description": "A block for cards.",
       "created_at": "2025-07-19T20:05:17.364Z",
-      "updated_at": "2025-07-19T20:38:42.623Z",
+      "updated_at": "2025-07-19T22:21:56.453Z",
       "id": 70721197530850,
       "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "id": "wfQrA-2iT_eEmP1ehre8SQ"
+        },
         "cards": {
           "type": "bloks",
-          "pos": 0,
+          "pos": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "atomSingleCard"
           ],
           "id": "tBIDhjkSQg-lojqoNP2wcA"
+        },
+        "backgroundStyle": {
+          "type": "option",
+          "pos": 2,
+          "use_uuid": true,
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "background-style",
+          "default_value": "section-bg-white",
+          "id": "la0cVGPTQTSJ1P-gmiPt6w"
         }
       },
       "image": null,
@@ -815,21 +830,12 @@
       "display_name": "Text with Image",
       "description": "A single block with an image and text.",
       "created_at": "2025-07-18T18:24:51.595Z",
-      "updated_at": "2025-07-18T18:39:52.836Z",
+      "updated_at": "2025-07-19T21:46:19.358Z",
       "id": 70342621579438,
       "schema": {
-        "backgroundStyle": {
-          "type": "option",
-          "pos": 0,
-          "use_uuid": true,
-          "required": true,
-          "source": "internal",
-          "datasource_slug": "background-style",
-          "id": "yNS5lpTzTSm1mG-drPwWgw"
-        },
         "block": {
           "type": "bloks",
-          "pos": 1,
+          "pos": 0,
           "restrict_type": "groups",
           "restrict_components": true,
           "component_whitelist": [],
@@ -841,9 +847,19 @@
         },
         "media": {
           "type": "multiasset",
-          "pos": 2,
+          "pos": 1,
           "required": true,
           "id": "ZfDGM6oZQXqwHt2qNP46Cw"
+        },
+        "backgroundStyle": {
+          "type": "option",
+          "pos": 2,
+          "use_uuid": true,
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "background-style",
+          "id": "yNS5lpTzTSm1mG-drPwWgw",
+          "default_value": "section-bg-white"
         }
       },
       "image": null,
@@ -1038,12 +1054,44 @@
       "display_name": "Page",
       "description": "A standard page.",
       "created_at": "2025-06-29T08:11:57.513Z",
-      "updated_at": "2025-07-18T08:58:15.296Z",
+      "updated_at": "2025-07-19T21:23:25.149Z",
       "id": 63468001337375,
       "schema": {
+        "brow": {
+          "type": "text",
+          "pos": 0,
+          "id": "exunUQYSR5iCqbEPIxwsGA"
+        },
+        "primary": {
+          "type": "text",
+          "pos": 1,
+          "id": "5XyB8YMBTpS3dOMHneD_WQ",
+          "description": "If this is not set, the page name will be used instead."
+        },
+        "primaryLevel": {
+          "type": "option",
+          "pos": 2,
+          "use_uuid": true,
+          "required": true,
+          "default_value": "p",
+          "source": "internal",
+          "datasource_slug": "heading-level",
+          "id": "0uDdw32LQYy5b_-cjGCRJQ"
+        },
+        "secondary": {
+          "type": "textarea",
+          "pos": 3,
+          "id": "l0ZcfxfnRIKXi7bhtRI4LA"
+        },
+        "media": {
+          "type": "multiasset",
+          "pos": 4,
+          "id": "XEc4xTSnTMSixfyEtD9IAw",
+          "required": true
+        },
         "meta_tags": {
           "type": "custom",
-          "pos": 0,
+          "pos": 5,
           "field_type": "meta-fields",
           "options": [],
           "id": "TYETNLwRQqGLdyTAK1ERRQ"
@@ -1054,15 +1102,16 @@
             "brow",
             "primary",
             "secondary",
-            "media"
+            "media",
+            "primaryLevel"
           ],
-          "pos": 0,
+          "pos": 6,
           "type": "tab",
           "id": "QN1-bjqtSzqNwp35sNNbhQ"
         },
         "body": {
           "type": "bloks",
-          "pos": 1,
+          "pos": 7,
           "required": false,
           "id": "NQom_38ER0O2Wa0r5lRhnQ",
           "restrict_type": "groups",
@@ -1077,31 +1126,9 @@
           "keys": [
             "meta_tags"
           ],
-          "pos": 2,
+          "pos": 8,
           "type": "tab",
           "id": "k0vq7s34RbCR62UamQ8iFA"
-        },
-        "brow": {
-          "type": "text",
-          "pos": 4,
-          "id": "exunUQYSR5iCqbEPIxwsGA"
-        },
-        "primary": {
-          "type": "text",
-          "pos": 5,
-          "id": "5XyB8YMBTpS3dOMHneD_WQ",
-          "description": "If this is not set, the page name will be used instead."
-        },
-        "secondary": {
-          "type": "textarea",
-          "pos": 6,
-          "id": "l0ZcfxfnRIKXi7bhtRI4LA"
-        },
-        "media": {
-          "type": "multiasset",
-          "pos": 7,
-          "id": "XEc4xTSnTMSixfyEtD9IAw",
-          "required": true
         }
       },
       "image": null,

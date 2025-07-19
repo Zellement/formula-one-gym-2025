@@ -18,9 +18,8 @@
                             { dimensions: '700x700', from: '400px' },
                             { dimensions: '400x1000', from: '1px' }
                         ]"
-                    >
-                        {{ item }}
-                    </single-storyblok-picture>
+                        :focus="item.focus"
+                    />
                 </template>
             </embla-carousel>
         </div>

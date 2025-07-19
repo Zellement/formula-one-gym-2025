@@ -8,9 +8,9 @@
                 <p v-if="brow" class="pill border-orange-300 bg-orange-300/50">
                     {{ brow }}
                 </p>
-                <p v-if="title" class="h1 font-bold">
+                <component :is="titleLevel" v-if="title" class="h1 font-bold">
                     {{ title }}
-                </p>
+                </component>
                 <p v-if="subtitle" class="max-w-screen-lg">
                     {{ subtitle }}
                 </p>
@@ -32,9 +32,8 @@
                                 { dimensions: '800x450', from: '400px' },
                                 { dimensions: '500x400', from: '1px' }
                             ]"
-                        >
-                            {{ item }}
-                        </single-storyblok-picture>
+                            :focus="item.focus"
+                        />
                     </template> </embla-carousel
                 ><embla-carousel-external-controls
                     class="absolute right-4 bottom-4 flex w-20"
@@ -53,6 +52,7 @@ import type { MultiassetStoryblok } from '~/types/storyblok-component-types'
 
 interface Props {
     title?: string
+    titleLevel?: string
     subtitle?: string
     brow?: string
     media: MultiassetStoryblok
