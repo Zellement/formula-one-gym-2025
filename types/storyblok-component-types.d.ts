@@ -149,9 +149,9 @@ export interface MetaSiteOptionsStoryblok {
 
 export interface SectionFlexibleBlockStoryblok {
   backgroundStyle: number | string;
-  browHeading?: string;
+  browHeading: string;
   browHeadingLevel: number | string;
-  mainHeading?: string;
+  mainHeading: string;
   mainHeadingLevel?: number | string;
   secondaryBlock?: (
     | ContentRichTextStoryblok
@@ -214,6 +214,22 @@ export interface SectionTextWithImageStoryblok {
   [k: string]: any;
 }
 
+export interface SectionTitleRowStoryblok {
+  brow: string;
+  browLevel: number | string;
+  title: string;
+  titleLevel: number | string;
+  mixedContent: (
+    | ContentRichTextStoryblok
+    | ContentSingleButtonsStoryblok
+    | ContentSingleMediaStoryblok
+    | ContentWhyChooseUsStoryblok
+  )[];
+  component: "sectionTitleRow";
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface TemplateHomepageStoryblok {
   brow?: string;
   primary?: string;
@@ -225,6 +241,7 @@ export interface TemplateHomepageStoryblok {
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok
+    | SectionTitleRowStoryblok
   )[];
   media: MultiassetStoryblok;
   component: "templateHomepage";
@@ -240,6 +257,7 @@ export interface TemplatePageStoryblok {
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok
+    | SectionTitleRowStoryblok
   )[];
   brow?: string;
   primary?: string;

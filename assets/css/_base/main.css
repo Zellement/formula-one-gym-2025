@@ -99,3 +99,31 @@ picture img {
         height: calc(var(--spacing) * 40);
     }
 }
+
+.no-padding {
+    padding: 0;
+}
+
+.padding-top {
+    padding-top: calc(var(--spacing) * 10);
+
+    @media (width >= 45.714rem) {
+        padding-top: calc(var(--spacing) * 20);
+    }
+}
+
+.padding-bottom {
+    padding-bottom: calc(var(--spacing) * 10);
+
+    @media (width >= 45.714rem) {
+        padding-bottom: calc(var(--spacing) * 20);
+    }
+}
+
+.padding-block {
+    padding-block: calc(var(--spacing) * 10);
+
+    @media (width >= 45.714rem) {
+        padding-block: calc(var(--spacing) * 20);
+    }
+}

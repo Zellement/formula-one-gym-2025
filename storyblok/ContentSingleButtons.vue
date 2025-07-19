@@ -1,5 +1,11 @@
 <template>
-    <div class="flex flex-wrap gap-4">
+    <div
+        v-gsap.delay-200.stagger.once.whenVisible.from="{
+            opacity: 0,
+            y: 10
+        }"
+        class="flex flex-wrap gap-4"
+    >
         <template v-for="link in blok.links" :key="link._uid">
             <btn-launch-induction-modal
                 v-if="link.launchInductionModal"

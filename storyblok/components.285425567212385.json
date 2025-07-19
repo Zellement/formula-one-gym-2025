@@ -398,7 +398,7 @@
       "display_name": "Flexible Block",
       "description": "A single flexible block with media, text, lists & buttons",
       "created_at": "2025-07-16T19:48:43.149Z",
-      "updated_at": "2025-07-18T19:06:10.284Z",
+      "updated_at": "2025-07-19T17:59:40.040Z",
       "id": 69655442026310,
       "schema": {
         "backgroundStyle": {
@@ -414,7 +414,8 @@
         "browHeading": {
           "type": "text",
           "pos": 1,
-          "id": "OHn8iWytSEW7LmlaTrswTw"
+          "id": "OHn8iWytSEW7LmlaTrswTw",
+          "required": true
         },
         "browHeadingLevel": {
           "type": "option",
@@ -429,7 +430,8 @@
         "mainHeading": {
           "type": "textarea",
           "pos": 3,
-          "id": "3pBMdtB4SiGQuU0Hh-qC9Q"
+          "id": "3pBMdtB4SiGQuU0Hh-qC9Q",
+          "required": true
         },
         "mainHeadingLevel": {
           "type": "option",
@@ -693,6 +695,76 @@
       "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
       "color": "#374dc3",
       "icon": "block-text-img-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Sections"
+    },
+    {
+      "name": "sectionTitleRow",
+      "display_name": "Title Row",
+      "description": "A row for titles.",
+      "created_at": "2025-07-19T18:07:17.064Z",
+      "updated_at": "2025-07-19T18:09:43.037Z",
+      "id": 70692196622025,
+      "schema": {
+        "brow": {
+          "type": "text",
+          "pos": 0,
+          "id": "0AfFuWLZTdW2JuUSbR_LHQ",
+          "required": true
+        },
+        "browLevel": {
+          "type": "option",
+          "pos": 1,
+          "use_uuid": true,
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "heading-level",
+          "default_value": "p",
+          "id": "PFLxguhTRXGqCcHBGpgieQ"
+        },
+        "title": {
+          "type": "text",
+          "pos": 2,
+          "id": "OZxQXdWVT6mUACFw-rnpsw",
+          "required": true
+        },
+        "titleLevel": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "id": "LhYWpf3YTuCS8f3WsRC6yw",
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "heading-level",
+          "default_value": "h2"
+        },
+        "mixedContent": {
+          "type": "bloks",
+          "pos": 4,
+          "required": true,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "c0671c1e-d800-4a74-a816-4425a1690df6"
+          ],
+          "id": "Jf2MSgIbSc-b3rpGClTDEg"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Title Row",
+      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
+      "color": "#374dc3",
+      "icon": null,
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,

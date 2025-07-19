@@ -24,7 +24,7 @@
                             v-for="item in media"
                             :key="item.id"
                             v-gsap.from="{ opacity: 0, x: 20 }"
-                            class="embla__slide basis-full"
+                            class="embla__slide basis-full overflow-clip rounded-lg"
                             :url="item.filename"
                             :alt="item.alt ?? ''"
                             :sizes="[
