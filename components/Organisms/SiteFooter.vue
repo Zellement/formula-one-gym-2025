@@ -1,5 +1,5 @@
 <template>
-    <div class="flex p-4 duration-1000 hover:opacity-100 lg:p-8">
+    <div class="mt-8 flex p-4 duration-1000 hover:opacity-100 lg:p-10">
         <footer
             role="contentinfo"
             class="relative z-10 w-full transition-transform duration-500"
