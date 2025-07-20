@@ -1,5 +1,5 @@
 <template>
-    <section :class="blok.backgroundStyle">
+    <section v-editable="blok" :class="blok.backgroundStyle">
         <div class="container-px container">
             <div class="grid-layout @container pb-4">
                 <div

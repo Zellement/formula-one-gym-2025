@@ -1,5 +1,9 @@
 <template>
-    <div aria-hidden="true" :class="[blok.backgroundStyle, blok.height]"></div>
+    <div
+        v-editable="blok"
+        aria-hidden="true"
+        :class="[blok.backgroundStyle, blok.height]"
+    ></div>
 </template>
 
 <script lang="ts" setup>
