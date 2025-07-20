@@ -20,9 +20,14 @@
 </template>
 
 <script lang="ts" setup>
-import type { AtomIconTitlePairStoryblok } from '~/types/storyblok-component-types'
+import type {
+    AtomIconTitlePairStoryblok,
+    ContentWhyChooseUsStoryblok
+} from '~/types/storyblok-component-types'
 
 const storyblokStore = useStoryblokStore()
+
+defineProps<{ blok: ContentWhyChooseUsStoryblok }>()
 
 const defaultWhyChooseUs: ComputedRef<AtomIconTitlePairStoryblok[]> = computed(
     () => {
