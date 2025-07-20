@@ -493,20 +493,84 @@
       "display_name": "Site Options",
       "description": "Site options.",
       "created_at": "2025-06-29T08:14:18.293Z",
-      "updated_at": "2025-07-17T21:55:41.722Z",
+      "updated_at": "2025-07-20T19:16:59.231Z",
       "id": 63468577972256,
       "schema": {
+        "enableStudentOffer": {
+          "type": "boolean",
+          "pos": 0,
+          "description": "Turn this on to enable the site-wide student offer.",
+          "id": "rJTQgjIpTVqNDDKsFh1zGg"
+        },
+        "topBarText": {
+          "type": "text",
+          "pos": 1,
+          "id": "C-KIVXHGScuUWy-yFARUoQ",
+          "required": true
+        },
+        "topBarButtonText": {
+          "type": "text",
+          "pos": 2,
+          "required": true,
+          "description": "The button text for the top bar. Short & sweet is best.",
+          "id": "8_Av3LTXT8u0gzxJaNKtAw"
+        },
+        "modalTitle": {
+          "type": "text",
+          "pos": 3,
+          "id": "AtIb4eW8RlmmYSAmSn17Pg"
+        },
+        "modalPrice": {
+          "type": "text",
+          "pos": 4,
+          "id": "VJ9MHC4uTUaix3l7mvoWHw"
+        },
+        "modalText": {
+          "type": "textarea",
+          "pos": 5,
+          "id": "AIH2Lm7dTT2-UitmBX_JMw"
+        },
+        "modalList": {
+          "type": "bloks",
+          "pos": 6,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomIconTitlePair"
+          ],
+          "id": "yYWhWfeMTfu3X59Nq_JQaA"
+        },
         "telephone": {
           "type": "text",
-          "pos": 0,
+          "pos": 7,
           "id": "6mG7vEPNQ4-YngMmw1vv0A"
+        },
+        "email": {
+          "type": "text",
+          "pos": 8,
+          "id": "eKzcRxGcQgO12wEQ6iQgeQ"
+        },
+        "discountedParking": {
+          "type": "bloks",
+          "pos": 9,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "dataDiscountedParkingOption"
+          ],
+          "id": "94IMr2zITS-YYmo3GSwSIg"
+        },
+        "membershipsFrom": {
+          "type": "text",
+          "pos": 10,
+          "id": "T1NfDDCBTdOBRlhojYZn5Q"
         },
         "tab-27d92668-edce-4a2d-b9b0-32728dc594f7": {
           "display_name": "Navigation",
           "keys": [
             "navigation"
           ],
-          "pos": 0,
+          "pos": 11,
           "type": "tab",
           "id": "J9kmaO3OSi25sDJyjcWU9w"
         },
@@ -515,18 +579,29 @@
           "keys": [
             "defaultWhy"
           ],
-          "pos": 0,
+          "pos": 12,
           "type": "tab",
           "id": "nIcqJEVWTsiEILhOQGh6Mg"
         },
-        "email": {
-          "type": "text",
-          "pos": 1,
-          "id": "eKzcRxGcQgO12wEQ6iQgeQ"
+        "tab-ad368dd2-b25f-404b-8a22-4e133e42618a": {
+          "display_name": "Students",
+          "keys": [
+            "topBarText",
+            "enableStudentOffer",
+            "topBarButtonText",
+            "modalTitle",
+            "modalText",
+            "modalList",
+            "price",
+            "modalPrice"
+          ],
+          "pos": 13,
+          "type": "tab",
+          "id": "rTaN0rJfQEuKIk4TPkJhig"
         },
         "navigation": {
           "type": "bloks",
-          "pos": 3,
+          "pos": 14,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -534,19 +609,9 @@
           ],
           "id": "qykkeC9XSk-XR3RtxCgWQg"
         },
-        "discountedParking": {
-          "type": "bloks",
-          "pos": 4,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": [
-            "dataDiscountedParkingOption"
-          ],
-          "id": "94IMr2zITS-YYmo3GSwSIg"
-        },
         "defaultWhy": {
           "type": "bloks",
-          "pos": 6,
+          "pos": 15,
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
@@ -554,11 +619,6 @@
             "atomIconTitlePair"
           ],
           "id": "KmOBkG8iQ66qbyl4Sd7dKg"
-        },
-        "membershipsFrom": {
-          "type": "text",
-          "pos": 7,
-          "id": "T1NfDDCBTdOBRlhojYZn5Q"
         }
       },
       "image": null,
@@ -582,7 +642,7 @@
       "display_name": "Card Block",
       "description": "A block for cards.",
       "created_at": "2025-07-19T20:05:17.364Z",
-      "updated_at": "2025-07-19T22:21:56.453Z",
+      "updated_at": "2025-07-19T22:23:57.206Z",
       "id": 70721197530850,
       "schema": {
         "title": {
@@ -590,9 +650,19 @@
           "pos": 0,
           "id": "wfQrA-2iT_eEmP1ehre8SQ"
         },
+        "titleLevel": {
+          "type": "option",
+          "pos": 1,
+          "use_uuid": true,
+          "default_value": "p",
+          "source": "internal",
+          "datasource_slug": "heading-level",
+          "id": "3WaykjnkRfOEtIA5-8c2KA",
+          "required": true
+        },
         "cards": {
           "type": "bloks",
-          "pos": 1,
+          "pos": 2,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -602,7 +672,7 @@
         },
         "backgroundStyle": {
           "type": "option",
-          "pos": 2,
+          "pos": 3,
           "use_uuid": true,
           "required": true,
           "source": "internal",
@@ -718,7 +788,7 @@
       "display_name": "Single Notice",
       "description": "A single notice, with buttons if needed.",
       "created_at": "2025-07-19T09:01:01.989Z",
-      "updated_at": "2025-07-19T09:14:26.316Z",
+      "updated_at": "2025-07-20T18:51:13.655Z",
       "id": 70557949914333,
       "schema": {
         "notice": {

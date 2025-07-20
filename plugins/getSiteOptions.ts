@@ -38,7 +38,13 @@ export default defineNuxtPlugin(async (): Promise<void> => {
             email: '',
             telephone: '',
             defaultWhy: [],
-            navigation: []
+            navigation: [],
+            topBarButtonText: '',
+            topBarText: '',
+            modalList: [],
+            modalText: '',
+            modalTitle: '',
+            modalPrice: ''
         }
         console.warn('Site options could not be loaded, using fallback.')
     }

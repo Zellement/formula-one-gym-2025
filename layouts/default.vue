@@ -4,6 +4,9 @@
         <GSAPTransition>
             <site-mobile-nav v-if="showMobileNav" />
         </GSAPTransition>
+        <GSAPTransition>
+            <modal-student-offer v-if="showStudentModal" />
+        </GSAPTransition>
         <main>
             <slot />
         </main>
@@ -24,8 +27,12 @@ const showMobileNav: ComputedRef<boolean> = computed(() => {
     return uiStore.showMobileNav && viewport.isLessThan('xl')
 })
 
+const showStudentModal: ComputedRef<boolean> = computed(() => {
+    return uiStore.showStudentModal
+})
+
 const isAnyModalActive: ComputedRef<boolean> = computed(() => {
-    return uiStore.showMobileNav
+    return showMobileNav.value || showStudentModal.value
 })
 useHead({
     // Prevent page scrolling when mobile nav is open

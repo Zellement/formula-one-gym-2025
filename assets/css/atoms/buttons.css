@@ -27,6 +27,18 @@
             color: var(--color-orange-500);
         }
 
+        &.btn--student {
+            background-color: var(--color-pink-700);
+            border-color: var(--color-pink-200);
+            color: var(--color-white);
+
+            &:hover {
+                background-color: var(--color-pink-800);
+                border-color: var(--color-pink-800);
+                color: var(--color-white);
+            }
+        }
+
         &:hover {
             background-color: var(--color-orange-800);
             border-color: var(--color-orange-800);

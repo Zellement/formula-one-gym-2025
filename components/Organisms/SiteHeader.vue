@@ -2,9 +2,30 @@
     <header
         role="banner"
         :class="headerClasses"
-        class="fixed top-0 right-0 left-0 z-50 w-full text-white transition-transform duration-500 lg:py-3 xl:py-6"
+        class="fixed top-0 right-0 left-0 z-50 w-full text-white transition-transform duration-500"
     >
-        <div class="grid-layout container-px container pt-2">
+        <div
+            v-if="siteOptions?.enableStudentOffer"
+            class="flex bg-gradient-to-br from-pink-500 to-pink-600"
+        >
+            <div
+                class="container-px container flex items-center justify-center gap-4 py-2"
+            >
+                <span class="text-white">
+                    {{ siteOptions.topBarText }}
+                </span>
+                <span v-if="isDesktop" class="text-white">
+                    {{ siteOptions.topBarTextAdded }}
+                </span>
+                <button
+                    class="btn btn--student whitespace-nowrap"
+                    @click="uiStore.toggleStudentModal(true)"
+                >
+                    {{ siteOptions.topBarButtonText }}
+                </button>
+            </div>
+        </div>
+        <div class="grid-layout container-px container pt-2 xl:pt-4">
             <div class="relative col-span-full flex w-full gap-2">
                 <site-brand
                     class="mr-auto max-w-40 shrink-0 py-2 xl:max-w-48"
@@ -41,6 +62,8 @@
 </template>
 
 <script setup lang="ts">
+import type { MetaSiteOptionsStoryblok } from '~/types/storyblok-component-types'
+
 /* --------------------------
 // Interfaces and types
 -------------------------- */
@@ -55,6 +78,7 @@ interface State {
 // States, stores and props
 -------------------------- */
 const uiStore = useUiStore()
+const storyblokStore = useStoryblokStore()
 
 const state: State = reactive({
     showHeader: true,
@@ -80,6 +104,12 @@ const headerClasses: ComputedRef<string> = computed(() => {
 const siteBrandColour: ComputedRef<string> = computed(() => {
     return state.darkenLogo ? 'text-black' : 'text-white'
 })
+
+const siteOptions: ComputedRef<MetaSiteOptionsStoryblok | null> = computed(
+    () => {
+        return storyblokStore.siteOptions
+    }
+)
 
 /* --------------------------
 // Methods

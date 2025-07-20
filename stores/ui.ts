@@ -8,6 +8,8 @@ export const useUiStore = defineStore('ui', () => {
     const animationsDisabled: Ref<boolean> = ref(false)
     const heroHeight: Ref<number> = ref(0)
 
+    const showStudentModal: Ref<boolean> = ref(false)
+
     /**
      * Getters
      **/
@@ -31,6 +33,14 @@ export const useUiStore = defineStore('ui', () => {
         animationsDisabled.value = !animationsDisabled.value
     }
 
+    const toggleStudentModal = (visible?: boolean) => {
+        if (visible) {
+            showStudentModal.value = visible
+            return
+        }
+        showStudentModal.value = !showStudentModal.value
+    }
+
     /**
      * Return
      **/
@@ -38,7 +48,9 @@ export const useUiStore = defineStore('ui', () => {
         showMobileNav,
         animationsDisabled,
         heroHeight,
+        showStudentModal,
         toggleShowMobileNav,
-        toggleAnimationsDisabled
+        toggleAnimationsDisabled,
+        toggleStudentModal
     }
 })

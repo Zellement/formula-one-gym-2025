@@ -190,12 +190,19 @@ export interface DataDiscountedParkingOptionStoryblok {
 }
 
 export interface MetaSiteOptionsStoryblok {
+  enableStudentOffer?: boolean;
+  topBarText: string;
+  topBarButtonText: string;
+  modalTitle?: string;
+  modalPrice?: string;
+  modalText?: string;
+  modalList?: AtomIconTitlePairStoryblok[];
   telephone?: string;
   email?: string;
-  navigation?: AtomSingleLinkStoryblok[];
   discountedParking?: DataDiscountedParkingOptionStoryblok[];
-  defaultWhy: AtomIconTitlePairStoryblok[];
   membershipsFrom?: string;
+  navigation?: AtomSingleLinkStoryblok[];
+  defaultWhy: AtomIconTitlePairStoryblok[];
   component: "metaSiteOptions";
   _uid: string;
   [k: string]: any;
@@ -203,6 +210,7 @@ export interface MetaSiteOptionsStoryblok {
 
 export interface SectionCardBlockStoryblok {
   title?: string;
+  titleLevel: number | string;
   cards?: AtomSingleCardStoryblok[];
   backgroundStyle: number | string;
   component: "sectionCardBlock";
