@@ -28,13 +28,13 @@
         }
 
         &.btn--student {
-            background-color: var(--color-pink-700);
-            border-color: var(--color-pink-200);
+            background-color: var(--color-teal-700);
+            border-color: var(--color-teal-200);
             color: var(--color-white);
 
             &:hover {
-                background-color: var(--color-pink-800);
-                border-color: var(--color-pink-800);
+                background-color: var(--color-teal-800);
+                border-color: var(--color-teal-800);
                 color: var(--color-white);
             }
         }

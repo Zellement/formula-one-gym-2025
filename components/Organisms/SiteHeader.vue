@@ -6,7 +6,7 @@
     >
         <div
             v-if="siteOptions?.enableStudentOffer"
-            class="flex bg-gradient-to-br from-pink-500 to-pink-600"
+            class="flex bg-gradient-to-br from-teal-500 to-teal-600"
         >
             <div
                 class="container-px container flex items-center justify-center gap-4 py-2"

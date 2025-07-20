@@ -1,14 +1,14 @@
 <template>
     <div
-        class="fixed inset-0 z-50 flex items-center justify-center bg-pink-800/80 p-8"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-teal-800/80 p-8"
     >
         <div
             class="@container relative flex max-h-[90svh] w-full max-w-md flex-col gap-3 overflow-y-auto rounded-lg bg-white p-8 shadow-lg"
         >
-            <h2 class="pr-20 text-xl font-bold text-pink-800">
+            <h2 class="pr-20 text-xl font-bold text-teal-800">
                 {{ siteOptions?.modalTitle }}
             </h2>
-            <p class="text-lg text-pink-500">
+            <p class="text-lg text-teal-500">
                 {{ siteOptions?.modalPrice }}
             </p>
             <p class="whitespace-pre-line text-gray-700">
