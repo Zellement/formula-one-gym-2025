@@ -2,6 +2,9 @@
     <div
         class="site-hero grid h-svh grid-cols-1 grid-rows-1 overflow-clip text-white"
     >
+        <div
+            class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/40 via-black/20"
+        />
         <div class="col-span-full col-start-1 row-start-1">
             <embla-carousel ref="emblaRef">
                 <template #carousel-items>
@@ -25,7 +28,7 @@
         </div>
         <div
             v-gsap.stagger.from="{ opacity: 0, x: -40 }"
-            class="container-px relative col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end gap-3 bg-gradient-to-t from-black/40 via-black/20 pb-12 text-white lg:gap-1 xl:pb-8 xl:pb-12"
+            class="container-px relative z-10 col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end gap-3 pb-12 text-white lg:gap-1 xl:pb-12"
         >
             <p v-if="brow" class="pill border-white/40 bg-black/60">
                 {{ brow }}
