@@ -1,5 +1,5 @@
 <template>
-    <rich-text :content="blok.richText" />
+    <rich-text v-editable="blok" :content="blok.richText" />
 </template>
 
 <script lang="ts" setup>

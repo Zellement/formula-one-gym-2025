@@ -1,5 +1,5 @@
 <template>
-    <div class="white-space-pre-wrap">
+    <div v-editable="blok" class="white-space-pre-wrap">
         {{ blok.textarea }}
     </div>
 </template>

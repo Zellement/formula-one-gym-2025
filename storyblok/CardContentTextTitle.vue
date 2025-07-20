@@ -1,5 +1,5 @@
 <template>
-    <h2 class="text-lg">
+    <h2 v-editable="blok" class="text-lg">
         {{ blok.title }}
     </h2>
 </template>

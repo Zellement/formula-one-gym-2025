@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex grow overflow-clip rounded-lg">
+    <div v-editable="blok" class="relative flex grow overflow-clip rounded-lg">
         <embla-carousel ref="emblaRef">
             <template #carousel-items>
                 <single-storyblok-picture

@@ -1,5 +1,5 @@
 <template>
-    <ul class="list-none">
+    <ul v-editable="blok" class="list-none">
         <storyblok-component
             v-for="nestedBlok in blok.items"
             :key="nestedBlok._uid"

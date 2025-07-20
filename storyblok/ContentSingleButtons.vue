@@ -1,5 +1,6 @@
 <template>
     <div
+        v-editable="blok"
         v-gsap.delay-200.stagger.once.whenVisible.from="{
             opacity: 0,
             y: 10

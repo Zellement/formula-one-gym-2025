@@ -1,5 +1,5 @@
 <template>
-    <section class="relative">
+    <section v-editable="blok" class="relative">
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
                 <div

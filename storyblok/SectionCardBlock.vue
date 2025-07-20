@@ -1,5 +1,5 @@
 <template>
-    <div :class="blok.backgroundStyle">
+    <div v-editable="blok" :class="blok.backgroundStyle">
         <div class="container-px container">
             <div
                 v-gsap.stagger.whenVisible.delay-300.once.from="{

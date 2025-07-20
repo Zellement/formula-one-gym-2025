@@ -1,5 +1,5 @@
 <template>
-    <div class="@container">
+    <div v-editable="blok" class="@container">
         <ul
             v-gsap.delay-200.stagger.once.whenVisible.from="{
                 opacity: 0,

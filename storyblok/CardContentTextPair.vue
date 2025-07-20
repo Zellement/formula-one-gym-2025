@@ -1,5 +1,5 @@
 <template>
-    <p class="flex items-center gap-1">
+    <p v-editable="blok" class="flex items-center gap-1">
         <span
             v-if="blok.bold"
             class="text-lg"
