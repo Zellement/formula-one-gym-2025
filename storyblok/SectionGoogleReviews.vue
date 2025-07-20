@@ -61,8 +61,11 @@
 <script lang="ts" setup>
 import dayjs from 'dayjs'
 import EmblaCarousel from '@/components/Molecules/EmblaCarousel.vue'
+import type { SectionGoogleReviewsStoryblok } from '~/types/storyblok-component-types'
 
 const storyblokStore = useStoryblokStore()
+
+defineProps<{ blok: SectionGoogleReviewsStoryblok }>()
 
 const reviewsGoogle: ComputedRef<any> = computed(() => {
     return storyblokStore.siteOptions?.reviewsGoogle
