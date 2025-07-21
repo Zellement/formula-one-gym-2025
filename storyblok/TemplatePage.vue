@@ -2,7 +2,7 @@
     <div v-editable="blok" class="flex flex-col">
         <site-hero
             :title="blok.primary || storyName"
-            :title-level="blok.primaryLevel.toString() || 'p'"
+            :title-level="blok.primaryLevel?.toString() || 'p'"
             :subtitle="blok.secondary"
             :brow="blok.brow"
             :media="blok.media || []"
@@ -14,6 +14,10 @@
         />
         <div
             v-if="route.path === '/help-advice/'"
+            v-gsap.delay-200.stagger.once.whenVisible.from="{
+                opacity: 0,
+                y: 10
+            }"
             class="grid-layout container-px container mt-20"
         >
             <nuxt-link

@@ -4,7 +4,10 @@
             <div class="grid-layout @container">
                 <!-- Primary block -->
                 <div class="col-span-full flex lg:col-span-5 lg:col-start-3">
-                    <div class="my-auto flex flex-col gap-4">
+                    <div
+                        v-gsap.entrance.slide-left
+                        class="my-auto flex flex-col gap-4"
+                    >
                         <StoryblokComponent
                             v-for="nestedBlok in blok.mixedBlockPrimary"
                             :key="nestedBlok._uid"
@@ -15,7 +18,10 @@
 
                 <!-- Secondary block -->
                 <div class="col-span-full flex lg:col-span-5 lg:col-start-8">
-                    <div class="my-auto flex flex-col gap-4">
+                    <div
+                        v-gsap.entrance.slide-left
+                        class="my-auto flex flex-col gap-4"
+                    >
                         <StoryblokComponent
                             v-for="nestedBlok in blok.mixedBlockSecondary"
                             :key="nestedBlok._uid"
