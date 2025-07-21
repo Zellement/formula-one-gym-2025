@@ -2,10 +2,15 @@
     <div v-editable="blok" class="flex flex-col">
         <site-hero
             :title="blok.primary || storyName"
-            :title-level="blok.title_level || 'p'"
+            :title-level="blok.primaryLevel.toString() || 'p'"
             :subtitle="blok.secondary"
             :brow="blok.brow"
             :media="blok.media || []"
+            :date="
+                isHelpAdviceArticle && firstPublishedAt
+                    ? new Date(firstPublishedAt).toLocaleDateString()
+                    : null
+            "
         />
         <div
             v-if="route.path === '/help-advice/'"
@@ -58,8 +63,16 @@
 <script setup lang="ts">
 import type { TemplatePageStoryblok } from '~/types/storyblok-component-types'
 
-defineProps<{ blok: TemplatePageStoryblok; storyName: string }>()
+defineProps<{
+    blok: TemplatePageStoryblok
+    storyName: string
+    firstPublishedAt: string | null
+}>()
 
 const route = useRoute()
 const posts = route.path === '/help-advice/' ? useHelpAdviceUtils() : null
+
+const isHelpAdviceArticle: ComputedRef<boolean> = computed(() => {
+    return route.path.startsWith('/help-advice/')
+})
 </script>

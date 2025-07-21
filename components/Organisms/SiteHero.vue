@@ -5,13 +5,18 @@
                 v-gsap.stagger.from="{ opacity: 0, x: -40 }"
                 class="col-span-full flex flex-col items-start justify-end xl:col-span-7"
             >
+                <p
+                    v-if="date"
+                    class="pill border-orange-600 bg-white/50 text-orange-700"
+                >
+                    {{ date }}
+                </p>
                 <p v-if="brow" class="pill border-orange-300 bg-orange-300/50">
                     {{ brow }}
                 </p>
                 <component
                     :is="titleLevel"
-                    v-if="title"
-                    class="h1 mb-2 leading-tight font-bold"
+                    class="mb-2 text-3xl leading-tight font-bold"
                 >
                     {{ title }}
                 </component>
@@ -38,8 +43,9 @@
                             ]"
                             :focus="item.focus"
                         />
-                    </template> </embla-carousel
-                ><embla-carousel-external-controls
+                    </template>
+                </embla-carousel>
+                <embla-carousel-external-controls
                     class="absolute right-4 bottom-4 flex w-20"
                     :next-disabled="!canScrollNext"
                     :prev-disabled="!canScrollPrev"
@@ -55,11 +61,12 @@ import EmblaCarousel from '@/components/Molecules/EmblaCarousel.vue'
 import type { MultiassetStoryblok } from '~/types/storyblok-component-types'
 
 interface Props {
-    title?: string
+    title: string
     titleLevel?: string
     subtitle?: string
     brow?: string
     media: MultiassetStoryblok
+    date?: string | null
 }
 
 const emblaRef: Ref<InstanceType<typeof EmblaCarousel> | null> = ref(null)

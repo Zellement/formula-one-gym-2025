@@ -4,6 +4,7 @@
             v-if="story?.content?.component"
             :blok="story.content"
             :story-name="story.name"
+            :first-published-at="story.first_published_at"
         />
     </div>
 </template>
