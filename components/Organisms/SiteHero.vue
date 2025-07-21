@@ -11,7 +11,7 @@
                 <component
                     :is="titleLevel"
                     v-if="title"
-                    class="h1 leading-normal font-bold"
+                    class="h1 mb-2 leading-tight font-bold"
                 >
                     {{ title }}
                 </component>
