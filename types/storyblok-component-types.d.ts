@@ -192,6 +192,7 @@ export interface DataDiscountedParkingOptionStoryblok {
 export interface MetaSiteOptionsStoryblok {
   enableStudentOffer?: boolean;
   topBarText: string;
+  topBarTextAdded?: string;
   topBarButtonText: string;
   modalTitle?: string;
   modalPrice?: string;
@@ -239,6 +240,13 @@ export interface SectionInsetColumnMixedContentStoryblok {
   )[];
   backgroundStyle: number | string;
   component: "sectionInsetColumnMixedContent";
+  _uid: string;
+  [k: string]: any;
+}
+
+export interface SectionRichTextOnlyStoryblok {
+  content: RichtextStoryblok;
+  component: "sectionRichTextOnly";
   _uid: string;
   [k: string]: any;
 }
@@ -298,6 +306,7 @@ export interface TemplateHomepageStoryblok {
     | SectionCardBlockStoryblok
     | SectionGoogleReviewsStoryblok
     | SectionInsetColumnMixedContentStoryblok
+    | SectionRichTextOnlyStoryblok
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok
@@ -319,6 +328,7 @@ export interface TemplatePageStoryblok {
     | SectionCardBlockStoryblok
     | SectionGoogleReviewsStoryblok
     | SectionInsetColumnMixedContentStoryblok
+    | SectionRichTextOnlyStoryblok
     | SectionSingleNoticeStoryblok
     | SectionSpacingBlockStoryblok
     | SectionTextWithImageStoryblok

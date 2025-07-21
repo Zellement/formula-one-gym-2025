@@ -8,7 +8,11 @@
                 <p v-if="brow" class="pill border-orange-300 bg-orange-300/50">
                     {{ brow }}
                 </p>
-                <component :is="titleLevel" v-if="title" class="h1 font-bold">
+                <component
+                    :is="titleLevel"
+                    v-if="title"
+                    class="h1 leading-normal font-bold"
+                >
                     {{ title }}
                 </component>
                 <p v-if="subtitle" class="max-w-screen-lg">

@@ -493,7 +493,7 @@
       "display_name": "Site Options",
       "description": "Site options.",
       "created_at": "2025-06-29T08:14:18.293Z",
-      "updated_at": "2025-07-20T19:16:59.231Z",
+      "updated_at": "2025-07-20T19:42:11.516Z",
       "id": 63468577972256,
       "schema": {
         "enableStudentOffer": {
@@ -506,33 +506,41 @@
           "type": "text",
           "pos": 1,
           "id": "C-KIVXHGScuUWy-yFARUoQ",
-          "required": true
+          "required": true,
+          "display_name": "",
+          "description": "This will show on both mobile & desktop."
+        },
+        "topBarTextAdded": {
+          "type": "text",
+          "pos": 2,
+          "id": "9__KRViAQKCxrSeXasfDEg",
+          "description": "This will ONLY show on desktop where there is more space."
         },
         "topBarButtonText": {
           "type": "text",
-          "pos": 2,
+          "pos": 3,
           "required": true,
           "description": "The button text for the top bar. Short & sweet is best.",
           "id": "8_Av3LTXT8u0gzxJaNKtAw"
         },
         "modalTitle": {
           "type": "text",
-          "pos": 3,
+          "pos": 4,
           "id": "AtIb4eW8RlmmYSAmSn17Pg"
         },
         "modalPrice": {
           "type": "text",
-          "pos": 4,
+          "pos": 5,
           "id": "VJ9MHC4uTUaix3l7mvoWHw"
         },
         "modalText": {
           "type": "textarea",
-          "pos": 5,
+          "pos": 6,
           "id": "AIH2Lm7dTT2-UitmBX_JMw"
         },
         "modalList": {
           "type": "bloks",
-          "pos": 6,
+          "pos": 7,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -542,17 +550,17 @@
         },
         "telephone": {
           "type": "text",
-          "pos": 7,
+          "pos": 8,
           "id": "6mG7vEPNQ4-YngMmw1vv0A"
         },
         "email": {
           "type": "text",
-          "pos": 8,
+          "pos": 9,
           "id": "eKzcRxGcQgO12wEQ6iQgeQ"
         },
         "discountedParking": {
           "type": "bloks",
-          "pos": 9,
+          "pos": 10,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -562,7 +570,7 @@
         },
         "membershipsFrom": {
           "type": "text",
-          "pos": 10,
+          "pos": 11,
           "id": "T1NfDDCBTdOBRlhojYZn5Q"
         },
         "tab-27d92668-edce-4a2d-b9b0-32728dc594f7": {
@@ -570,7 +578,7 @@
           "keys": [
             "navigation"
           ],
-          "pos": 11,
+          "pos": 12,
           "type": "tab",
           "id": "J9kmaO3OSi25sDJyjcWU9w"
         },
@@ -579,7 +587,7 @@
           "keys": [
             "defaultWhy"
           ],
-          "pos": 12,
+          "pos": 13,
           "type": "tab",
           "id": "nIcqJEVWTsiEILhOQGh6Mg"
         },
@@ -593,15 +601,16 @@
             "modalText",
             "modalList",
             "price",
-            "modalPrice"
+            "modalPrice",
+            "topBarTextAdded"
           ],
-          "pos": 13,
+          "pos": 14,
           "type": "tab",
           "id": "rTaN0rJfQEuKIk4TPkJhig"
         },
         "navigation": {
           "type": "bloks",
-          "pos": 14,
+          "pos": 15,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
@@ -611,7 +620,7 @@
         },
         "defaultWhy": {
           "type": "bloks",
-          "pos": 15,
+          "pos": 16,
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
@@ -777,6 +786,49 @@
       "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
       "color": "#374dc3",
       "icon": "block-center-m",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Sections"
+    },
+    {
+      "name": "sectionRichTextOnly",
+      "display_name": "Rich Text Only",
+      "description": "A single column of rich text.",
+      "created_at": "2025-07-21T19:10:09.069Z",
+      "updated_at": "2025-07-21T19:11:39.149Z",
+      "id": 71415435555173,
+      "schema": {
+        "content": {
+          "type": "richtext",
+          "pos": 0,
+          "required": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "list",
+            "h2",
+            "h3",
+            "unset",
+            "olist",
+            "paragraph",
+            "paste-action",
+            "quote"
+          ],
+          "id": "ln-3EoTOQOefqh7q9pVVdw"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Rich Text Only",
+      "component_group_uuid": "bc66f707-351d-44e4-81a7-4b428aab4c57",
+      "color": "#374dc3",
+      "icon": "block-text-l",
       "internal_tags_list": [],
       "internal_tag_ids": [],
       "content_type_asset_preview": null,
