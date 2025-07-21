@@ -355,7 +355,7 @@
       "display_name": "[Content] Rich Text",
       "description": "Just rich text.",
       "created_at": "2025-07-16T19:58:10.355Z",
-      "updated_at": "2025-07-19T19:04:16.058Z",
+      "updated_at": "2025-07-21T20:23:07.859Z",
       "id": 69657765297993,
       "schema": {
         "richText": {
@@ -370,7 +370,9 @@
             "h1",
             "paragraph",
             "paste-action",
-            "quote"
+            "quote",
+            "bold",
+            "list"
           ],
           "id": "ToAI_wyCQNKeFhbFc6PPNw"
         }
@@ -493,7 +495,7 @@
       "display_name": "Site Options",
       "description": "Site options.",
       "created_at": "2025-06-29T08:14:18.293Z",
-      "updated_at": "2025-07-20T19:42:11.516Z",
+      "updated_at": "2025-07-21T20:33:45.846Z",
       "id": 63468577972256,
       "schema": {
         "enableStudentOffer": {
@@ -501,6 +503,16 @@
           "pos": 0,
           "description": "Turn this on to enable the site-wide student offer.",
           "id": "rJTQgjIpTVqNDDKsFh1zGg"
+        },
+        "tab-39fead21-c7e7-492c-af7f-373f19570f7c": {
+          "display_name": "Induction",
+          "keys": [
+            "inductionModalTitle",
+            "inductionModalText"
+          ],
+          "pos": 0,
+          "type": "tab",
+          "id": "Of6tIcfnSSyvfzc_GVcPfA"
         },
         "topBarText": {
           "type": "text",
@@ -628,6 +640,18 @@
             "atomIconTitlePair"
           ],
           "id": "KmOBkG8iQ66qbyl4Sd7dKg"
+        },
+        "inductionModalTitle": {
+          "type": "text",
+          "pos": 18,
+          "id": "iOI61JvcTFSwa_NiD2S-VQ",
+          "required": true
+        },
+        "inductionModalText": {
+          "type": "textarea",
+          "pos": 19,
+          "id": "tpcMwYPKTwGg80RQ_2WpGw",
+          "required": true
         }
       },
       "image": null,
@@ -737,7 +761,7 @@
       "display_name": "Inset Column Mixed Content",
       "description": "A single block that is offset with two mixed content fields.",
       "created_at": "2025-07-16T19:48:43.149Z",
-      "updated_at": "2025-07-19T19:18:16.735Z",
+      "updated_at": "2025-07-21T20:23:40.192Z",
       "id": 69655442026310,
       "schema": {
         "mixedBlockPrimary": {
@@ -769,7 +793,7 @@
           "pos": 3,
           "use_uuid": true,
           "required": true,
-          "default_value": "default",
+          "default_value": "bg-white",
           "id": "cYKmbCDKQeGSB-J2YDZc9g",
           "source": "internal",
           "datasource_slug": "background-style"
@@ -797,7 +821,7 @@
       "display_name": "Rich Text Only",
       "description": "A single column of rich text.",
       "created_at": "2025-07-21T19:10:09.069Z",
-      "updated_at": "2025-07-21T19:11:39.149Z",
+      "updated_at": "2025-07-21T19:47:42.993Z",
       "id": 71415435555173,
       "schema": {
         "content": {
@@ -813,9 +837,13 @@
             "olist",
             "paragraph",
             "paste-action",
-            "quote"
+            "quote",
+            "bold",
+            "link"
           ],
-          "id": "ln-3EoTOQOefqh7q9pVVdw"
+          "id": "ln-3EoTOQOefqh7q9pVVdw",
+          "restrict_type": "",
+          "restrict_components": false
         }
       },
       "image": null,

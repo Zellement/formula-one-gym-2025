@@ -204,6 +204,8 @@ export interface MetaSiteOptionsStoryblok {
   membershipsFrom?: string;
   navigation?: AtomSingleLinkStoryblok[];
   defaultWhy: AtomIconTitlePairStoryblok[];
+  inductionModalTitle: string;
+  inductionModalText: string;
   component: "metaSiteOptions";
   _uid: string;
   [k: string]: any;

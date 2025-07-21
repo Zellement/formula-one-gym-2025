@@ -1,5 +1,9 @@
 <template>
-    <button>Book your free induction</button>
+    <button @click.prevent="uiStore.toggleInductionModal(true)">
+        Book your free induction
+    </button>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const uiStore = useUiStore()
+</script>

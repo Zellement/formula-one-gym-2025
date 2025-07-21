@@ -7,6 +7,9 @@
         <GSAPTransition>
             <modal-student-offer v-if="showStudentModal" />
         </GSAPTransition>
+        <GSAPTransition>
+            <modal-induction v-if="showInductionModal" />
+        </GSAPTransition>
         <main>
             <slot />
         </main>
@@ -31,9 +34,18 @@ const showStudentModal: ComputedRef<boolean> = computed(() => {
     return uiStore.showStudentModal
 })
 
-const isAnyModalActive: ComputedRef<boolean> = computed(() => {
-    return showMobileNav.value || showStudentModal.value
+const showInductionModal: ComputedRef<boolean> = computed(() => {
+    return uiStore.showInductionModal
 })
+
+const isAnyModalActive: ComputedRef<boolean> = computed(() => {
+    return (
+        showMobileNav.value ||
+        showStudentModal.value ||
+        showInductionModal.value
+    )
+})
+
 useHead({
     // Prevent page scrolling when mobile nav is open
     bodyAttrs: {

@@ -44,7 +44,9 @@ export default defineNuxtPlugin(async (): Promise<void> => {
             modalList: [],
             modalText: '',
             modalTitle: '',
-            modalPrice: ''
+            modalPrice: '',
+            inductionModalTitle: '',
+            inductionModalText: ''
         }
         console.warn('Site options could not be loaded, using fallback.')
     }
