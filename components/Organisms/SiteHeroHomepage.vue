@@ -28,35 +28,42 @@
         </div>
         <div
             v-gsap.stagger.from="{ opacity: 0, x: -40 }"
-            class="container-px relative z-10 col-span-full col-start-1 row-start-1 container flex h-full flex-col items-start justify-end gap-3 pb-12 text-white lg:gap-1 xl:pb-12"
+            class="container-px relative z-10 col-span-full col-start-1 row-start-1 container flex h-full w-full flex-col items-start justify-end gap-4 pb-12 text-white xl:flex-row xl:items-end xl:justify-between"
         >
-            <p v-if="brow" class="pill border-white/40 bg-black/60">
-                {{ brow }}
-            </p>
-            <p v-if="title" class="text-3xl font-bold">
-                {{ title }}
-            </p>
-            <p v-if="subtitle" class="max-w-[750px]">
-                {{ subtitle }}
-            </p>
-            <div
-                class="xs:self-start mt-4 flex flex-col items-center gap-4 self-stretch rounded-lg bg-black p-2 sm:flex-row"
-            >
-                <btn-launch-induction-modal class="btn xs:w-auto w-full" />
-                <span v-if="membershipsFrom">
-                    Memberships from just
-                    <span class="text-orange-500">
-                        {{ membershipsFrom }}
+            <div class="flex flex-col items-start gap-3">
+                <embla-carousel-external-controls
+                    class="flex w-20"
+                    :next-disabled="!canScrollNext"
+                    :prev-disabled="!canScrollPrev"
+                    @scroll="handleScrollClick"
+                />
+                <p v-if="brow" class="pill border-white/40 bg-black/60">
+                    {{ brow }}
+                </p>
+                <p v-if="title" class="text-3xl font-bold">
+                    {{ title }}
+                </p>
+                <p v-if="subtitle" class="max-w-[750px]">
+                    {{ subtitle }}
+                </p>
+                <div
+                    class="xs:self-start mt-4 flex flex-col items-center gap-4 self-stretch rounded-lg bg-black p-2 sm:flex-row"
+                >
+                    <btn-launch-induction-modal class="btn xs:w-auto w-full" />
+                    <span v-if="membershipsFrom">
+                        Memberships from just
+                        <span class="text-orange-500">
+                            {{ membershipsFrom }}
+                        </span>
                     </span>
-                </span>
+                </div>
             </div>
-
-            <embla-carousel-external-controls
-                class="xs:bottom-4 absolute right-4 bottom-1 flex w-20"
-                :next-disabled="!canScrollNext"
-                :prev-disabled="!canScrollPrev"
-                @scroll="handleScrollClick"
-            />
+            <div class="xs:justify-start flex w-full justify-center xl:w-auto">
+                <total-reviews
+                    class="xs:justify-start xs:flex-col xs:items-start flex w-full max-w-56 flex-row items-center justify-between text-left xl:items-end xl:text-right"
+                    stars-classes="text-orange-500"
+                />
+            </div>
         </div>
     </div>
 </template>
