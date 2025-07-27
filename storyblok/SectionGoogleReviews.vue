@@ -32,7 +32,25 @@
                         }"
                         class="mt-auto flex flex-col gap-1"
                     >
-                        <h3 class="font-bold">{{ review.user?.name }}</h3>
+                        <div class="flex items-center gap-2">
+                            <img
+                                v-if="review.user?.thumbnail"
+                                :src="review.user.thumbnail"
+                                alt="User thumbnail"
+                                class="size-8 rounded-full object-cover"
+                            />
+                            <div
+                                v-else
+                                class="rounded-fullsize-8 bg-gray-200 p-1"
+                            >
+                                <Icon
+                                    name="ic:round-account-circle"
+                                    size="30"
+                                    class="text-gray-500"
+                                />
+                            </div>
+                            <h3 class="font-bold">{{ review.user?.name }}</h3>
+                        </div>
                         <p>
                             Date:
                             {{ dayjs(review.iso_date).format('D MMM YYYY') }}
