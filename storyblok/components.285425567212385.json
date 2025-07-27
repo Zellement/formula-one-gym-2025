@@ -5,7 +5,7 @@
       "display_name": "Icon & Title Pair",
       "description": "An icon with a title.",
       "created_at": "2025-06-29T15:41:02.961Z",
-      "updated_at": "2025-07-16T19:42:12.151Z",
+      "updated_at": "2025-07-27T12:38:12.383Z",
       "id": 63578369896992,
       "schema": {
         "name": {
@@ -26,6 +26,17 @@
           "type": "number",
           "pos": 2,
           "id": "9bdr8XUDS5SL09uS5YjAUQ"
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 3,
+          "email_link_type": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "templateHomepage",
+            "templatePage"
+          ],
+          "id": "cBS3Vj4NRuOJVN8bZq3w2A"
         }
       },
       "image": null,
@@ -314,6 +325,43 @@
       "content_type_asset_preview": null,
       "metadata": {},
       "component_group_name": "Card Content"
+    },
+    {
+      "name": "contentIconTextPair",
+      "display_name": "[Content] Icon & Text Pairings",
+      "description": "A block for icons and text list.",
+      "created_at": "2025-07-27T12:35:37.709Z",
+      "updated_at": "2025-07-27T12:36:36.514Z",
+      "id": 73441844062724,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "atomIconTitlePair"
+          ],
+          "id": "rKMjrIV5Q7yfPp3Jv6PQbg",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "[Content] Icon & Text Pairings",
+      "component_group_uuid": "c0671c1e-d800-4a74-a816-4425a1690df6",
+      "color": "#f5a928",
+      "icon": "block-table",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "metadata": {},
+      "component_group_name": "Content"
     },
     {
       "name": "contentMultiMedia",
