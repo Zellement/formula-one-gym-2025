@@ -33,7 +33,7 @@
                 />
                 <site-nav
                     v-if="isDesktop"
-                    ul-classes="bg-white flex items-center 2xl:text-base 2xl:gap-5 xl:text-sm gap-3 text-black rounded-lg px-4"
+                    ul-classes="bg-white flex items-center 2xl:text-base 3xl:gap-5 xl:text-sm gap-3 text-black rounded-lg px-4"
                 />
                 <div
                     class="col-span-4 col-start-9 row-start-1 flex justify-end gap-2"

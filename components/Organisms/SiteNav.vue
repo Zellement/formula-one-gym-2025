@@ -12,7 +12,7 @@
             <li
                 v-for="navItem in navigation"
                 :key="navItem._uid"
-                class="group relative"
+                class="group relative text-center leading-tight tracking-tight"
             >
                 <nuxt-link
                     :to="getLinkUrl(navItem)"
