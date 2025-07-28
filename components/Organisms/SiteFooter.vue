@@ -47,6 +47,7 @@
                 </div>
                 <div class="flex w-full bg-gray-100 lg:w-1/2">
                     <iframe
+                        title="Map of where we are located"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2403.7207820905182!2d-1.1483069223096876!3d52.95344697217786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c3d5996f7b75%3A0x8531186fa3c1bef3!2sFormula%20One%20Gym!5e0!3m2!1sen!2suk!4v1751053648344!5m2!1sen!2suk"
                         width="100%"
                         height="400"

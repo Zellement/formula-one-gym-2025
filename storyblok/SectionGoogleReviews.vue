@@ -36,6 +36,7 @@
                             <img
                                 v-if="review.user?.thumbnail"
                                 :src="review.user.thumbnail"
+                                loading="lazy"
                                 alt="User thumbnail"
                                 class="size-8 rounded-full object-cover"
                             />
