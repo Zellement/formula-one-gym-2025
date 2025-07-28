@@ -3,7 +3,8 @@
         <div class="container-px container">
             <div class="grid-layout">
                 <div
-                    class="relative col-span-full overflow-clip rounded-lg lg:col-span-7 lg:col-start-1"
+                    class="relative col-span-full overflow-clip rounded-lg lg:col-span-7"
+                    :class="blok.reverse ? 'lg:order-last' : ''"
                 >
                     <embla-carousel ref="emblaRef">
                         <template #carousel-items>
@@ -32,6 +33,7 @@
                 <div
                     v-gsap.entrance.slide-left.stagger
                     class="col-span-full my-auto flex flex-col gap-4 lg:col-span-5"
+                    :class="blok.reverse ? 'lg:order-first' : ''"
                 >
                     <StoryblokComponent
                         v-for="nestedBlok in blok.block"

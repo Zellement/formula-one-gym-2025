@@ -17,7 +17,9 @@
             <span>{{ blok.name }}</span>
         </a>
         <nuxt-link
-            v-else-if="blok.link?.linktype === 'story'"
+            v-else-if="
+                blok.link?.linktype === 'story' && blok.link.story?.full_slug
+            "
             :href="`/${blok.link.story?.full_slug}`"
             class="flex flex-row items-center gap-2 text-orange-500 underline underline-offset-1"
         >

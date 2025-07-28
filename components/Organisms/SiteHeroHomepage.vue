@@ -27,10 +27,12 @@
             </embla-carousel>
         </div>
         <div
-            v-gsap.stagger.from="{ opacity: 0, x: -40 }"
             class="container-px relative z-10 col-span-full col-start-1 row-start-1 container flex h-full w-full flex-col items-start justify-end gap-4 pb-12 text-white xl:flex-row xl:items-end xl:justify-between"
         >
-            <div class="flex flex-col items-start gap-3">
+            <div
+                v-gsap.stagger.from="{ opacity: 0, x: -40 }"
+                class="flex flex-col items-start gap-3"
+            >
                 <embla-carousel-external-controls
                     class="flex w-20"
                     :next-disabled="!canScrollNext"
