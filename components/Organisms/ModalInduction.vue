@@ -12,7 +12,48 @@
                 {{ siteOptions?.inductionModalText }}
             </p>
 
-            <div>INDUCTION FORM HERE</div>
+            <div>
+                <form action="https://submit-form.com/MmawNZhqV">
+                    <div class="flex flex-col">
+                        <label for="name">Name</label>
+                        <input
+                            id="name"
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            required="true"
+                        />
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="email">Email</label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            required="true"
+                        />
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="message">Telephone</label>
+                        <input
+                            id="message"
+                            type="tel"
+                            name="message"
+                            placeholder="Telephone"
+                            required="true"
+                        />
+                        <input
+                            id="tel2"
+                            type="tel"
+                            name="tel2"
+                            placeholder="Do not fill this field"
+                            class="hidden"
+                        />
+                    </div>
+                    <button type="submit" class="btn self-end">Send</button>
+                </form>
+            </div>
 
             <div class="absolute top-2 right-2">
                 <button

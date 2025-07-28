@@ -2,7 +2,7 @@ type Screens = Record<string, string>
 
 export default defineNuxtPlugin(() => {
     // Only run the script in a development environment and on client-side
-    if (process.env.NODE_ENV !== 'development' || process.server) {
+    if (process.env.NODE_ENV !== 'development' || import.meta.server) {
         return
     }
 

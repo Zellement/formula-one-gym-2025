@@ -86,6 +86,12 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'en'
             },
+
+            // script: [
+            //     {
+            //         src: 'https://consent.cookiebot.com/uc.js?cbid=a6734070-cc0f-4a9f-9db5-b776c6117cc5'
+            //     },
+            // ]
             title: 'Formula One Gym | Nottingham',
             meta: [
                 {

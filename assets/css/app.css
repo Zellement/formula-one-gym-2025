@@ -6,9 +6,8 @@
 @import './_base/main.css';
 @import './_base/typography.css';
 @import './_base/transitions.css';
+@import './_base/forms.css';
 
 @import './atoms/buttons.css';
 
 @import './molecules/embla-carousel.css';
-
-@import './organisms/site-nav.css';

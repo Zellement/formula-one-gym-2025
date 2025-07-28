@@ -17,6 +17,15 @@
                 <nuxt-link
                     :to="getLinkUrl(navItem)"
                     class="transition-colors hover:text-orange-600"
+                    :class="
+                        route.path
+                            .replaceAll('/', '')
+                            .startsWith(
+                                (getLinkUrl(navItem) ?? '').replaceAll('/', '')
+                            )
+                            ? 'text-orange-600'
+                            : ''
+                    "
                     @click="uiStore.toggleShowMobileNav(false)"
                 >
                     {{ getLinkName(navItem) }}
@@ -32,6 +41,8 @@ const uiStore = useUiStore()
 defineProps<{
     ulClasses?: string
 }>()
+
+const route = useRoute()
 
 const storyblokStore = useStoryblokStore()
 
