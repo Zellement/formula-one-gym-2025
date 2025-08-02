@@ -1,5 +1,14 @@
 <template>
     <section v-editable="blok" class="relative">
+        <single-storyblok-picture
+            v-if="storyblokStore?.siteOptions?.googleReviewsLogo?.filename"
+            v-gsap.from="{ opacity: 0, x: 20 }"
+            class="mx-auto mb-8 w-full max-w-40"
+            :url="storyblokStore?.siteOptions?.googleReviewsLogo?.filename"
+            alt="Google Reviews Logo"
+            :sizes="[{ dimensions: '300x0', from: '1px' }]"
+            hide-spinner
+        />
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
                 <div
