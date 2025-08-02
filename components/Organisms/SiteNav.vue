@@ -1,7 +1,7 @@
 <template>
     <nav v-if="navigation" class="site-nav flex">
         <ul :class="ulClasses">
-            <li class="xl:hidden">
+            <li class="text-center xl:hidden">
                 <nuxt-link
                     to="/"
                     class="transition-colors hover:text-orange-600"

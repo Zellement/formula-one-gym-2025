@@ -19,13 +19,19 @@
                 <div
                     v-for="(card, index) in blok.cards"
                     :key="index"
-                    class="xs:col-span-6 relative col-span-full grid grid-cols-1 grid-rows-1 overflow-clip rounded-lg xl:col-span-3 xl:aspect-[3/4]"
+                    class="xs:col-span-6 relative col-span-full grid grid-cols-1 grid-rows-1 rounded-lg xl:col-span-3"
                     :class="
                         blok.backgroundStyle === 'section-bg-ecru-500'
                             ? 'bg-white'
                             : 'bg-ecru-500'
                     "
                 >
+                    <span
+                        v-if="card.topRight"
+                        class="absolute top-0 right-0 z-10 -translate-2 rounded bg-black p-1 text-center whitespace-pre-line text-white"
+                    >
+                        {{ card.topRight }}
+                    </span>
                     <span
                         class="pill absolute top-2 left-2 z-10 mr-2 lg:top-4 lg:left-4 lg:mr-4"
                         :class="
@@ -36,7 +42,9 @@
                     >
                         {{ card.pill }}
                     </span>
-                    <div class="col-span-full col-start-1 row-start-1">
+                    <div
+                        class="col-span-full col-start-1 row-start-1 overflow-clip"
+                    >
                         <single-storyblok-picture
                             v-if="card.media?.filename"
                             class="embla__slide basis-full"

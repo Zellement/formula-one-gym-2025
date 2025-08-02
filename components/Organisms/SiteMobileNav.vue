@@ -16,11 +16,11 @@
                 </button>
                 <site-nav
                     v-gsap.from="{ opacity: 0, x: 40 }"
-                    class="text-lg"
-                    ul-classes="gap-3 flex flex-col"
+                    class="w-full text-lg"
+                    ul-classes="gap-3 flex flex-col w-full"
                 />
                 <btn-join-today
-                    class="mt-8 flex items-center justify-center self-start rounded-lg bg-orange-500 px-4 py-2 text-lg whitespace-nowrap text-white"
+                    class="mx-auto mt-8 flex items-center justify-center self-start rounded-lg bg-orange-500 px-4 py-2 text-lg whitespace-nowrap text-white"
                 />
             </div>
         </div>
