@@ -51,9 +51,9 @@
                 <div
                     class="xs:self-start mt-4 flex flex-col items-center gap-4 self-stretch rounded-lg bg-black p-2 sm:flex-row"
                 >
-                    <btn-launch-induction-modal class="btn xs:w-auto w-full" />
+                    <btn-join-today class="btn xs:w-auto w-full" />
                     <span v-if="membershipsFrom">
-                        Memberships from just
+                        Memberships from
                         <span class="text-orange-500">
                             {{ membershipsFrom }}
                         </span>
