@@ -1,6 +1,6 @@
 <template>
     <div
-        class="site-hero grid h-svh grid-cols-1 grid-rows-1 overflow-clip text-white"
+        class="site-hero relative grid min-h-svh grid-cols-1 grid-rows-1 overflow-clip text-white lg:h-svh"
     >
         <div
             class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/40 via-black/20"
@@ -19,7 +19,7 @@
                             { dimensions: '1300x1000', from: '800px' },
                             { dimensions: '1000x800', from: '700px' },
                             { dimensions: '700x700', from: '400px' },
-                            { dimensions: '400x1000', from: '1px' }
+                            { dimensions: '400x700', from: '1px' }
                         ]"
                         :focus="item.focus"
                     />
@@ -27,7 +27,7 @@
             </embla-carousel>
         </div>
         <div
-            class="container-px relative z-10 col-span-full col-start-1 row-start-1 container flex h-full w-full flex-col items-start justify-end gap-4 pb-12 text-white xl:flex-row xl:items-end xl:justify-between"
+            class="container-px relative z-10 col-span-full col-start-1 row-start-1 container flex h-full w-full flex-col items-start justify-end gap-4 pt-32 pb-12 text-white xl:flex-row xl:items-end xl:justify-between"
         >
             <div
                 v-gsap.stagger.from="{ opacity: 0, x: -40 }"
@@ -49,10 +49,10 @@
                     {{ subtitle }}
                 </p>
                 <div
-                    class="xs:self-start mt-4 flex flex-col items-center gap-4 self-stretch rounded-lg bg-black p-2 sm:flex-row"
+                    class="mt-4 mr-auto flex flex-col items-center justify-center gap-4 rounded-lg bg-black p-2 sm:flex-row"
                 >
-                    <btn-join-today class="btn xs:w-auto w-full" />
-                    <span v-if="membershipsFrom">
+                    <btn-join-today class="btn w-full text-center" />
+                    <span v-if="membershipsFrom" class="shrink-0">
                         Memberships from
                         <span class="text-orange-500">
                             {{ membershipsFrom }}
@@ -60,9 +60,9 @@
                     </span>
                 </div>
             </div>
-            <div class="xs:justify-start flex w-full justify-center xl:w-auto">
+            <div class="flex w-full justify-start xl:w-auto">
                 <total-reviews
-                    class="xs:justify-start xs:flex-col xs:items-start flex w-full max-w-56 flex-row items-center justify-between text-left xl:items-end xl:text-right"
+                    class="flex w-full max-w-56 flex-col text-left xl:items-end xl:text-right"
                     stars-classes="text-orange-500"
                 />
             </div>
