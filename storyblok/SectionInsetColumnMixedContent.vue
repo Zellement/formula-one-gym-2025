@@ -17,17 +17,15 @@
                 </div>
 
                 <!-- Secondary block -->
-                <div class="col-span-full flex lg:col-span-5 lg:col-start-8">
-                    <div
-                        v-gsap.entrance.slide-left
-                        class="my-auto flex flex-col gap-4"
-                    >
-                        <StoryblokComponent
-                            v-for="nestedBlok in blok.mixedBlockSecondary"
-                            :key="nestedBlok._uid"
-                            :blok="nestedBlok"
-                        />
-                    </div>
+                <div
+                    v-gsap.entrance.slide-left
+                    class="col-span-full my-auto flex flex-col gap-4 lg:col-span-5 lg:col-start-8"
+                >
+                    <StoryblokComponent
+                        v-for="nestedBlok in blok.mixedBlockSecondary"
+                        :key="nestedBlok._uid"
+                        :blok="nestedBlok"
+                    />
                 </div>
             </div>
         </div>
