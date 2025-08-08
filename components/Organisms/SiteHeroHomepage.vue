@@ -8,21 +8,23 @@
         <div class="col-span-full col-start-1 row-start-1">
             <embla-carousel ref="emblaRef">
                 <template #carousel-items>
-                    <single-storyblok-picture
-                        v-for="item in media"
-                        :key="item.id"
-                        class="embla__slide basis-full"
-                        :url="item.filename"
-                        :alt="item.alt ?? ''"
-                        :sizes="[
-                            { dimensions: '1700x1300', from: '1000px' },
-                            { dimensions: '1300x1000', from: '800px' },
-                            { dimensions: '1000x800', from: '700px' },
-                            { dimensions: '700x700', from: '400px' },
-                            { dimensions: '400x700', from: '1px' }
-                        ]"
-                        :focus="item.focus"
-                    />
+                    <template v-for="item in media">
+                        <single-storyblok-picture
+                            v-if="item.filename"
+                            :key="item.id"
+                            class="embla__slide basis-full"
+                            :url="item.filename"
+                            :alt="item.alt ?? ''"
+                            :sizes="[
+                                { dimensions: '1700x1300', from: '1000px' },
+                                { dimensions: '1300x1000', from: '800px' },
+                                { dimensions: '1000x800', from: '700px' },
+                                { dimensions: '700x700', from: '400px' },
+                                { dimensions: '400x700', from: '1px' }
+                            ]"
+                            :focus="item.focus"
+                        />
+                    </template>
                 </template>
             </embla-carousel>
         </div>
@@ -33,12 +35,6 @@
                 v-gsap.stagger.from="{ opacity: 0, x: -40 }"
                 class="flex flex-col items-start gap-3"
             >
-                <embla-carousel-external-controls
-                    class="flex w-20"
-                    :next-disabled="!canScrollNext"
-                    :prev-disabled="!canScrollPrev"
-                    @scroll="handleScrollClick"
-                />
                 <p v-if="brow" class="pill border-white/40 bg-black/60">
                     {{ brow }}
                 </p>
@@ -53,17 +49,25 @@
                 >
                     <btn-join-today class="btn w-full text-center" />
                     <span v-if="membershipsFrom" class="shrink-0">
-                        Memberships from
+                        Membership just
                         <span class="text-orange-500">
                             {{ membershipsFrom }}
                         </span>
                     </span>
                 </div>
             </div>
-            <div class="flex w-full justify-start xl:w-auto">
+            <div
+                class="flex w-full flex-col justify-start gap-4 xl:w-auto xl:flex-row"
+            >
                 <total-reviews
-                    class="flex w-full max-w-56 flex-col text-left xl:items-end xl:text-right"
+                    class="flex w-full max-w-56 flex-col text-left xl:items-end xl:justify-end xl:text-right"
                     stars-classes="text-orange-500"
+                />
+                <embla-carousel-external-controls
+                    class="order-last flex w-20 xl:order-first xl:mt-auto"
+                    :next-disabled="!canScrollNext"
+                    :prev-disabled="!canScrollPrev"
+                    @scroll="handleScrollClick"
                 />
             </div>
         </div>
