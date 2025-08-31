@@ -11,69 +11,80 @@
         />
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
-                <div
+                <template
                     v-for="review in reviewsGoogle.reviews"
                     :key="review.review_id"
-                    class="border-ecru-500 flex shrink-0 basis-full flex-col gap-2 rounded-xl border p-4 md:mx-4 md:basis-[320px] xl:mx-8"
                 >
                     <div
-                        v-gsap.stagger.from="{ opacity: 0, x: -40 }"
-                        class="mb-2 flex items-center gap-0"
+                        v-if="review.rating >= 4"
+                        class="border-ecru-500 flex shrink-0 basis-full flex-col gap-2 rounded-xl border p-4 md:mx-4 md:basis-[320px] xl:mx-8"
                     >
-                        <Icon
-                            v-for="(filled, i) in getStars(review.rating)"
-                            :key="i"
-                            name="ic:outline-star"
-                            size="30"
-                            class="text-orange-500"
-                        />
-                    </div>
-                    <p
-                        v-gsap.whenVisible.once.from="{ opacity: 0, x: -20 }"
-                        class="mb-4"
-                    >
-                        {{ truncate(review.snippet, 300) }}
-                    </p>
-                    <div
-                        v-gsap.whenVisible.stagger.once.delay-200.from="{
-                            opacity: 0,
-                            x: -20
-                        }"
-                        class="mt-auto flex flex-col gap-1"
-                    >
-                        <div class="flex items-center gap-2">
-                            <img
-                                v-if="review.user?.thumbnail"
-                                :src="review.user.thumbnail"
-                                loading="lazy"
-                                alt="User thumbnail"
-                                class="size-8 rounded-full object-cover"
-                            />
-                            <div
-                                v-else
-                                class="rounded-fullsize-8 bg-gray-200 p-1"
-                            >
-                                <Icon
-                                    name="ic:round-account-circle"
-                                    size="30"
-                                    class="text-gray-500"
-                                />
-                            </div>
-                            <h3 class="font-bold">{{ review.user?.name }}</h3>
-                        </div>
-                        <p>
-                            Date:
-                            {{ dayjs(review.iso_date).format('D MMM YYYY') }}
-                        </p>
-                        <nuxt-link
-                            :to="review.link"
-                            target="_blank"
-                            class="flex items-center gap-1 text-orange-500 hover:underline"
+                        <div
+                            v-gsap.stagger.from="{ opacity: 0, x: -40 }"
+                            class="mb-2 flex items-center gap-0"
                         >
-                            Read review <Icon name="ic:round-open-in-new" />
-                        </nuxt-link>
+                            <Icon
+                                v-for="(filled, i) in getStars(review.rating)"
+                                :key="i"
+                                name="ic:outline-star"
+                                size="30"
+                                class="text-orange-500"
+                            />
+                        </div>
+                        <p
+                            v-gsap.whenVisible.once.from="{
+                                opacity: 0,
+                                x: -20
+                            }"
+                            class="mb-4"
+                        >
+                            {{ truncate(review.snippet, 300) }}
+                        </p>
+                        <div
+                            v-gsap.whenVisible.stagger.once.delay-200.from="{
+                                opacity: 0,
+                                x: -20
+                            }"
+                            class="mt-auto flex flex-col gap-1"
+                        >
+                            <div class="flex items-center gap-2">
+                                <img
+                                    v-if="review.user?.thumbnail"
+                                    :src="review.user.thumbnail"
+                                    loading="lazy"
+                                    alt="User thumbnail"
+                                    class="size-8 rounded-full object-cover"
+                                />
+                                <div
+                                    v-else
+                                    class="rounded-fullsize-8 bg-gray-200 p-1"
+                                >
+                                    <Icon
+                                        name="ic:round-account-circle"
+                                        size="30"
+                                        class="text-gray-500"
+                                    />
+                                </div>
+                                <h3 class="font-bold">
+                                    {{ review.user?.name }}
+                                </h3>
+                            </div>
+                            <p>
+                                Date:
+                                {{
+                                    dayjs(review.iso_date).format('D MMM YYYY')
+                                }}
+                            </p>
+                            <nuxt-link
+                                :to="review.link"
+                                target="_blank"
+                                class="flex items-center gap-1 text-orange-500 hover:underline"
+                            >
+                                Read review <Icon name="ic:round-open-in-new" />
+                            </nuxt-link>
+                        </div>
                     </div>
-                </div>
+                </template>
             </template>
         </embla-carousel>
         <embla-carousel-external-controls
