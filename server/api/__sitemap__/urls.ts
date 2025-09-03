@@ -1,11 +1,10 @@
 import type { SitemapUrl, SitemapUrlInput } from '#sitemap/types'
 import type { TemplatePageStoryblok } from '~/types/storyblok-component-types'
-import { storyblokInit } from '@storyblok/js'
+import StoryblokClient from 'storyblok-js-client'
 
-const config = useRuntimeConfig()
-
-const { storyblokApi } = storyblokInit({
-    accessToken: (config.STORYBLOK_DELIVERY_API_TOKEN as string) || ''
+const Storyblok = new StoryblokClient({
+    accessToken: (import.meta.env.STORYBLOK_DELIVERY_API_TOKEN as string) || '',
+    region: 'eu'
 })
 
 const fetchAllStories = async () => {
@@ -14,11 +13,11 @@ const fetchAllStories = async () => {
     let page = 1
     let total = 0
 
-    if (!storyblokApi) return
+    if (!Storyblok) return
 
     while (true) {
         // Fetch the current page
-        const response = await storyblokApi.get('cdn/stories', {
+        const response = await Storyblok.get('cdn/stories', {
             version: 'published',
             per_page: perPage,
             page: page,
@@ -53,7 +52,6 @@ const parseUrlForSitemap = (story: any) => {
 
 export default defineSitemapEventHandler(async (): Promise<any> => {
     let response: SitemapUrlInput[] = []
-
     try {
         const stories = await fetchAllStories()
         if (stories) {

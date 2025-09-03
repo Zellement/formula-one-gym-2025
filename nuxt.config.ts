@@ -23,7 +23,8 @@ export default defineNuxtConfig({
         '@nuxt/fonts',
         '@nuxt/icon',
         '@storyblok/nuxt',
-        'v-gsap-nuxt'
+        'v-gsap-nuxt',
+        '@nuxtjs/sitemap'
     ],
 
     fonts: {
@@ -31,6 +32,12 @@ export default defineNuxtConfig({
             weights: [500, 600, 700],
             styles: ['normal', 'italic']
         }
+    },
+
+    sitemap: {
+        exclude: ['/_icons'],
+        excludeAppSources: true,
+        sources: ['/api/__sitemap__/urls']
     },
 
     storyblok: {
