@@ -15,8 +15,9 @@
                     v-for="review in reviewsGoogle.reviews"
                     :key="review.review_id"
                 >
+                    <!-- <pre>{{ review }}</pre> -->
                     <div
-                        v-if="review.rating >= 4"
+                        v-if="review.rating >= 4 && review.snippet"
                         class="border-ecru-500 flex shrink-0 basis-full flex-col gap-2 rounded-xl border p-4 md:mx-4 md:basis-[320px] xl:mx-8"
                     >
                         <div
@@ -72,7 +73,9 @@
                             <p>
                                 Date:
                                 {{
-                                    dayjs(review.iso_date).format('D MMM YYYY')
+                                    dayjs(review.iso_date_of_last_edit).format(
+                                        'D MMM YYYY'
+                                    )
                                 }}
                             </p>
                             <nuxt-link
