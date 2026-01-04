@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="discountedParking?.length > 0">
         <p class="font-bold">Discounted Parking</p>
         <ul class="w-full">
             <li
