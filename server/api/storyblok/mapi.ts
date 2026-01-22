@@ -56,7 +56,6 @@ export default defineEventHandler(async (event: H3Event): Promise<any> => {
             }
         )
 
-        console.log('Storyblok MAPI PUT Success Result:', updateResult)
         return updateResult // Client returns data directly
     } catch (error: any) {
         console.error('Storyblok API route error (caught):', error) // Log the full error object
