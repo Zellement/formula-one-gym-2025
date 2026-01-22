@@ -14,10 +14,8 @@ const props = defineProps<Props>()
 const { render } = richTextResolver({
     resolvers: {
         [MarkTypes.LINK]: (node: any) => {
-            // If a story link is detected, use the linkHelper to format it
             if (node.attrs.linktype === 'story') {
-                // console.log('Story link detected:', node.attrs)
-                return `<a href="${node.attrs?.story?.full_slug}">${node.text}</a>`
+                return `<a href="/${node.attrs?.story?.full_slug}/">${node.text}</a>`
             }
 
             // Custom case for when DeepL copies over as links and not stories, or a link comes through starting with '/global/'
