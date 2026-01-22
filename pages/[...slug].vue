@@ -21,21 +21,30 @@ const { fetchGoogleReviews } = useSerpApiUtils()
 const isDev = import.meta.dev
 const isPreview = route.query._storyblok !== undefined
 
-interface StoryblokOptions {
-    version: 'draft' | 'published'
-    resolve_links: 'url'
-}
+const { story, error } = await useAsyncStoryblok(
+    routePath.value,
+    {
+        api: {
+            version: isDev || isPreview ? 'draft' : 'published',
+            resolve_links: 'url'
+        },
+        bridge: {}
+    }
+)
 
-const storyblokOptions: StoryblokOptions = {
-    version: isDev || isPreview ? 'draft' : 'published',
-    resolve_links: 'url' as const
+if (error.value) {
+    throw createError({
+        statusCode: error.value.statusCode,
+        statusMessage: error.value.statusMessage
+    })
 }
-
-const story = await useAsyncStoryblok(routePath.value, storyblokOptions)
 
 const pageTitle = computed(() => {
-    return story.value?.content?.meta_tags?.title || 'Formula One Gym'
+    return (
+        story.value?.content?.meta_tags?.title || 'Gym Nottingham City Centre'
+    )
 })
+console.log('Page Title:', pageTitle.value)
 
 const pageDescription = computed(() => {
     return story.value?.content?.meta_tags?.description || ''
