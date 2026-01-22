@@ -29,7 +29,7 @@
             </embla-carousel>
         </div>
         <div
-            class="container-px relative z-10 col-span-full col-start-1 row-start-1 container flex h-full w-full flex-col items-start justify-end gap-4 pt-32 pb-12 text-white xl:flex-row xl:items-end xl:justify-between"
+            class="relative z-10 col-span-full col-start-1 row-start-1 container flex h-full w-full flex-col items-start justify-end gap-4 container-px pt-32 pb-12 text-white xl:flex-row xl:items-end xl:justify-between"
         >
             <div
                 v-gsap.stagger.from="{ opacity: 0, x: -40 }"

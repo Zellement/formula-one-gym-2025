@@ -22,7 +22,7 @@ export default defineNuxtPlugin((nuxtApp): void => {
         }
     }
 
-    if (import.meta.client || import.meta.browser) {
+    if (import.meta.client || import.meta.client) {
         const userPrefersReducedMotion: MediaQueryList = window.matchMedia(
             '(prefers-reduced-motion: reduce)'
         )
