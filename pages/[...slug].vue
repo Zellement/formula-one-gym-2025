@@ -33,17 +33,25 @@ const storyblokOptions: StoryblokOptions = {
 
 const story = await useAsyncStoryblok(routePath.value, storyblokOptions)
 
-onMounted(async () => {
-    await useAsyncData('reviews', () => fetchGoogleReviews())
+const pageTitle = computed(() => {
+    return story.value?.content?.meta_tags?.title || 'Formula One Gym'
+})
+
+const pageDescription = computed(() => {
+    return story.value?.content?.meta_tags?.description || ''
 })
 
 useHead({
-    title: story.value?.content?.meta_tags?.title || 'Formula One Gym',
+    title: pageTitle,
     meta: [
         {
             name: 'description',
-            content: story.value?.content?.meta_tags?.description || ''
+            content: pageDescription
         }
     ]
+})
+
+onMounted(async () => {
+    await useAsyncData('reviews', () => fetchGoogleReviews())
 })
 </script>
