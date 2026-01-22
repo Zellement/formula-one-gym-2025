@@ -1,6 +1,6 @@
 <template>
     <section v-editable="blok" :class="blok.backgroundStyle">
-        <div class="container-px container">
+        <div class="container container-px">
             <div class="grid-layout">
                 <div
                     class="relative col-span-full overflow-clip rounded-lg lg:col-span-7"

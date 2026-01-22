@@ -1,7 +1,7 @@
 <template>
     <section v-editable="blok" :class="blok.backgroundStyle">
-        <div class="container-px container">
-            <div class="grid-layout @container">
+        <div class="container container-px">
+            <div class="@container grid-layout">
                 <!-- Primary block -->
                 <div class="col-span-full flex lg:col-span-5 lg:col-start-3">
                     <div

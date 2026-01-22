@@ -1,6 +1,6 @@
 <template>
     <div class="site-hero bg-orange-500 pt-32 pb-12 text-white">
-        <div class="container-px grid-layout container">
+        <div class="container grid-layout container-px">
             <div
                 v-gsap.stagger.from="{ opacity: 0, x: -40 }"
                 class="col-span-full flex flex-col items-start justify-end xl:col-span-7"

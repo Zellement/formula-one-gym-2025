@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-ecru-500 fixed inset-0 z-[999] flex">
-        <div class="container-px h-full w-full overflow-y-auto">
+    <div class="fixed inset-0 z-[999] flex bg-ecru-500">
+        <div class="h-full w-full overflow-y-auto container-px">
             <div class="flex w-full flex-col py-2">
                 <button
                     class="ml-auto flex items-center justify-center gap-1 rounded-lg bg-white px-4 py-3 text-black"

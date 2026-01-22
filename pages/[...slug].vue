@@ -21,16 +21,13 @@ const { fetchGoogleReviews } = useSerpApiUtils()
 const isDev = import.meta.dev
 const isPreview = route.query._storyblok !== undefined
 
-const { story, error } = await useAsyncStoryblok(
-    routePath.value,
-    {
-        api: {
-            version: isDev || isPreview ? 'draft' : 'published',
-            resolve_links: 'url'
-        },
-        bridge: {}
-    }
-)
+const { story, error } = await useAsyncStoryblok(routePath.value, {
+    api: {
+        version: isDev || isPreview ? 'draft' : 'published',
+        resolve_links: 'url'
+    },
+    bridge: {}
+})
 
 if (error.value) {
     throw createError({

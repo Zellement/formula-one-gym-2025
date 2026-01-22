@@ -18,7 +18,7 @@
                     <!-- <pre>{{ review }}</pre> -->
                     <div
                         v-if="review.rating >= 4 && review.snippet"
-                        class="border-ecru-500 flex shrink-0 basis-full flex-col gap-2 rounded-xl border p-4 md:mx-4 md:basis-[320px] xl:mx-8"
+                        class="flex shrink-0 basis-full flex-col gap-2 rounded-xl border border-ecru-500 p-4 md:mx-4 md:basis-[320px] xl:mx-8"
                     >
                         <div
                             v-gsap.stagger.from="{ opacity: 0, x: -40 }"

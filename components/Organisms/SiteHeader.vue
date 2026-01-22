@@ -9,7 +9,7 @@
             class="flex bg-gradient-to-br from-teal-500 to-teal-600"
         >
             <div
-                class="container-px container flex items-center justify-center gap-4 py-2"
+                class="container flex items-center justify-center gap-4 container-px py-2"
             >
                 <span class="text-white">
                     {{ siteOptions.topBarText }}
@@ -25,7 +25,7 @@
                 </button>
             </div>
         </div>
-        <div class="grid-layout container-px container pt-2 xl:pt-4">
+        <div class="container grid-layout container-px pt-2 xl:pt-4">
             <div class="relative col-span-full flex w-full gap-2">
                 <site-brand
                     class="mr-auto max-w-40 shrink-0 py-2 xl:max-w-48"
@@ -50,7 +50,7 @@
                             size="24"
                         />
                     </button>
-                    <div class="xs:flex hidden rounded-lg bg-white p-2">
+                    <div class="hidden rounded-lg bg-white p-2 xs:flex">
                         <btn-join-today
                             class="flex items-center justify-center rounded bg-orange-500 px-4 py-2 whitespace-nowrap text-white"
                         />

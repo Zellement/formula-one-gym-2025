@@ -18,13 +18,13 @@
                 opacity: 0,
                 y: 10
             }"
-            class="grid-layout container-px container mt-20"
+            class="container mt-20 grid-layout container-px"
         >
             <nuxt-link
                 v-for="post in posts?.data?.value?.data?.stories"
                 :key="post.id"
                 :to="`/help-advice/${post.slug}`"
-                class="group bg-ecru-500 col-span-full grid grid-cols-1 grid-rows-1 text-white transition-colors hover:text-orange-500 sm:col-span-6 md:col-span-4 xl:col-span-3"
+                class="group col-span-full grid grid-cols-1 grid-rows-1 bg-ecru-500 text-white transition-colors hover:text-orange-500 sm:col-span-6 md:col-span-4 xl:col-span-3"
             >
                 <div class="col-start-1 row-start-1 overflow-clip">
                     <single-storyblok-picture

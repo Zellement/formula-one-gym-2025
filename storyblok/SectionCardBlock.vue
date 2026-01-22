@@ -1,6 +1,6 @@
 <template>
     <div v-editable="blok" :class="blok.backgroundStyle">
-        <div class="container-px container">
+        <div class="container container-px">
             <div
                 v-gsap.stagger.whenVisible.delay-300.once.from="{
                     opacity: 0,
@@ -19,7 +19,7 @@
                 <div
                     v-for="(card, index) in blok.cards"
                     :key="index"
-                    class="xs:col-span-6 relative col-span-full grid grid-cols-1 grid-rows-1 rounded-lg xl:col-span-3"
+                    class="relative col-span-full grid grid-cols-1 grid-rows-1 rounded-lg xs:col-span-6 xl:col-span-3"
                     :class="
                         blok.backgroundStyle === 'section-bg-ecru-500'
                             ? 'bg-white'

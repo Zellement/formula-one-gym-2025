@@ -1,7 +1,7 @@
 <template>
     <section v-editable="blok" :class="blok.backgroundStyle">
-        <div class="container-px container">
-            <div class="grid-layout @container pb-4">
+        <div class="container container-px">
+            <div class="@container grid-layout pb-4">
                 <div
                     v-gsap.entrance.slide-left
                     class="col-span-full lg:col-span-2"

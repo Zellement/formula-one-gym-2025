@@ -8,7 +8,7 @@
                 class="flex w-full flex-col overflow-clip rounded-xl lg:flex-row"
             >
                 <div
-                    class="to-blaze-orange-500 via-pizazz-500 @container flex w-full flex-col gap-8 bg-gradient-to-b from-orange-500 p-6 text-white lg:w-1/2 xl:gap-4"
+                    class="@container flex w-full flex-col gap-8 bg-gradient-to-b from-orange-500 via-pizazz-500 to-blaze-orange-500 p-6 text-white lg:w-1/2 xl:gap-4"
                 >
                     <div class="grid gap-4 @sm:grid-cols-2">
                         <div class="flex flex-col gap-1 leading-tight">
