@@ -2,6 +2,7 @@ import { useStoryblokStore } from '@/stores/storyblok' // Adjust path if needed
 
 export const useSerpApiUtils = () => {
     const fetchGoogleReviews = async () => {
+        console.log('leys go')
         const storyblokStore = useStoryblokStore()
 
         const today = new Date()
@@ -10,7 +11,13 @@ export const useSerpApiUtils = () => {
         const lastFetched = new Date(
             storyblokStore.siteOptions?.reviewsLastFetched
         )
-        lastFetched.setHours(0, 0, 0, 0) // Start of that day
+
+        if (lastFetched) {
+            lastFetched.setHours(0, 0, 0, 0) // Start of that day
+
+            console.log('Last fetched date:', lastFetched)
+            console.log("Today's date:", today)
+        }
 
         if (
             storyblokStore.siteOptions?.reviewsGoogle &&

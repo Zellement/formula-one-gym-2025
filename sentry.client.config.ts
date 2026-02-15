@@ -10,7 +10,7 @@ Sentry.init({
     tracesSampleRate: 1.0,
 
     // Enable logs to be sent to Sentry
-    enableLogs: true,
+    enableLogs: process.env.NODE_ENV === 'production',
 
     // Enable sending of user PII (Personally Identifiable Information)
     // https://docs.sentry.io/platforms/javascript/guides/nuxt/configuration/options/#sendDefaultPii
