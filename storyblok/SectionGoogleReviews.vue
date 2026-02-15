@@ -1,5 +1,9 @@
 <template>
-    <section v-editable="blok" class="relative">
+    <section
+        v-if="reviewsGoogle?.reviews?.length"
+        v-editable="blok"
+        class="relative"
+    >
         <single-storyblok-picture
             v-if="storyblokStore?.siteOptions?.googleReviewsLogo?.filename"
             v-gsap.from="{ opacity: 0, x: 20 }"

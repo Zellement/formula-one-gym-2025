@@ -19,6 +19,10 @@
     "update-storyblok": "npm run pull-sb-components && npm run generate-sb-types"
   },
   "devDependencies": {
+    "@iconify-json/basil": "^1.2.4",
+    "@iconify-json/ic": "^1.2.4",
+    "@iconify-json/material-symbols-light": "^1.2.55",
+    "@iconify-json/svg-spinners": "^1.2.4",
     "@nuxt/fonts": "^0.13.0",
     "@nuxtjs/seo": "^3.3.0",
     "@nuxtjs/sitemap": "^7.5.2",
