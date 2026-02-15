@@ -9,7 +9,7 @@ Sentry.init({
     // for finer control
     tracesSampleRate: 1.0,
 
-    // Enable logs to be sent to Sentry
+    // Enable logs to be sent to Sentry (keep disabled in dev)
     enableLogs: process.env.NODE_ENV === 'production',
 
     // Enable sending of user PII (Personally Identifiable Information)
@@ -17,5 +17,15 @@ Sentry.init({
     sendDefaultPii: true,
 
     // Setting this option to true will print useful information to the console while you're setting up Sentry.
-    debug: false
+    debug: false,
+
+    // Reduce dev noise: remove integrations that can emit warnings on http origins
+    integrations: (defaultIntegrations) => {
+        if (import.meta.dev) {
+            return defaultIntegrations.filter(
+                (i) => i.name !== 'Feedback' && i.name !== 'Replay'
+            )
+        }
+        return defaultIntegrations
+    }
 })

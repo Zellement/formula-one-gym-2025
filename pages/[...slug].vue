@@ -57,6 +57,10 @@ useHead({
 })
 
 onMounted(async () => {
-    await useAsyncData('reviews', () => fetchGoogleReviews())
+    try {
+        await fetchGoogleReviews()
+    } catch (e) {
+        console.error('onMounted: fetchGoogleReviews error', e)
+    }
 })
 </script>

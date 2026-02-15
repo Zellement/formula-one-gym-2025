@@ -1,76 +1,78 @@
-import { useStoryblokStore } from '@/stores/storyblok' // Adjust path if needed
+import { useStoryblokStore } from '@/stores/storyblok'
 
 export const useSerpApiUtils = () => {
     const fetchGoogleReviews = async () => {
-        console.log('leys go')
         const storyblokStore = useStoryblokStore()
 
-        const today = new Date()
-        today.setHours(0, 0, 0, 0) // Start of today
+        // Extract existing cached data from Pinia
+        const existingReviews = storyblokStore.siteOptions?.reviewsGoogle
+        const lastFetchedRaw = storyblokStore.siteOptions?.reviewsLastFetched
 
-        const lastFetched = new Date(
-            storyblokStore.siteOptions?.reviewsLastFetched
-        )
-
-        if (lastFetched) {
-            lastFetched.setHours(0, 0, 0, 0) // Start of that day
-
-            console.log('Last fetched date:', lastFetched)
-            console.log("Today's date:", today)
+        // Helper: check if a date string represents today (ignoring time)
+        const isToday = (iso?: string) => {
+            if (!iso) return false
+            const d = new Date(iso)
+            if (isNaN(d.getTime())) return false
+            const today = new Date()
+            return (
+                d.getFullYear() === today.getFullYear() &&
+                d.getMonth() === today.getMonth() &&
+                d.getDate() === today.getDate()
+            )
         }
 
-        if (
-            storyblokStore.siteOptions?.reviewsGoogle &&
-            storyblokStore.siteOptions?.reviewsLastFetched &&
-            lastFetched >= today
-        ) {
-            // console.log(
-            //     'Google reviews already fetched today, skipping API call.'
-            // )
-            return storyblokStore.siteOptions?.reviewsGoogle
+        const alreadyFetchedToday = isToday(lastFetchedRaw)
+
+        // Use cache only if fetched today and data exists; otherwise fetch
+        if (existingReviews && alreadyFetchedToday) {
+            return existingReviews
         }
 
-        // console.log('Fetching Google reviews from SerpAPI...')
-
-        // 1. Fetch reviews from SerpAPI
-        const { data: serpApiData, error: serpApiError } = await useFetch(
-            '/api/integrations/serpapi'
-        )
-
-        if (serpApiError.value) {
-            console.error('Error fetching from SerpAPI:', serpApiError.value)
-            // Optionally throw an error or handle it gracefully
-            throw new Error('Failed to fetch Google reviews from SerpAPI.')
+        // Fetch reviews from SerpAPI
+        let serpApiData
+        try {
+            serpApiData = await $fetch('/api/integrations/serpapi')
+        } catch (err) {
+            console.error('SerpAPI fetch error:', err)
+            // Fall back to any existing cached reviews if available
+            return existingReviews ?? null
         }
 
-        if (!serpApiData.value) {
+        if (!serpApiData) {
             console.warn('SerpAPI returned no data.')
-            return null // No data to process
+            return existingReviews ?? null
         }
 
-        const reviewsToSave = serpApiData.value
+        const reviewsToSave = serpApiData
+        const nowIso = new Date().toISOString()
 
-        // console.log(
-        //     'SerpAPI data received, attempting to post to Storyblok MAPI...'
-        // )
-
-        const requestBody = {
-            reviewsGoogle: reviewsToSave,
-            reviewsLastFetched: new Date().toISOString()
-        }
-
+        // Persist to Storyblok (MAPI)
         try {
             await $fetch('/api/storyblok/mapi', {
                 method: 'POST',
-                body: requestBody
+                body: {
+                    reviewsGoogle: reviewsToSave,
+                    reviewsLastFetched: nowIso
+                }
             })
-
-            // console.log('Successfully posted to Storyblok MAPI:', postResponse)
         } catch (err) {
             console.error('Error posting to Storyblok MAPI:', err)
         }
 
-        return
+        // Update local Pinia cache for immediate use
+        try {
+            const current = storyblokStore.siteOptions || {}
+            // Assign back to store to keep reactive updates
+            storyblokStore.siteOptions = {
+                ...current,
+                reviewsGoogle: reviewsToSave,
+                reviewsLastFetched: nowIso
+            } as any
+        } catch (err) {
+            console.error('Error updating local store cache:', err)
+        }
+
+        return reviewsToSave
     }
 
     return {
