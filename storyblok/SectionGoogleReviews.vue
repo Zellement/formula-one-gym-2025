@@ -1,5 +1,5 @@
 <template>
-    <section v-editable="blok" class="relative">
+    <section v-if="reviewsGoogle?.reviews" v-editable="blok" class="relative">
         <single-storyblok-picture
             v-if="storyblokStore?.siteOptions?.googleReviewsLogo?.filename"
             v-gsap.from="{ opacity: 0, x: 20 }"
@@ -12,10 +12,9 @@
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
                 <template
-                    v-for="review in reviewsGoogle.reviews"
-                    :key="review.review_id"
+                    v-for="review in reviewsGoogle?.reviews"
+                    :key="review?.review_id"
                 >
-                    <!-- <pre>{{ review }}</pre> -->
                     <div
                         v-if="review.rating >= 4 && review.snippet"
                         class="flex shrink-0 basis-full flex-col gap-2 rounded-xl border border-ecru-500 p-4 md:mx-4 md:basis-[320px] xl:mx-8"
