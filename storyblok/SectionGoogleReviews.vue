@@ -12,10 +12,9 @@
         <embla-carousel ref="emblaRef" class="">
             <template #carousel-items>
                 <template
-                    v-for="review in reviewsGoogle.reviews"
-                    :key="review.review_id"
+                    v-for="review in reviewsGoogle?.reviews"
+                    :key="review?.review_id"
                 >
-                    <!-- <pre>{{ review }}</pre> -->
                     <div
                         v-if="review.rating >= 4 && review.snippet"
                         class="flex shrink-0 basis-full flex-col gap-2 rounded-xl border border-ecru-500 p-4 md:mx-4 md:basis-[320px] xl:mx-8"
@@ -79,7 +78,8 @@
                                 }}
                             </p>
                             <nuxt-link
-                                :to="review.link"
+                                v-if="review?.link"
+                                :to="review?.link"
                                 target="_blank"
                                 class="flex items-center gap-1 text-orange-500 hover:underline"
                             >

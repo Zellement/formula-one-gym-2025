@@ -41,7 +41,6 @@ const pageTitle = computed(() => {
         story.value?.content?.meta_tags?.title || 'Gym Nottingham City Centre'
     )
 })
-console.log('Page Title:', pageTitle.value)
 
 const pageDescription = computed(() => {
     return story.value?.content?.meta_tags?.description || ''
