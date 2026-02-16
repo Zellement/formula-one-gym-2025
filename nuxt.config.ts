@@ -6,8 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
     // Fix for issue - https://github.com/nuxt-modules/tailwindcss/issues/480
-    devServerHandlers: [],
-
     ssr: true,
 
     nitro: {
@@ -24,7 +22,8 @@ export default defineNuxtConfig({
         '@nuxt/icon',
         '@storyblok/nuxt',
         'v-gsap-nuxt',
-        '@nuxtjs/sitemap'
+        '@nuxtjs/sitemap',
+        '@sentry/nuxt/module'
     ],
 
     fonts: {
@@ -141,10 +140,15 @@ export default defineNuxtConfig({
     vite: {
         plugins: [
             tailwindcss(),
-            eslintVitePlugin({
-                fix: true,
-                include: ['./**/*.vue', './**/*.ts', './**/*.js']
-            })
+            // Only run ESLint in development to reduce build memory usage
+            ...(process.env.NODE_ENV !== 'production'
+                ? [
+                      eslintVitePlugin({
+                          fix: true,
+                          include: ['./**/*.vue', './**/*.ts', './**/*.js']
+                      })
+                  ]
+                : [])
         ]
     },
 
@@ -164,7 +168,16 @@ export default defineNuxtConfig({
             ]
         }
     },
-    devtools: { enabled: true },
 
-    compatibilityDate: '2024-08-08'
+    devtools: { enabled: true },
+    compatibilityDate: '2024-08-08',
+
+    sentry: {
+        org: 'zellement',
+        project: 'formula-one-gym',
+        autoInjectServerSentry: 'top-level-import'
+    },
+
+    // Disable sourcemaps in production to reduce bundle size and memory footprint
+    sourcemap: false
 })

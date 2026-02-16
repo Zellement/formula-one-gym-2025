@@ -41,7 +41,6 @@ const pageTitle = computed(() => {
         story.value?.content?.meta_tags?.title || 'Gym Nottingham City Centre'
     )
 })
-console.log('Page Title:', pageTitle.value)
 
 const pageDescription = computed(() => {
     return story.value?.content?.meta_tags?.description || ''
@@ -58,6 +57,10 @@ useHead({
 })
 
 onMounted(async () => {
-    await useAsyncData('reviews', () => fetchGoogleReviews())
+    try {
+        await fetchGoogleReviews()
+    } catch (e) {
+        console.error('onMounted: fetchGoogleReviews error', e)
+    }
 })
 </script>

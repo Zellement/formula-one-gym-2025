@@ -1,5 +1,9 @@
 <template>
-    <section v-if="reviewsGoogle?.reviews" v-editable="blok" class="relative">
+    <section
+        v-if="reviewsGoogle?.reviews?.length"
+        v-editable="blok"
+        class="relative"
+    >
         <single-storyblok-picture
             v-if="storyblokStore?.siteOptions?.googleReviewsLogo?.filename"
             v-gsap.from="{ opacity: 0, x: 20 }"
@@ -78,7 +82,8 @@
                                 }}
                             </p>
                             <nuxt-link
-                                :to="review.link"
+                                v-if="review?.link"
+                                :to="review?.link"
                                 target="_blank"
                                 class="flex items-center gap-1 text-orange-500 hover:underline"
                             >
