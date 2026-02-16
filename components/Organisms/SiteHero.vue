@@ -20,7 +20,7 @@
                 >
                     {{ title }}
                 </component>
-                <p v-if="subtitle" class="max-w-screen-lg">
+                <p v-if="subtitle" class="max-w-lg">
                     {{ subtitle }}
                 </p>
                 <div class="mt-8 flex flex-col items-start gap-8 sm:flex-row">
@@ -29,12 +29,12 @@
                     />
                     <total-reviews
                         class="text-[0.9em] italic"
-                        stars-classes="text-yellow-200"
+                        stars-classes="text-yellow-200 not-italic"
                     />
                 </div>
             </div>
             <div
-                class="relative col-span-full mt-8 xl:col-span-5 xl:aspect-[578/361]"
+                class="relative col-span-full mt-8 xl:col-span-5 xl:aspect-578/361"
             >
                 <embla-carousel ref="emblaRef">
                     <template #carousel-items>
