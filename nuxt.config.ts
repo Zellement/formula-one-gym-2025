@@ -140,10 +140,15 @@ export default defineNuxtConfig({
     vite: {
         plugins: [
             tailwindcss(),
-            eslintVitePlugin({
-                fix: true,
-                include: ['./**/*.vue', './**/*.ts', './**/*.js']
-            })
+            // Only run ESLint in development to reduce build memory usage
+            ...(process.env.NODE_ENV !== 'production'
+                ? [
+                      eslintVitePlugin({
+                          fix: true,
+                          include: ['./**/*.vue', './**/*.ts', './**/*.js']
+                      })
+                  ]
+                : [])
         ]
     },
 
@@ -173,7 +178,6 @@ export default defineNuxtConfig({
         autoInjectServerSentry: 'top-level-import'
     },
 
-    sourcemap: {
-        client: 'hidden'
-    }
+    // Disable sourcemaps in production to reduce bundle size and memory footprint
+    sourcemap: false
 })
