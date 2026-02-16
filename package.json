@@ -58,7 +58,7 @@
         "dayjs": "^1.11.19",
         "embla-carousel-vue": "^8.6.0",
         "esbuild": "0.27.3",
-        "isomorphic-dompurify": "2.36.0",
+        "isomorphic-dompurify": "2.26.0",
         "pinia": "3.0.4",
         "serpapi": "^2.2.1",
         "storyblok-js-client": "^7.2.3",
