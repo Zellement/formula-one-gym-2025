@@ -1,6 +1,6 @@
 <template>
     <div class="gap-2">
-        <p>
+        <p v-if="isHomePage">
             Recommended by
             <span class="font-bold" :class="starsClasses">hundreds</span>
             of happy members!
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <span
-                v-if="totalReviews && rating && isHomePage"
+                v-if="totalReviews && rating"
                 class="font-sans text-sm text-white lining-nums"
                 :class="starsClasses"
             >

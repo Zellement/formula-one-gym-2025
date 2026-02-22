@@ -23,7 +23,7 @@
                 <p v-if="subtitle" class="max-w-lg">
                     {{ subtitle }}
                 </p>
-                <div class="mt-8 flex flex-col items-start gap-8 sm:flex-row">
+                <div class="mt-8 flex flex-col items-center gap-8 sm:flex-row">
                     <btn-join-today
                         class="flex items-center justify-center self-start rounded bg-white px-4 py-2 whitespace-nowrap text-orange-500 transition-colors hover:bg-orange-800 hover:text-white"
                     />
