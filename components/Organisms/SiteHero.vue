@@ -27,10 +27,6 @@
                     <btn-join-today
                         class="flex items-center justify-center self-start rounded bg-white px-4 py-2 whitespace-nowrap text-orange-500 transition-colors hover:bg-orange-800 hover:text-white"
                     />
-                    <total-reviews
-                        class="text-[0.9em] italic"
-                        stars-classes="text-yellow-200 not-italic"
-                    />
                 </div>
             </div>
             <div
