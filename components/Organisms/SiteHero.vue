@@ -27,6 +27,17 @@
                     <btn-join-today
                         class="flex items-center justify-center self-start rounded bg-white px-4 py-2 whitespace-nowrap text-orange-500 transition-colors hover:bg-orange-800 hover:text-white"
                     />
+                    <div>
+                        <p class="italic">
+                            Recommended by
+                            <span class="text-yellow-200">hundreds</span> of
+                            happy members!
+                        </p>
+                        <total-reviews
+                            class="flex w-full max-w-56 flex-col"
+                            stars-classes="text-yellow-200"
+                        />
+                    </div>
                 </div>
             </div>
             <div
